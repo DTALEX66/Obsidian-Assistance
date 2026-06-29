@@ -1,0 +1,54 @@
+# Local/private Obsidian data
+.obsidian/
+.smart-env/
+*.ajson
+*.canvas
+
+# Generated project outputs
+outputs/
+work/
+temp/
+cache/
+*.sqlite
+*.db
+*.log
+*.bak*
+
+# Course/source materials
+*.mp3
+*.mp4
+*.m4a
+*.wav
+*.flac
+*.avi
+*.mov
+*.mkv
+*.pdf
+*.ppt
+*.pptx
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.zip
+*.rar
+*.7z
+
+# OCR/ASR generated text dumps
+transcripts/
+ocr/
+asr/
+pdf_pages/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
