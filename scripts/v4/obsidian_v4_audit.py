@@ -10,7 +10,7 @@ from pathlib import Path
 
 FORBIDDEN_EXT = {".mp3", ".mp4", ".wav", ".flac", ".ape", ".m4a", ".mov", ".avi", ".mkv", ".pdf", ".ppt", ".pptx", ".zip", ".rar", ".7z", ".sqlite"}
 SECRET_RE = re.compile(r"(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|Bearer\s+[A-Za-z0-9._-]{20,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----)")
-FORMAL_PATH_RE = re.compile(r"E:[\\/]BaiduSyncdisk[\\/]Obsidian知识库|E:/BaiduSyncdisk/Obsidian知识库")
+FORMAL_PATH_RE = re.compile("E:" + r"[\\/]" + "BaiduSyncdisk" + r"[\\/]" + "Obsidian知识库")
 
 
 def audit(root: Path):

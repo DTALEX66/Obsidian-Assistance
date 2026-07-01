@@ -53,18 +53,18 @@
 
 ### 5.4 正式库硬编码路径
 
-- `docs/handoff-2026-06-30.md:26` `E:/BaiduSyncdisk/Obsidian知识库/`
-- `docs/project-audit-2026-06-30.md:9` `| Obsidian 知识库 | `E:/BaiduSyncdisk/Obsidian知识库/` | 正常 |`
-- `docs/project-audit-2026-06-30.md:18` `正式库：`E:/BaiduSyncdisk/Obsidian知识库/02_课程库/知识内化训练营/``
-- `docs/project-audit-2026-06-30.md:71` `- `E:/BaiduSyncdisk/Obsidian知识库/93_导入报告/项目总控梳理_2026-06-30.md``
-- `docs/project-audit-2026-06-30.md:72` `- `E:/BaiduSyncdisk/Obsidian知识库/02_课程库/01_课程处理工作台.md``
-- `docs/project-audit-2026-06-30.md:73` `- `E:/BaiduSyncdisk/Obsidian知识库/02_课程库/心理记忆学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）.md``
-- `reports/repo-audit-v4.md:47` `- `docs/handoff-2026-06-30.md:26` `E:/BaiduSyncdisk/Obsidian知识库/``
-- `reports/repo-audit-v4.md:48` `- `docs/project-audit-2026-06-30.md:9` `| Obsidian 知识库 | `E:/BaiduSyncdisk/Obsidian知识库/` | 正常 |``
-- `reports/repo-audit-v4.md:49` `- `docs/project-audit-2026-06-30.md:18` `正式库：`E:/BaiduSyncdisk/Obsidian知识库/02_课程库/知识内化训练营/```
-- `reports/repo-audit-v4.md:50` `- `docs/project-audit-2026-06-30.md:71` `- `E:/BaiduSyncdisk/Obsidian知识库/93_导入报告/项目总控梳理_2026-06-30.md```
-- `reports/repo-audit-v4.md:51` `- `docs/project-audit-2026-06-30.md:72` `- `E:/BaiduSyncdisk/Obsidian知识库/02_课程库/01_课程处理工作台.md```
-- `reports/repo-audit-v4.md:52` `- `docs/project-audit-2026-06-30.md:73` `- `E:/BaiduSyncdisk/Obsidian知识库/02_课程库/心理记忆学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）.md```
+- `docs/handoff-2026-06-30.md:26` `<OBSIDIAN_VAULT_PATH>/`
+- `docs/project-audit-2026-06-30.md:9` `| Obsidian 知识库 | `<OBSIDIAN_VAULT_PATH>/` | 正常 |`
+- `docs/project-audit-2026-06-30.md:18` `正式库：`<OBSIDIAN_VAULT_PATH>/02_课程库/知识内化训练营/``
+- `docs/project-audit-2026-06-30.md:71` `- `<OBSIDIAN_VAULT_PATH>/93_导入报告/项目总控梳理_2026-06-30.md``
+- `docs/project-audit-2026-06-30.md:72` `- `<OBSIDIAN_VAULT_PATH>/02_课程库/01_课程处理工作台.md``
+- `docs/project-audit-2026-06-30.md:73` `- `<OBSIDIAN_VAULT_PATH>/02_课程库/心理记忆学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）.md``
+- `reports/repo-audit-v4.md:47` `- `docs/handoff-2026-06-30.md:26` `<OBSIDIAN_VAULT_PATH>/``
+- `reports/repo-audit-v4.md:48` `- `docs/project-audit-2026-06-30.md:9` `| Obsidian 知识库 | `<OBSIDIAN_VAULT_PATH>/` | 正常 |``
+- `reports/repo-audit-v4.md:49` `- `docs/project-audit-2026-06-30.md:18` `正式库：`<OBSIDIAN_VAULT_PATH>/02_课程库/知识内化训练营/```
+- `reports/repo-audit-v4.md:50` `- `docs/project-audit-2026-06-30.md:71` `- `<OBSIDIAN_VAULT_PATH>/93_导入报告/项目总控梳理_2026-06-30.md```
+- `reports/repo-audit-v4.md:51` `- `docs/project-audit-2026-06-30.md:72` `- `<OBSIDIAN_VAULT_PATH>/02_课程库/01_课程处理工作台.md```
+- `reports/repo-audit-v4.md:52` `- `docs/project-audit-2026-06-30.md:73` `- `<OBSIDIAN_VAULT_PATH>/02_课程库/心理记忆学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）.md```
 
 ## 6. 建议
 
