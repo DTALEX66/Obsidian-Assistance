@@ -170,6 +170,8 @@ def main():
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
+    if args.apply and args.dry_run:
+        raise SystemExit("--apply and --dry-run are mutually exclusive")
     if bool(args.output) == bool(args.vault):
         raise SystemExit("--output and --vault must be exactly one")
     spec = load_spec(args.spec) if args.spec else None
@@ -185,3 +187,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

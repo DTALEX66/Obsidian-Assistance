@@ -1,4 +1,5 @@
-from pathlib import Path
+import subprocess
+import sys
 from scripts.v4.generate_course_pack import build_course_pack, load_spec, write_to_output
 
 
@@ -40,3 +41,27 @@ def test_spec_driven_apply_writes_multiple_lessons(tmp_path):
     assert result["dry_run"] is False
     assert (tmp_path / "spec-demo" / "02_逐节总结" / "第01节_输入箱与素材识别.md").exists()
     assert (tmp_path / "spec-demo" / "02_逐节总结" / "第02节_卡片化与复习.md").exists()
+
+
+def test_cli_apply_and_dry_run_are_mutually_exclusive(tmp_path):
+    output = tmp_path / "conflict-output"
+    report = tmp_path / "conflict-report"
+    result = subprocess.run(
+        [
+            sys.executable,
+            "scripts/v4/generate_course_pack.py",
+            "--course",
+            "Conflict Demo",
+            "--output",
+            str(output),
+            "--apply",
+            "--dry-run",
+            "--report-dir",
+            str(report),
+        ],
+        text=True,
+        capture_output=True,
+    )
+    assert result.returncode != 0
+    assert "mutually exclusive" in (result.stderr + result.stdout)
+    assert not (output / "00_课程主页.md").exists()
