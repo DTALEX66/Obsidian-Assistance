@@ -42,6 +42,14 @@ jobs:
         run: |
           python scripts/v4/generate_course_pack.py --course "CI Demo课程" --output "examples/ci-demo-course" --dry-run --report-dir reports
 
+      - name: Validate spec-driven course generation
+        run: |
+          python scripts/v4/generate_course_pack.py --spec examples/v4-course-spec.json --output ".ci-v4-spec-demo" --apply --report-dir .ci-v4-report
+          test -f ".ci-v4-spec-demo/02_逐节总结/第01节_输入箱与素材识别.md"
+          test -f ".ci-v4-spec-demo/02_逐节总结/第02节_卡片化与复习.md"
+          test -f ".ci-v4-spec-demo/07_证据索引/spec-demo-001.md"
+          python scripts/v4/validate_yaml_schema.py .ci-v4-spec-demo
+
       - name: Apply demo generation in temporary directory
         run: |
           python scripts/v4/generate_course_pack.py --course "CI Demo课程" --output ".ci-v4-demo" --apply --report-dir .ci-v4-report
