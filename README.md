@@ -17,8 +17,18 @@
 skills/
   course-verifier/          本地证据检索与课程术语核验 Skill
 scripts/
-  course_verify.py          本地证据索引、查询、核验脚本
-  setup_obsidian_mvp_flow.ps1 参数化 Obsidian 全流程 MVP 写入脚本
+  course_verify.py                  本地证据索引、查询、核验脚本
+  setup_obsidian_mvp_flow.ps1       参数化 Obsidian 全流程 MVP 写入脚本
+  v4/generate_course_pack.py        V4 课程包生成器，默认 dry-run，显式 --apply 才写
+  v4/generate_canvas_map.py         V4 Canvas 生成器，默认 dry-run
+  v4/generate_mermaid_graph.py      V4 Mermaid 图生成器，默认 dry-run
+  v4/generate_bases_views.py        V4 Bases 视图草案生成器，默认 dry-run
+  v4/safe_vault_writer.py           V4 安全写入层，阻止路径穿越并覆盖前备份
+  v4/obsidian_v4_audit.py           V4 安全审计脚本
+templates/v4/                       V4 Markdown/Canvas 模板
+snippets/v4/                        V4 Obsidian CSS snippets
+tests/v4/                           V4 回归测试与安全边界测试
+.github/workflows/v4-validation.yml GitHub Actions 自动验证
 docs/
   data-boundary.md                  数据边界与防外溢规则
   pipeline-acceleration.md          加速转化与状态机方案
@@ -127,6 +137,21 @@ python scripts/v4/generate_course_pack.py --spec examples/v4-course-spec.json --
 ```
 
 `--spec` 至少需要提供 `course` 字段，可选提供 `lessons`、`concepts`、`methods`、`cases`、`reviews`、`actions`、`evidence` 等数组。
+
+### V4 子生成器安全用法
+
+以下子生成器与课程包生成器一样，默认只输出 dry-run 计划；只有显式 `--apply` 才写文件：
+
+```powershell
+python scripts/v4/generate_canvas_map.py --output "tmp/课程地图.canvas"
+python scripts/v4/generate_canvas_map.py --output "tmp/课程地图.canvas" --apply
+
+python scripts/v4/generate_mermaid_graph.py --course "Demo课程" --output "tmp/视觉图解"
+python scripts/v4/generate_mermaid_graph.py --course "Demo课程" --output "tmp/视觉图解" --apply
+
+python scripts/v4/generate_bases_views.py --course "Demo课程" --output "tmp/bases-view.json"
+python scripts/v4/generate_bases_views.py --course "Demo课程" --output "tmp/bases-view.json" --apply
+```
 
 ### 如何安装到测试 vault
 
