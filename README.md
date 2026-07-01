@@ -25,6 +25,7 @@ scripts/
   v4/generate_bases_views.py        V4 Bases 视图草案生成器，默认 dry-run
   v4/safe_vault_writer.py           V4 安全写入层，阻止路径穿越并覆盖前备份
   v4/obsidian_v4_audit.py           V4 安全审计脚本
+  v5/course_diversity_audit.py      V5 课程验证与内容多样化审计脚本
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
@@ -41,6 +42,7 @@ docs/
   obsidian-ai-fullchain-absorption-plan.md  Obsidian AI 全链路可吸收路线图
   v5-obsidian-knowledgeos-upgrade-analysis.md  V5 Obsidian 知识库升级分析
   v5-talos-ai-os-dashboard-spec.md             V5 Talos-like 中控规格
+  v5-course-diversity-standard.md              V5 课程验证与内容多样化标准
   research/obsidian-knowledgeos-upgrade-evidence.md  V5 公开参考核验与吸收结论
   ui-audit.md                       Obsidian UI/插件体检清单
   open-source-counterparts.md       开源对标项目
