@@ -10,6 +10,9 @@ outputs/
 work/
 temp/
 cache/
+.ci-v4-demo/
+.ci-v4-report/
+reports/generate-course-pack-report.json
 *.sqlite
 *.db
 *.log
