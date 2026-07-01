@@ -3,6 +3,7 @@
 .smart-env/
 *.ajson
 *.canvas
+!examples/v4-demo-course/*.canvas
 
 # Generated project outputs
 outputs/

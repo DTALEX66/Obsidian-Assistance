@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "course",
+      "type": "text",
+      "text": "V4 Demo课程",
+      "x": 0,
+      "y": 0,
+      "width": 260,
+      "height": 80
+    },
+    {
+      "id": "lessons-1",
+      "type": "text",
+      "text": "章节: 第01节",
+      "x": 360,
+      "y": -260,
+      "width": 240,
+      "height": 80
+    },
+    {
+      "id": "concepts-1",
+      "type": "text",
+      "text": "概念: 输入箱",
+      "x": 360,
+      "y": -120,
+      "width": 240,
+      "height": 80
+    },
+    {
+      "id": "methods-1",
+      "type": "text",
+      "text": "方法: 课程处理流程",
+      "x": 360,
+      "y": 20,
+      "width": 240,
+      "height": 80
+    },
+    {
+      "id": "cases-1",
+      "type": "text",
+      "text": "案例: 示例案例",
+      "x": 360,
+      "y": 160,
+      "width": 240,
+      "height": 80
+    },
+    {
+      "id": "reviews-1",
+      "type": "text",
+      "text": "复习: 什么是输入箱",
+      "x": 360,
+      "y": 300,
+      "width": 240,
+      "height": 80
+    },
+    {
+      "id": "tasks-1",
+      "type": "text",
+      "text": "行动: 完成复习",
+      "x": 360,
+      "y": 440,
+      "width": 240,
+      "height": 80
+    },
+    {
+      "id": "evidence-1",
+      "type": "text",
+      "text": "证据: evidence-001",
+      "x": 360,
+      "y": 580,
+      "width": 240,
+      "height": 80
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-lessons-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "lessons-1",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-concepts-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "concepts-1",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-methods-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "methods-1",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-cases-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "cases-1",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-reviews-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "reviews-1",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-tasks-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "tasks-1",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-evidence-1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "evidence-1",
+      "toSide": "left"
+    }
+  ]
+}
