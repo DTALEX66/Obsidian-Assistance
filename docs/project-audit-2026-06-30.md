@@ -6,7 +6,7 @@
 |:---|:---|:---|
 | 项目工作区 | `D:/All projects/Obsidian-Assistance/` | 已迁移并改名 |
 | GitHub 辅助仓库 | `D:/All projects/Obsidian-Assistance/github/Obsidian-Assistance/` | 正常 |
-| Obsidian 知识库 | `E:/BaiduSyncdisk/Obsidian知识库/` | 正常 |
+| Obsidian 知识库 | `<OBSIDIAN_VAULT_PATH>/` | 正常 |
 | 原始素材 | `D:/All projects/Obsidian-Assistance/work/` | 保留 |
 | 输出/转写/OCR | `D:/All projects/Obsidian-Assistance/outputs/` | 保留 |
 | 待审核归档 | `D:/All projects/Obsidian-Assistance/archived-待审核中间文件/` | 已归档 |
@@ -15,7 +15,7 @@
 
 第一课《知识内化训练营：21天北大学霸科学记忆系统（完结）》已完成正式入库。
 
-正式库：`E:/BaiduSyncdisk/Obsidian知识库/02_课程库/知识内化训练营/`
+正式库：`<OBSIDIAN_VAULT_PATH>/02_课程库/知识内化训练营/`
 
 包含：
 - 课程总览
@@ -68,6 +68,6 @@
 
 ## 已同步到知识库
 
-- `E:/BaiduSyncdisk/Obsidian知识库/93_导入报告/项目总控梳理_2026-06-30.md`
-- `E:/BaiduSyncdisk/Obsidian知识库/02_课程库/01_课程处理工作台.md`
-- `E:/BaiduSyncdisk/Obsidian知识库/02_课程库/心理记忆学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）.md`
+- `<OBSIDIAN_VAULT_PATH>/93_导入报告/项目总控梳理_2026-06-30.md`
+- `<OBSIDIAN_VAULT_PATH>/02_课程库/01_课程处理工作台.md`
+- `<OBSIDIAN_VAULT_PATH>/02_课程库/心理记忆学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）.md`

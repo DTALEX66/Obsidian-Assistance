@@ -1,0 +1,17 @@
+/* KnowledgeOS V4 Status Tags */
+.markdown-preview-view.knowledgeos-v4 .status-inbox,
+.markdown-preview-view.knowledgeos-v4 .status-processing,
+.markdown-preview-view.knowledgeos-v4 .status-verified,
+.markdown-preview-view.knowledgeos-v4 .status-blocked,
+.markdown-preview-view.knowledgeos-v4 .status-done {
+  display: inline-block;
+  padding: .15rem .5rem;
+  border-radius: 999px;
+  font-size: .82em;
+  border: 1px solid var(--background-modifier-border);
+}
+.markdown-preview-view.knowledgeos-v4 .status-inbox { color: var(--text-muted); }
+.markdown-preview-view.knowledgeos-v4 .status-processing { color: var(--color-blue); }
+.markdown-preview-view.knowledgeos-v4 .status-verified { color: var(--color-green); }
+.markdown-preview-view.knowledgeos-v4 .status-blocked { color: var(--color-red); }
+.markdown-preview-view.knowledgeos-v4 .status-done { color: var(--color-green); font-weight: 600; }

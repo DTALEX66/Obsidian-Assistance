@@ -1,0 +1,20 @@
+/* KnowledgeOS V4 Cards */
+.markdown-preview-view.knowledgeos-v4 .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--ko-gap, 1rem);
+}
+.markdown-preview-view.knowledgeos-v4 .knowledge-card,
+.markdown-preview-view.knowledgeos-v4 .review-card,
+.markdown-preview-view.knowledgeos-v4 .action-card {
+  border: var(--ko-border, 1px solid var(--background-modifier-border));
+  border-radius: var(--ko-radius, 14px);
+  padding: 1rem;
+  box-shadow: var(--ko-shadow, 0 4px 16px rgba(0,0,0,.06));
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.markdown-preview-view.knowledgeos-v4 .knowledge-card:hover,
+.markdown-preview-view.knowledgeos-v4 .review-card:hover,
+.markdown-preview-view.knowledgeos-v4 .action-card:hover {
+  transform: translateY(-2px);
+}

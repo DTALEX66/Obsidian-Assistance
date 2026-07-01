@@ -1,0 +1,10 @@
+/* KnowledgeOS V4 Review */
+.markdown-preview-view.knowledgeos-v4 .review-card {
+  background: var(--background-secondary);
+}
+.markdown-preview-view.knowledgeos-v4 .review-card strong {
+  color: var(--text-accent);
+}
+.markdown-preview-view.knowledgeos-v4 input[type="checkbox"] {
+  border-radius: 50%;
+}

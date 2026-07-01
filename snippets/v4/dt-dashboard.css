@@ -1,0 +1,14 @@
+/* KnowledgeOS V4 Dashboard */
+.markdown-preview-view.knowledgeos-v4.dashboard .callout,
+.markdown-preview-view.knowledgeos-v4.course-home .callout {
+  border-radius: var(--ko-radius, 14px);
+  border: var(--ko-border, 1px solid var(--background-modifier-border));
+  box-shadow: var(--ko-shadow, 0 4px 16px rgba(0,0,0,.06));
+}
+.markdown-preview-view.knowledgeos-v4 .dataview.table-view-table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.markdown-preview-view.knowledgeos-v4 .dataview.table-view-table tr {
+  border-radius: var(--ko-radius, 14px);
+}
