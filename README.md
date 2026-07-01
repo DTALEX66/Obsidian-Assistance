@@ -34,6 +34,7 @@ docs/
   pipeline-acceleration.md          加速转化与状态机方案
   pipeline-v2-full-flow.md          课程处理全流程规范
   project-experience-2026-07-01.md  项目经验总结：长循环、自检、全网比校
+  obsidian-ai-fullchain-absorption-plan.md  Obsidian AI 全链路可吸收路线图
   ui-audit.md                       Obsidian UI/插件体检清单
   open-source-counterparts.md       开源对标项目
 ```
