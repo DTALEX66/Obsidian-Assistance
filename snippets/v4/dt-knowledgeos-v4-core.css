@@ -1,0 +1,21 @@
+/* KnowledgeOS V4 Core — scoped only */
+.markdown-preview-view.knowledgeos-v4 {
+  --ko-radius: 14px;
+  --ko-gap: 1rem;
+  --ko-border: 1px solid var(--background-modifier-border);
+  --ko-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --ko-accent: var(--interactive-accent);
+}
+.markdown-preview-view.knowledgeos-v4 h1 {
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: .5rem;
+}
+.markdown-preview-view.knowledgeos-v4 h2 {
+  margin-top: 2rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.markdown-preview-view.knowledgeos-v4 table {
+  width: 100%;
+}

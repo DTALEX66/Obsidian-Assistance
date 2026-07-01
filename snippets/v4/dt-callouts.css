@@ -1,0 +1,11 @@
+/* KnowledgeOS V4 Callouts */
+.markdown-preview-view.knowledgeos-v4 .callout[data-callout="summary"] {
+  border-left: 4px solid var(--ko-accent, var(--interactive-accent));
+}
+.markdown-preview-view.knowledgeos-v4 .callout[data-callout="warning"],
+.markdown-preview-view.knowledgeos-v4 .pending-review {
+  border-left: 4px solid var(--color-orange);
+}
+.markdown-preview-view.knowledgeos-v4 .callout[data-callout="success"] {
+  border-left: 4px solid var(--color-green);
+}
