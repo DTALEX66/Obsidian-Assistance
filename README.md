@@ -20,10 +20,12 @@ scripts/
   course_verify.py          本地证据索引、查询、核验脚本
   setup_obsidian_mvp_flow.ps1 参数化 Obsidian 全流程 MVP 写入脚本
 docs/
-  data-boundary.md          数据边界与防外溢规则
-  pipeline-acceleration.md  加速转化与状态机方案
-  ui-audit.md               Obsidian UI/插件体检清单
-  open-source-counterparts.md 开源对标项目
+  data-boundary.md                  数据边界与防外溢规则
+  pipeline-acceleration.md          加速转化与状态机方案
+  pipeline-v2-full-flow.md          课程处理全流程规范
+  project-experience-2026-07-01.md  项目经验总结：长循环、自检、全网比校
+  ui-audit.md                       Obsidian UI/插件体检清单
+  open-source-counterparts.md       开源对标项目
 ```
 
 ## 不上传的内容
