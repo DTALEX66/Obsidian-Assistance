@@ -28,6 +28,7 @@ scripts/
   v5/course_diversity_audit.py      V5 课程验证与内容多样化审计脚本
   v5/course_image_evidence_audit.py V5 课程图片证据/关键帧待补扫描脚本
   v5/generate_course_diversity_pack.py  V5 课程多样化补丁包生成器，默认 dry-run
+  v5/generate_course_review_cards.py    V5 课程独立复习卡生成器，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
