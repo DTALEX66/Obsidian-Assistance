@@ -70,3 +70,109 @@ powershell -ExecutionPolicy Bypass -File scripts/setup_obsidian_mvp_flow.ps1 -Va
 4. 非课程主线内容不入库。
 5. 正式库只保存最终可用结果。
 
+## Obsidian-Assistance V4
+
+### V4 是什么
+
+V4 是 Obsidian-Assistance 的工程化学习系统生成器版本。它不是正式 Obsidian vault，也不包含真实课程内容；它提供一套可测试、可回滚、默认 dry-run 的工具链，用于生成课程学习包。
+
+### V4 能生成什么
+
+一门课程可以生成：
+
+- 课程主页
+- 课程地图 Canvas
+- 逐节总结
+- 知识卡片：概念 / 方法 / 案例
+- 复习卡片
+- 行动任务
+- 视觉图解：流程图 / 思维导图 / 时间线
+- 证据索引
+- 导入报告
+
+### 安全边界
+
+- 不写正式 Obsidian vault。
+- 不上传真实课程内容、原始素材、OCR/ASR 全文或私人配置。
+- 所有写入默认 dry-run。
+- 只有显式 `--apply` 才写文件。
+- 对 vault 路径写入必须走 `scripts/v4/safe_vault_writer.py`。
+- 覆盖已有文件前必须备份。
+- V4 脚本不包含删除用户文件的逻辑。
+
+### 如何生成 demo 课程
+
+```powershell
+python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --output "examples/v4-demo-course" --apply
+```
+
+如果只想预览计划，不写文件：
+
+```powershell
+python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --output "examples/v4-demo-course" --dry-run
+```
+
+### 如何安装到测试 vault
+
+推荐先建立一个空测试 vault，例如：
+
+```text
+D:/OBS-V4-DEMO
+```
+
+然后执行：
+
+```powershell
+python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --vault "D:/OBS-V4-DEMO" --apply
+```
+
+写入前会通过 safe writer 校验路径；覆盖已有文件前会备份。
+
+### 如何迁移到正式 vault
+
+1. 先在测试 vault 中打开 Demo，确认 CSS、Dataview、Canvas、Mermaid 表现正常。
+2. 确认无真实隐私内容进入输出。
+3. 将 `snippets/v4/` 中 CSS 复制到正式 vault 的 snippets 目录并手动启用。
+4. 对正式 vault 的课程生成必须显式 `--apply`，且保留 safe writer 备份报告。
+5. 不建议直接把 examples 复制成真实课程内容；真实课程应从本地证据/OCR/转写生成。
+
+### 推荐插件
+
+P0：
+
+- Dataview
+- Tasks
+- Canvas
+- Mermaid 支持
+
+P1：
+
+- QuickAdd
+- Style Settings
+- Excalidraw
+
+P2：
+
+- Spaced Repetition
+- Omnisearch
+- Text Extractor
+
+### 常见问题
+
+**Q：V4 会不会直接改正式知识库？**  
+A：不会。默认 dry-run；写 vault 必须显式 `--apply`。
+
+**Q：Demo 是否包含真实课程？**  
+A：不包含。Demo 明确标注“示例，不含用户真实课程内容”。
+
+**Q：没有安装 pytest 怎么办？**  
+A：仓库内提供了一个极小的 `python -m pytest` 兼容入口，仅用于本项目离线环境下运行当前测试。真实 CI 环境可替换为标准 pytest。
+
+**Q：如何验证安全边界？**  
+A：运行：
+
+```powershell
+python -m pytest tests -q
+python scripts/v4/obsidian_v4_audit.py .
+```
+
