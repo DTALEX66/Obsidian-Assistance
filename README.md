@@ -26,6 +26,7 @@ scripts/
   v4/safe_vault_writer.py           V4 安全写入层，阻止路径穿越并覆盖前备份
   v4/obsidian_v4_audit.py           V4 安全审计脚本
   v5/course_diversity_audit.py      V5 课程验证与内容多样化审计脚本
+  v5/generate_course_diversity_pack.py  V5 课程多样化补丁包生成器，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
