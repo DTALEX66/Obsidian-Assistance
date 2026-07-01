@@ -1,0 +1,171 @@
+/* KnowledgeOS V5 — Talos-like Obsidian Dashboard
+   Scope-only CSS. Enable as an Obsidian snippet, then add
+   <div class="knowledgeos-v5 talos-dashboard">...</div> to dashboard notes.
+*/
+
+.knowledgeos-v5 {
+  --ko-bg: #08090a;
+  --ko-panel: rgba(255,255,255,0.035);
+  --ko-panel-2: rgba(255,255,255,0.055);
+  --ko-border: rgba(255,255,255,0.08);
+  --ko-border-strong: rgba(124,58,237,0.38);
+  --ko-text: #f7f8f8;
+  --ko-muted: #8a8f98;
+  --ko-soft: #d0d6e0;
+  --ko-accent: #7c3aed;
+  --ko-accent-2: #22d3ee;
+  --ko-good: #22c55e;
+  --ko-warn: #f59e0b;
+  --ko-bad: #ef4444;
+  --ko-radius: 18px;
+  color: var(--ko-text);
+}
+
+.knowledgeos-v5.talos-dashboard {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 4px 48px;
+}
+
+.knowledgeos-v5 .talos-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  gap: 24px;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid var(--ko-border);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124,58,237,0.26), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.065), rgba(255,255,255,0.018));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 80px rgba(0,0,0,0.22);
+}
+
+.knowledgeos-v5 .talos-kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ko-accent-2);
+  font-weight: 700;
+}
+
+.knowledgeos-v5 .talos-hero h2 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  color: var(--ko-text);
+}
+
+.knowledgeos-v5 .talos-hero p:not(.talos-kicker) {
+  color: var(--ko-soft);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.knowledgeos-v5 .talos-orb {
+  width: 116px;
+  height: 116px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(34,211,238,0.38), rgba(124,58,237,0.2) 42%, rgba(255,255,255,0.05));
+  border: 1px solid var(--ko-border-strong);
+  color: white;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.knowledgeos-v5 .talos-grid {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.knowledgeos-v5 .talos-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.knowledgeos-v5 .talos-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.knowledgeos-v5 .talos-grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+.knowledgeos-v5 .talos-card,
+.knowledgeos-v5 .talos-stat {
+  position: relative;
+  overflow: hidden;
+  min-height: 92px;
+  padding: 16px;
+  border-radius: var(--ko-radius);
+  border: 1px solid var(--ko-border);
+  background: linear-gradient(180deg, var(--ko-panel-2), var(--ko-panel));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.045);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.knowledgeos-v5 .talos-card:hover,
+.knowledgeos-v5 .talos-stat:hover {
+  transform: translateY(-2px);
+  border-color: var(--ko-border-strong);
+  background: linear-gradient(180deg, rgba(124,58,237,0.12), var(--ko-panel));
+}
+
+.knowledgeos-v5 .talos-card strong,
+.knowledgeos-v5 .talos-stat strong {
+  display: block;
+  color: var(--ko-text);
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.knowledgeos-v5 .talos-card span,
+.knowledgeos-v5 .talos-stat span,
+.knowledgeos-v5 .talos-stat em {
+  display: block;
+  color: var(--ko-muted);
+  font-style: normal;
+  line-height: 1.55;
+  margin-top: 6px;
+}
+
+.knowledgeos-v5 .talos-link {
+  color: var(--ko-text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.knowledgeos-v5 .dataview.table-view-table,
+.knowledgeos-v5 table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--ko-border);
+  border-radius: 16px;
+}
+
+.knowledgeos-v5 .dataview.table-view-table th,
+.knowledgeos-v5 table th {
+  background: rgba(255,255,255,0.055);
+  color: var(--ko-soft);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.knowledgeos-v5 .dataview.table-view-table td,
+.knowledgeos-v5 table td {
+  border-top: 1px solid rgba(255,255,255,0.055);
+}
+
+@media (max-width: 900px) {
+  .knowledgeos-v5 .talos-hero { grid-template-columns: 1fr; }
+  .knowledgeos-v5 .talos-grid-5,
+  .knowledgeos-v5 .talos-grid-4,
+  .knowledgeos-v5 .talos-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .knowledgeos-v5 .talos-grid-5,
+  .knowledgeos-v5 .talos-grid-4,
+  .knowledgeos-v5 .talos-grid-3 { grid-template-columns: 1fr; }
+}
