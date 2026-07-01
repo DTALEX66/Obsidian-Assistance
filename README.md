@@ -48,6 +48,7 @@ docs/
   v5-obsidian-knowledgeos-upgrade-analysis.md  V5 Obsidian 知识库升级分析
   v5-talos-ai-os-dashboard-spec.md             V5 Talos-like 中控规格
   v5-course-diversity-standard.md              V5 课程验证与内容多样化标准
+  v5-20-round-course-repair-loop-summary.md   V5 前20门课程20轮修补循环总结
   research/obsidian-knowledgeos-upgrade-evidence.md  V5 公开参考核验与吸收结论
   ui-audit.md                       Obsidian UI/插件体检清单
   open-source-counterparts.md       开源对标项目
