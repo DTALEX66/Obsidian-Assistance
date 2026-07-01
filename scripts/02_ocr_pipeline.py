@@ -19,9 +19,8 @@ except ImportError:
     sys.exit(1)
 
 PDFTOPPM_CANDIDATES = [
-    r"C:UsersALEX.cachecodex-runtimescodex-primary-runtimedependencies
-ativepopplerLibraryinpdftoppm.exe",
-    "pdftoppm", "pdftoppm.exe"
+    "pdftoppm",
+    "pdftoppm.exe",
 ]
 
 def find_pdftoppm():
