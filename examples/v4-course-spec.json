@@ -1,0 +1,70 @@
+{
+  "course": "V4 Spec Demo课程",
+  "status": "processing",
+  "source_type": "demo",
+  "source_path": "examples/v4-course-spec.json",
+  "confidence": "medium",
+  "summary": "这是用于验证 spec 驱动生成能力的合成示例，不含用户真实课程内容。",
+  "pending_review": "示例数据，无需人工确认。",
+  "lessons": [
+    {
+      "lesson": "第01节",
+      "title": "输入箱与素材识别",
+      "summary": "说明如何把学习材料放入输入箱并做初步识别。",
+      "content": "示例章节内容：列出文件类型、来源、处理状态和下一步动作。"
+    },
+    {
+      "lesson": "第02节",
+      "title": "卡片化与复习",
+      "summary": "说明如何把课程内容拆为知识卡与复习卡。",
+      "content": "示例章节内容：概念卡记录定义，方法卡记录步骤，复习卡支持主动回忆。"
+    }
+  ],
+  "concepts": [
+    {
+      "title": "输入箱",
+      "summary": "暂存待处理学习材料的入口。",
+      "content": "输入箱用于承接未整理材料，避免直接污染正式知识库。"
+    },
+    {
+      "title": "证据索引",
+      "summary": "记录内容来源与可信度的索引。",
+      "content": "证据索引用于追踪每条总结或卡片的来源。"
+    }
+  ],
+  "methods": [
+    {
+      "title": "三步处理法",
+      "summary": "识别、生成、验证。",
+      "content": "第一步识别素材，第二步生成课程包，第三步运行测试和审计。"
+    }
+  ],
+  "cases": [
+    {
+      "title": "Demo课程生成",
+      "summary": "用 spec 文件生成一个可打开的课程包。",
+      "content": "该案例只使用合成数据，不包含真实课程内容。"
+    }
+  ],
+  "reviews": [
+    {
+      "title": "为什么要保留证据索引",
+      "summary": "证据索引解决什么问题？",
+      "content": "证据索引能帮助后续审计和可信度复核。"
+    }
+  ],
+  "actions": [
+    {
+      "title": "验证 spec 生成结果",
+      "summary": "运行生成器并检查 YAML、Canvas、Mermaid。",
+      "content": "执行生成命令后运行测试与安全审计。"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "spec-demo-001",
+      "title": "示例规格文件",
+      "summary": "本 JSON 文件自身是 demo 证据来源。"
+    }
+  ]
+}

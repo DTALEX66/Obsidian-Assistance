@@ -112,6 +112,22 @@ python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --output "exa
 python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --output "examples/v4-demo-course" --dry-run
 ```
 
+### 如何从 JSON 课程规格生成
+
+V4 也支持用 JSON 规格文件驱动生成，而不是只能生成固定 Demo。示例规格：
+
+```text
+examples/v4-course-spec.json
+```
+
+运行：
+
+```powershell
+python scripts/v4/generate_course_pack.py --spec examples/v4-course-spec.json --output "examples/spec-demo-course" --apply
+```
+
+`--spec` 至少需要提供 `course` 字段，可选提供 `lessons`、`concepts`、`methods`、`cases`、`reviews`、`actions`、`evidence` 等数组。
+
 ### 如何安装到测试 vault
 
 推荐先建立一个空测试 vault，例如：
