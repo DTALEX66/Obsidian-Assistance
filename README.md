@@ -26,8 +26,12 @@ scripts/
   v4/safe_vault_writer.py           V4 安全写入层，阻止路径穿越并覆盖前备份
   v4/obsidian_v4_audit.py           V4 安全审计脚本
 templates/v4/                       V4 Markdown/Canvas 模板
+templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
+snippets/v5/talos-dashboard.css     V5 Talos-like KnowledgeOS 中控 CSS
+examples/v5-talos-dashboard/        V5 中控 demo vault 页面
 tests/v4/                           V4 回归测试与安全边界测试
+tests/v5/                           V5 KnowledgeOS 模板/CSS/参考资产测试
 .github/workflows/v4-validation.yml GitHub Actions 自动验证
 docs/
   data-boundary.md                  数据边界与防外溢规则
@@ -35,6 +39,9 @@ docs/
   pipeline-v2-full-flow.md          课程处理全流程规范
   project-experience-2026-07-01.md  项目经验总结：长循环、自检、全网比校
   obsidian-ai-fullchain-absorption-plan.md  Obsidian AI 全链路可吸收路线图
+  v5-obsidian-knowledgeos-upgrade-analysis.md  V5 Obsidian 知识库升级分析
+  v5-talos-ai-os-dashboard-spec.md             V5 Talos-like 中控规格
+  research/obsidian-knowledgeos-upgrade-evidence.md  V5 公开参考核验与吸收结论
   ui-audit.md                       Obsidian UI/插件体检清单
   open-source-counterparts.md       开源对标项目
 ```
