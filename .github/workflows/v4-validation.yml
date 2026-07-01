@@ -1,0 +1,60 @@
+name: V4 Validation
+
+on:
+  push:
+    branches:
+      - main
+      - 'ci/**'
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  v4-validation:
+    name: V4 tests and safety audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile Python scripts
+        run: |
+          python -m py_compile scripts/*.py scripts/v4/*.py pytest.py
+
+      - name: Run V4 tests
+        run: |
+          python -m pytest tests -q
+
+      - name: Run V4 repository safety audit
+        run: |
+          python scripts/v4/obsidian_v4_audit.py .
+
+      - name: Dry-run demo course generation
+        run: |
+          python scripts/v4/generate_course_pack.py --course "CI Demo课程" --output "examples/ci-demo-course" --dry-run --report-dir reports
+
+      - name: Apply demo generation in temporary directory
+        run: |
+          python scripts/v4/generate_course_pack.py --course "CI Demo课程" --output ".ci-v4-demo" --apply --report-dir .ci-v4-report
+          test -f ".ci-v4-demo/00_课程主页.md"
+          test -f ".ci-v4-demo/01_课程地图.canvas"
+          test -f ".ci-v4-demo/08_导入报告.md"
+          python scripts/v4/validate_yaml_schema.py .ci-v4-demo
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('.ci-v4-demo')
+          json.loads((root / '01_课程地图.canvas').read_text(encoding='utf-8'))
+          for p in (root / '05_视觉图解').glob('*.md'):
+              assert '```mermaid' in p.read_text(encoding='utf-8')
+          print('CI demo validation ok')
+          PY
