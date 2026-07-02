@@ -35,6 +35,7 @@ scripts/
   v6/evidence_index_builder.py          V6 从 metadata 生成证据索引/图库，默认 dry-run
   v6/video_keyframe_plan.py             V6 视频关键帧候选计划，只生成 candidate-only
   v6/video_keyframe_extract.py          V6 视频关键帧抽取到 PNG+metadata，默认 dry-run
+  v6/visual_index_updater.py            V6 从 metadata 更新04关键图表索引，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
