@@ -40,6 +40,7 @@ scripts/
   v6/source_discovery_assistant.py       V6 本地源文件候选定位报告，候选不是证据
   v7/course_project_generator.py         V7 课程项目转化页生成器，默认 dry-run
   v8/daily_mission_generator.py          V8 TALOS每日任务日志生成器，默认 dry-run
+  v8/training_streak_radar.py            V8 训练复盘/连续打卡雷达，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
