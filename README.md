@@ -42,6 +42,7 @@ scripts/
   v8/daily_mission_generator.py          V8 TALOS每日任务日志生成器，默认 dry-run
   v8/training_streak_radar.py            V8 训练复盘/连续打卡雷达，默认 dry-run
   v8/retro_summary_generator.py          V8 自动复盘汇总器，默认 dry-run
+  v9/oer_crosswalk_generator.py          V9 OER/开放知识交叉对比页生成器，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
