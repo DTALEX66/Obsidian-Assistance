@@ -32,6 +32,7 @@ scripts/
   v5/generate_keyframe_tasks.py         V5 课程关键帧采集任务单生成器，默认 dry-run
   v5/source_candidate_audit.py          V5 本地源文件候选扫描，候选未核验
   v6/pdf_page_snapshot.py               V6 PDF 页截图证据工具，默认 dry-run
+  v6/evidence_index_builder.py          V6 从 metadata 生成证据索引/图库，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
