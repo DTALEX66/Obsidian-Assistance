@@ -19,6 +19,12 @@ from typing import Any
 TASK_RE = re.compile(r"^- \[( |x|X)\]", re.MULTILINE)
 COURSE_RE = re.compile(r"^course:\s*(.+?)\s*$", re.MULTILINE)
 DATE_RE = re.compile(r"^mission_date:\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
+TYPE_RE = re.compile(r"^type:\s*talos-daily-mission\s*$", re.MULTILINE)
+
+
+def is_daily_mission_text(text: str) -> bool:
+    """Return True only for Daily Mission notes, not adjacent output artifacts."""
+    return bool(TYPE_RE.search(text) or '# TALOS Daily Mission' in text)
 
 
 @dataclass
@@ -79,6 +85,9 @@ def audit(vault: Path, today: str | None = None) -> dict[str, Any]:
     missions = []
     if mission_dir.exists():
         for path in sorted(mission_dir.glob('*.md')):
+            text = path.read_text(encoding='utf-8', errors='ignore')
+            if not is_daily_mission_text(text):
+                continue
             missions.append(parse_mission(path, vault))
     dates = [m.date for m in missions]
     task_total = sum(m.tasks_total for m in missions)

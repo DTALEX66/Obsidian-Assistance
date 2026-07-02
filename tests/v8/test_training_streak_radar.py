@@ -38,6 +38,7 @@ def test_audit_reads_missions_and_completion(tmp_path):
     vault = tmp_path / 'vault'
     write(vault / '00_主页/12_TALOS_Daily_Missions/2026-07-01.md', mission('2026-07-01', '课程A', done=True))
     write(vault / '00_主页/12_TALOS_Daily_Missions/2026-07-02.md', mission('2026-07-02', '课程A', done=False))
+    write(vault / '00_主页/12_TALOS_Daily_Missions/2026-07-02_output.md', '---\ntype: talos-mission-output\n---\n# output\n- [x] should not count')
     data = audit(vault, today='2026-07-02')
     assert data['missions'] == 2
     assert data['tasks_total'] == 8
@@ -48,7 +49,7 @@ def test_audit_reads_missions_and_completion(tmp_path):
 
 def test_audit_detects_missing_sections(tmp_path):
     vault = tmp_path / 'vault'
-    write(vault / '00_主页/12_TALOS_Daily_Missions/2026-07-02.md', '---\nmission_date: 2026-07-02\ncourse: 课程B\n---\n- [ ] task')
+    write(vault / '00_主页/12_TALOS_Daily_Missions/2026-07-02.md', '---\ntype: talos-daily-mission\nmission_date: 2026-07-02\ncourse: 课程B\n---\n- [ ] task')
     data = audit(vault, today='2026-07-02')
     assert data['missing_sections']
     assert 'Evidence' in data['missing_sections'][0]['missing']
