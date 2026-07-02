@@ -31,6 +31,7 @@ scripts/
   v5/generate_course_review_cards.py    V5 课程独立复习卡生成器，默认 dry-run
   v5/generate_keyframe_tasks.py         V5 课程关键帧采集任务单生成器，默认 dry-run
   v5/source_candidate_audit.py          V5 本地源文件候选扫描，候选未核验
+  v6/pdf_page_snapshot.py               V6 PDF 页截图证据工具，默认 dry-run
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
@@ -49,6 +50,7 @@ docs/
   v5-talos-ai-os-dashboard-spec.md             V5 Talos-like 中控规格
   v5-course-diversity-standard.md              V5 课程验证与内容多样化标准
   v5-20-round-course-repair-loop-summary.md   V5 前20门课程20轮修补循环总结
+  v6-evidence-keyframe-system.md              V6 真实证据与关键帧系统设计
   research/obsidian-knowledgeos-upgrade-evidence.md  V5 公开参考核验与吸收结论
   ui-audit.md                       Obsidian UI/插件体检清单
   open-source-counterparts.md       开源对标项目
