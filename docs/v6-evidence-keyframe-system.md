@@ -77,7 +77,7 @@ For a fully upgraded course, V6 can add:
 |---|---|---|
 | `scripts/v6/pdf_page_snapshot.py` | Render selected PDF pages into image files and metadata sidecars. | dry-run |
 | `scripts/v6/video_keyframe_plan.py` | Generate timestamp extraction plans without copying videos. | dry-run |
-| `scripts/v6/evidence_index_builder.py` | Build `11_证据索引.md` from metadata sidecars. | dry-run |
+| `scripts/v6/evidence_index_builder.py` | Build `11_证据索引.md` and `12_真实截图与关键帧.md` from metadata sidecars. | dry-run |
 | `scripts/v6/visual_index_updater.py` | Link verified evidence images into `04_关键图表与课件索引.md`. | dry-run |
 | `scripts/v6/vault_health_radar.py` | Track multimodal evidence health by course. | read-only |
 
