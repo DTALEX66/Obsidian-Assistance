@@ -62,6 +62,7 @@ docs/
   v5-course-diversity-standard.md              V5 课程验证与内容多样化标准
   v5-20-round-course-repair-loop-summary.md   V5 前20门课程20轮修补循环总结
   v6-evidence-keyframe-system.md              V6 真实证据与关键帧系统设计
+  oer-sleep-mode-update-2026-07-03.md          V9 OER睡觉模式脱敏更新与停止协议
   research/obsidian-knowledgeos-upgrade-evidence.md  V5 公开参考核验与吸收结论
   ui-audit.md                       Obsidian UI/插件体检清单
   open-source-counterparts.md       开源对标项目
