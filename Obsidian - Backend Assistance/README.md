@@ -57,8 +57,12 @@ snippets/v4/                        V4 Obsidian CSS snippets
 snippets/v5/talos-dashboard.css     V5 Talos-like KnowledgeOS 中控 CSS
 examples/v5-talos-dashboard/        V5 中控 demo vault 页面
 tests/v4/                           V4 回归测试与安全边界测试
-tests/v5/                           V5 KnowledgeOS 模板/CSS/参考资产测试
-.github/workflows/v4-validation.yml GitHub Actions 自动验证
+tests/v5/                           V5 课程多样化/KnowledgeOS 测试
+tests/v6/                           V6 证据/关键帧工具链测试
+tests/v7/                           V7 课程项目转化测试
+tests/v8/                           V8 主动训练/复盘测试
+tests/v9/                           V9 OER 交叉对比测试
+../.github/workflows/repo-validation.yml  GitHub Actions：测试与 cloud-boundary 审计
 docs/
   project-definition.md              后端增强目录定义：云端总仓库中的后端子目录，与前端目录同级
   data-boundary.md                  数据边界与防外溢规则
@@ -89,6 +93,27 @@ docs/
 - API Key、token、个人路径、同步盘内部状态。
 
 ## 快速使用
+
+### 0. 验证后端工具链
+
+在 `Obsidian - Backend Assistance` 目录运行：
+
+```powershell
+python -m pytest tests -q
+python scripts/v4/obsidian_v4_audit.py .
+```
+
+在仓库根目录运行跨目录 cloud-boundary 审计：
+
+```powershell
+python "Obsidian - Backend Assistance/scripts/v4/obsidian_v4_audit.py" .
+```
+
+CI 定义在仓库根目录：
+
+```text
+.github/workflows/repo-validation.yml
+```
 
 ### 1. 构建本地证据索引
 
@@ -197,16 +222,16 @@ python scripts/v4/generate_bases_views.py --course "Demo课程" --output "tmp/ba
 
 ### 如何安装到测试 vault
 
-推荐先建立一个空测试 vault，例如：
+推荐先建立一个 workspace 内的空测试 vault，例如：
 
 ```text
-D:/OBS-V4-DEMO
+D:/All projects/Obsidian-Assistance/demo-vaults/OBS-V4-DEMO
 ```
 
 然后执行：
 
 ```powershell
-python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --vault "D:/OBS-V4-DEMO" --apply
+python scripts/v4/generate_course_pack.py --course "V4 Demo课程" --vault "D:/All projects/Obsidian-Assistance/demo-vaults/OBS-V4-DEMO" --apply
 ```
 
 写入前会通过 safe writer 校验路径；覆盖已有文件前会备份。
