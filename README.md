@@ -65,6 +65,9 @@ docs/
   oer-sleep-mode-update-2026-07-03.md          V9 OER睡觉模式脱敏更新与停止协议
   research/obsidian-knowledgeos-upgrade-evidence.md  V5 公开参考核验与吸收结论
   ui-audit.md                       Obsidian UI/插件体检清单
+  talos-ui-ux-design-handoff-2026-07-04.md       TALOS/Purple Gemstone UI/UX 设计师交接包（脱敏公开版）
+  obsidian-knowledgeos-project-status-2026-07-04.md  Obsidian KnowledgeOS 项目状态快照（脱敏公开版）
+  cloud-upload-safety-report-2026-07-04.md       云仓库上传安全边界与检查报告
   open-source-counterparts.md       开源对标项目
 ```
 
