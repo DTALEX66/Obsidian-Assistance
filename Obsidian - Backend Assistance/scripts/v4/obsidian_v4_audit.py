@@ -38,7 +38,9 @@ def rel_parts(rel: str) -> tuple[str, ...]:
 
 def should_scan_dangerous_delete(rel: str, path: Path) -> bool:
     parts = rel_parts(rel)
-    if rel.endswith("scripts/v4/obsidian_v4_audit.py"):
+    if parts[-4:] == ("Obsidian - Backend Assistance", "scripts", "v4", "obsidian_v4_audit.py"):
+        return False
+    if rel == "scripts/v4/obsidian_v4_audit.py":
         return False
     if "tests" in parts:
         return False
@@ -54,7 +56,7 @@ def audit(root: Path):
         parts = rel_parts(rel)
         if p.is_file() and p.suffix.lower() in FORBIDDEN_EXT:
             issues.append({"file": rel, "issue": "forbidden_ext"})
-        if p.is_file() and p.name.endswith(FORBIDDEN_FILE_SUFFIXES):
+        if p.is_file() and p.name.lower().endswith(FORBIDDEN_FILE_SUFFIXES):
             issues.append({"file": rel, "issue": "open_design_artifact_metadata"})
         if p.is_file() and any(part in FORBIDDEN_DIR_NAMES for part in parts):
             issues.append({"file": rel, "issue": "obsidian_runtime_path"})
