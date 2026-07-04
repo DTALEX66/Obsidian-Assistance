@@ -1,0 +1,196 @@
+{
+  "nodes": [
+    {
+      "id": "hero",
+      "type": "text",
+      "text": "# AI in Knowledge Work\n项目总画布：输入 → 概念 → 应用 → 实验 → 输出",
+      "x": -760,
+      "y": -420,
+      "width": 360,
+      "height": 180,
+      "color": "6"
+    },
+    {
+      "id": "why",
+      "type": "text",
+      "text": "## Why this matters\nAI 放大人类的捕获、连接、创造与执行能力。\n#purpose",
+      "x": -200,
+      "y": -440,
+      "width": 300,
+      "height": 150,
+      "color": "5"
+    },
+    {
+      "id": "north",
+      "type": "text",
+      "text": "## ⭐ North Star\n建立一个可信的知识系统：AI 增强洞察，但不替代判断。\n#vision",
+      "x": 350,
+      "y": -420,
+      "width": 330,
+      "height": 150,
+      "color": "5"
+    },
+    {
+      "id": "research",
+      "type": "text",
+      "text": "## ① Research & Insights\n- 未来工作形态\n- AI Alignment\n- Second Brain Method\n- 访谈记录\n- 市场观察",
+      "x": -760,
+      "y": -140,
+      "width": 360,
+      "height": 260,
+      "color": "4"
+    },
+    {
+      "id": "concepts",
+      "type": "text",
+      "text": "## ② Core Concepts\n- Augmented Cognition\n- Knowledge Graphs\n- Context Engineering\n- Human-in-the-Loop",
+      "x": -210,
+      "y": -130,
+      "width": 320,
+      "height": 230,
+      "color": "5"
+    },
+    {
+      "id": "apps",
+      "type": "text",
+      "text": "## ③ Applications\n- Writing & Research\n- Meeting Intelligence\n- Project Management\n- Learning & PKM",
+      "x": 280,
+      "y": -130,
+      "width": 320,
+      "height": 230,
+      "color": "2"
+    },
+    {
+      "id": "experiments",
+      "type": "text",
+      "text": "## ④ Experiments\n- AI Summary Test\n- Graph Assisted Writing\n- Daily AI Co-pilot\n- Review Automation",
+      "x": -760,
+      "y": 210,
+      "width": 450,
+      "height": 220,
+      "color": "3"
+    },
+    {
+      "id": "synthesis",
+      "type": "text",
+      "text": "# ◆ Synthesis\n人类创造力 × 机器智能\n\n将输入、概念、应用、实验汇聚为可复用工作流。",
+      "x": -80,
+      "y": 180,
+      "width": 360,
+      "height": 220,
+      "color": "6"
+    },
+    {
+      "id": "outcomes",
+      "type": "text",
+      "text": "## ⑤ Outcomes\n- Repeatable Workflows\n- Knowledge Leverage\n- Better Thinking\n- More Impact",
+      "x": 420,
+      "y": 220,
+      "width": 340,
+      "height": 220,
+      "color": "1"
+    },
+    {
+      "id": "opps",
+      "type": "text",
+      "text": "## ⭐ Opportunities\n- Smarter notes\n- Faster insights\n- Better decisions",
+      "x": 690,
+      "y": 20,
+      "width": 270,
+      "height": 160,
+      "color": "3"
+    },
+    {
+      "id": "assets",
+      "type": "text",
+      "text": "## Assets & References\n- Prompt Library.md\n- Case Study.md\n- AI Workflow.png\n- Knowledge Graph Example.md",
+      "x": -760,
+      "y": 540,
+      "width": 720,
+      "height": 160,
+      "color": "6"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "why",
+      "fromSide": "right",
+      "toNode": "north",
+      "toSide": "left",
+      "color": "5"
+    },
+    {
+      "id": "e2",
+      "fromNode": "research",
+      "fromSide": "right",
+      "toNode": "concepts",
+      "toSide": "left",
+      "color": "4"
+    },
+    {
+      "id": "e3",
+      "fromNode": "concepts",
+      "fromSide": "right",
+      "toNode": "apps",
+      "toSide": "left",
+      "color": "5"
+    },
+    {
+      "id": "e4",
+      "fromNode": "research",
+      "fromSide": "bottom",
+      "toNode": "experiments",
+      "toSide": "top",
+      "color": "4"
+    },
+    {
+      "id": "e5",
+      "fromNode": "concepts",
+      "fromSide": "bottom",
+      "toNode": "synthesis",
+      "toSide": "top",
+      "color": "5"
+    },
+    {
+      "id": "e6",
+      "fromNode": "apps",
+      "fromSide": "bottom",
+      "toNode": "synthesis",
+      "toSide": "right",
+      "color": "2"
+    },
+    {
+      "id": "e7",
+      "fromNode": "experiments",
+      "fromSide": "right",
+      "toNode": "synthesis",
+      "toSide": "left",
+      "color": "3"
+    },
+    {
+      "id": "e8",
+      "fromNode": "synthesis",
+      "fromSide": "right",
+      "toNode": "outcomes",
+      "toSide": "left",
+      "color": "6"
+    },
+    {
+      "id": "e9",
+      "fromNode": "apps",
+      "fromSide": "right",
+      "toNode": "opps",
+      "toSide": "left",
+      "color": "2"
+    },
+    {
+      "id": "e10",
+      "fromNode": "assets",
+      "fromSide": "top",
+      "toNode": "synthesis",
+      "toSide": "bottom",
+      "color": "6"
+    }
+  ]
+}

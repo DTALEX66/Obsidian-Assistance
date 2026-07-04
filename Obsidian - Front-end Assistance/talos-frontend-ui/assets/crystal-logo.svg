@@ -1,0 +1,34 @@
+<svg width="160" height="200" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TALOS 紫晶标识</title>
+  <desc id="desc">紫色晶体图形，用于 TALOS Obsidian 前端界面。</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#D9C7FF" stop-opacity="0.72"/>
+      <stop offset="52%" stop-color="#8B5CF6" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#0F0D18" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="facetA" x1="35" y1="20" x2="130" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6D7FF"/>
+      <stop offset="0.42" stop-color="#9D6CFF"/>
+      <stop offset="1" stop-color="#2A1B54"/>
+    </linearGradient>
+    <linearGradient id="facetB" x1="112" y1="22" x2="36" y2="172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BDA2FF"/>
+      <stop offset="0.5" stop-color="#6D40D8"/>
+      <stop offset="1" stop-color="#17102E"/>
+    </linearGradient>
+    <filter id="softBlur" x="-40%" y="-35%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  <ellipse cx="80" cy="103" rx="72" ry="80" fill="url(#glow)" filter="url(#softBlur)"/>
+  <path d="M80 10L128 36L150 111L80 190L10 111L32 36L80 10Z" fill="#1C1238" stroke="#CDB8FF" stroke-opacity="0.55" stroke-width="1.4"/>
+  <path d="M80 10L80 190L10 111L32 36L80 10Z" fill="url(#facetA)" fill-opacity="0.9"/>
+  <path d="M80 10L128 36L150 111L80 190V10Z" fill="url(#facetB)" fill-opacity="0.92"/>
+  <path d="M32 36L80 68L128 36L80 10L32 36Z" fill="#DCCBFF" fill-opacity="0.7"/>
+  <path d="M10 111L80 68L150 111L80 190L10 111Z" fill="#4F2EA8" fill-opacity="0.52"/>
+  <path d="M80 68L80 190" stroke="#EEE7FF" stroke-opacity="0.38"/>
+  <path d="M32 36L80 68L128 36M10 111L80 68L150 111" stroke="#F2EAFF" stroke-opacity="0.28"/>
+  <circle cx="50" cy="52" r="3" fill="#F3EBFF" fill-opacity="0.78"/>
+  <circle cx="115" cy="126" r="2.4" fill="#D7C4FF" fill-opacity="0.72"/>
+</svg>

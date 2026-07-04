@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TALOS Obsidian 前端包预览</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      background: #0f0d18;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="talos-ui-kit-host">
+    <div class="talos-ui-kit talos-obsidian-preview" data-talos-view="preview" aria-label="TALOS Obsidian 前端包预览">
+      <div class="talos-bg-grid" aria-hidden="true"></div>
+
+      <aside class="talos-vault-rail" aria-label="Obsidian Vault 导航预览">
+        <div class="talos-vault-brand">
+          <div class="talos-mark"><img src="assets/crystal-logo.svg" alt="" aria-hidden="true" /></div>
+          <div>
+            <strong>Obsidian Workspace</strong>
+            <span>紫晶前端预览</span>
+          </div>
+        </div>
+
+        <div class="talos-vault-tools" aria-label="Vault 工具">
+          <button class="talos-icon-button" type="button" aria-label="新建笔记">✎</button>
+          <button class="talos-icon-button" type="button" aria-label="新建文件夹">□</button>
+          <button class="talos-icon-button" type="button" aria-label="折叠目录">⌘</button>
+        </div>
+
+        <nav class="talos-tree" aria-label="Vault 文件树">
+          <div class="talos-tree-group">
+            <div class="talos-tree-heading">00 — Inbox</div>
+            <div class="talos-tree-item">快速收件箱</div>
+          </div>
+          <div class="talos-tree-group is-open">
+            <div class="talos-tree-heading">01 — Personal</div>
+            <div class="talos-tree-item">Daily Notes</div>
+            <div class="talos-tree-item is-nested">2024-05-22</div>
+            <div class="talos-tree-item is-active">2024-05-24</div>
+            <div class="talos-tree-item is-nested">Ideas</div>
+          </div>
+          <div class="talos-tree-group is-open">
+            <div class="talos-tree-heading">02 — Knowledge</div>
+            <div class="talos-tree-item is-active">Atomic Habits</div>
+            <div class="talos-tree-item">Deep Work</div>
+            <div class="talos-tree-item">Systems Thinking</div>
+          </div>
+          <div class="talos-tree-group">
+            <div class="talos-tree-heading">03 — Projects</div>
+            <div class="talos-tree-item">Project Atlas</div>
+            <div class="talos-tree-item">AI in Knowledge Work</div>
+          </div>
+        </nav>
+
+        <div class="talos-sidebar-card">
+          <img class="talos-sidebar-crystal" src="assets/crystal-logo.svg" alt="TALOS 紫晶工作区标识" />
+          <strong>TALOS Workspace</strong>
+          <span>v0.1.0 — Frontend only</span>
+        </div>
+      </aside>
+
+      <header class="talos-obsidian-topbar" aria-label="Obsidian 顶部标签栏预览">
+        <div class="talos-tab-strip">
+          <button class="talos-os-tab is-active" type="button">Atomic Habits — Key Takeaways</button>
+          <button class="talos-os-tab" type="button">Second Brain</button>
+          <button class="talos-os-tab" type="button">Project Atlas</button>
+          <button class="talos-os-tab" type="button">Daily Journal</button>
+          <button class="talos-os-add" type="button" aria-label="新建标签">+</button>
+        </div>
+        <label class="talos-search">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" placeholder="搜索笔记、标签或链接..." aria-label="搜索笔记、标签或链接" />
+        </label>
+        <div class="talos-state-actions">
+          <button class="talos-icon-button" type="button" aria-label="日历">◴</button>
+          <button class="talos-icon-button" type="button" aria-label="帮助">?</button>
+          <button class="talos-icon-button" type="button" aria-label="设置">⚙</button>
+        </div>
+      </header>
+
+      <main class="talos-note-workspace" aria-label="TALOS 课程阅读工作区">
+        <section class="talos-editor-pane" aria-label="Markdown 编辑预览">
+          <div class="talos-pane-toolbar">
+            <div class="talos-breadcrumb">02 — Knowledge / Books / Atomic Habits</div>
+            <div class="talos-pane-icons">← → ⋯</div>
+          </div>
+
+          <article class="talos-note-card">
+            <div class="talos-note-title-row">
+              <span class="talos-hash">#</span>
+              <h1>Atomic Habits — Key Takeaways</h1>
+            </div>
+            <div class="talos-tag-row">
+              <span>#book</span>
+              <span>#habits</span>
+              <span>#productivity</span>
+              <span>#growth</span>
+            </div>
+
+            <blockquote class="talos-quote">
+              Success is the product of daily habits — not once-in-a-lifetime transformations.
+              <span>— James Clear</span>
+            </blockquote>
+
+            <h2>1. The Power of Tiny Changes</h2>
+            <p>Small habits, repeated consistently, compound into remarkable results.</p>
+            <ul>
+              <li>1% better every day → 37x better in a year.</li>
+              <li>Focus on becoming 1% better, not achieving perfection.</li>
+            </ul>
+
+            <div class="talos-callout">
+              <strong>Key Idea:</strong>
+              <span>You do not rise to the level of your goals. You fall to the level of your systems.</span>
+            </div>
+
+            <h2>2. The Four Laws of Behavior Change</h2>
+            <h3>2.1 Make it Obvious</h3>
+            <label class="talos-check"><input type="checkbox" /> Use visual cues and environment design.</label>
+            <label class="talos-check"><input type="checkbox" checked /> Stack habits: “After current habit, I will new habit.”</label>
+            <label class="talos-check"><input type="checkbox" /> Notice when the cue appears.</label>
+
+            <h3>2.2 Make it Attractive</h3>
+            <ul>
+              <li>Pair habits with something you enjoy.</li>
+              <li>Join a culture where your desired behavior is the norm.</li>
+              <li>Create immediate rewards.</li>
+            </ul>
+
+            <pre class="talos-code">```dataview
+TABLE file.link, habits.core, habits.status
+FROM #habit
+WHERE !completed
+SORT habits.core DESC
+```</pre>
+          </article>
+        </section>
+
+        <section class="talos-live-pane" aria-label="Live Preview">
+          <div class="talos-pane-toolbar">
+            <div class="talos-breadcrumb">Live Preview</div>
+            <div class="talos-pane-icons">＋ ⛓ ⌗ ⋯</div>
+          </div>
+
+          <article class="talos-live-card">
+            <h1>Atomic Habits — Key Takeaways</h1>
+            <div class="talos-tag-row">
+              <span>#book</span>
+              <span>#habits</span>
+              <span>#productivity</span>
+              <span>#growth</span>
+            </div>
+
+            <blockquote class="talos-quote">
+              Success is the product of daily habits — not once-in-a-lifetime transformations.
+              <span>— James Clear</span>
+            </blockquote>
+
+            <h2>1. The Power of Tiny Changes</h2>
+            <p>Small habits, repeated consistently, compound into remarkable results.</p>
+            <ul>
+              <li>1% better every day → 37x better in a year.</li>
+              <li>Focus on becoming 1% better, not achieving perfection.</li>
+            </ul>
+
+            <div class="talos-callout is-strong">
+              <strong>Key Idea:</strong>
+              <span>You do not rise to the level of your goals. You fall to the level of your systems.</span>
+            </div>
+
+            <h2>2. The Four Laws of Behavior Change</h2>
+            <h3>2.1 Make it Obvious</h3>
+            <label class="talos-check"><input type="checkbox" /> Use visual cues and environment design.</label>
+            <label class="talos-check"><input type="checkbox" checked /> Stack habits: “After current habit, I will new habit.”</label>
+            <label class="talos-check"><input type="checkbox" /> Notice when the cue appears.</label>
+
+            <div class="talos-flow-card">
+              <img src="assets/reading-flow.svg" alt="阅读从微小改进到显著结果的流程图" />
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <aside class="talos-right-rail" aria-label="Outline Backlinks Properties">
+        <div class="talos-right-tabs" role="tablist" aria-label="右侧面板">
+          <button class="is-active" type="button">Outline</button>
+          <button type="button">Backlinks</button>
+          <button type="button">Properties</button>
+        </div>
+
+        <section class="talos-rail-panel">
+          <h2>Atomic Habits — Key Takeaways</h2>
+          <ol class="talos-outline">
+            <li>The Power of Tiny Changes</li>
+            <li>The Four Laws of Behavior Change</li>
+            <li class="is-nested">2.1 Make it Obvious</li>
+            <li class="is-nested">2.2 Make it Attractive</li>
+            <li class="is-nested">2.3 Make it Easy</li>
+            <li>Identity-Based Habits</li>
+            <li>Action Plan</li>
+          </ol>
+        </section>
+
+        <section class="talos-rail-panel">
+          <h2>Properties</h2>
+          <div class="talos-property-grid">
+            <span>aliases</span><strong>Atomic Habits</strong>
+            <span>author</span><strong>James Clear</strong>
+            <span>type</span><strong>book</strong>
+            <span>status</span><strong><i></i> in-progress</strong>
+            <span>rating</span><strong>★★★★☆</strong>
+            <span>source</span><strong>Kindle</strong>
+          </div>
+        </section>
+
+        <section class="talos-rail-panel">
+          <h2>Linked mentions</h2>
+          <div class="talos-mention-card">
+            <strong>2024-05-22 Daily Log</strong>
+            <p>Worked on improving morning routine. Atomic Habits principles are helping.</p>
+          </div>
+          <div class="talos-mention-card">
+            <strong>Project Atlas</strong>
+            <p>Using habit systems to build consistent daily progress.</p>
+          </div>
+        </section>
+
+        <section class="talos-rail-panel talos-empty-preview">
+          <h2>Empty state</h2>
+          <img src="assets/empty-state.svg" alt="等待选择材料的空状态插图" />
+        </section>
+      </aside>
+
+      <footer class="talos-bottom-status" aria-label="状态栏">
+        <div><span class="talos-live-dot"></span> Live Preview</div>
+        <div>1,273 words</div>
+        <div>8,842 characters</div>
+        <div>0 backlinks</div>
+        <div>Graph</div>
+        <div>Aa</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

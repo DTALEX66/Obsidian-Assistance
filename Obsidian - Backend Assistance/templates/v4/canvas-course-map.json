@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "course",
+      "type": "text",
+      "text": "{{course}}",
+      "x": 0,
+      "y": 0,
+      "width": 260,
+      "height": 80
+    }
+  ],
+  "edges": []
+}

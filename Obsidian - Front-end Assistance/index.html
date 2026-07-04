@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TALOS 紫晶知识操作台原型</title>
+  <style>
+    :root {
+      --bg: oklch(14% 0.045 296);
+      --surface: oklch(20% 0.052 296 / 0.76);
+      --surface-strong: oklch(25% 0.07 296 / 0.9);
+      --fg: oklch(94% 0.018 292);
+      --muted: oklch(72% 0.035 292);
+      --border: oklch(62% 0.08 296 / 0.26);
+      --accent: oklch(72% 0.17 305);
+      --accent-2: oklch(78% 0.14 205);
+      --success: oklch(72% 0.13 155);
+      --warn: oklch(78% 0.13 82);
+      --danger: oklch(68% 0.18 25);
+      --shadow: 0 24px 80px oklch(5% 0.04 296 / 0.48);
+      --font-display: "Aptos Display", "Segoe UI", system-ui, sans-serif;
+      --font-body: "Microsoft YaHei UI", "Segoe UI", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 12%, oklch(38% 0.14 305 / 0.24), transparent 24rem),
+        radial-gradient(circle at 82% 2%, oklch(34% 0.1 214 / 0.16), transparent 28rem),
+        linear-gradient(135deg, oklch(11% 0.04 292), var(--bg) 46%, oklch(9% 0.035 292));
+      color: var(--fg);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 3px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .state-note {
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      color: var(--muted);
+      background: oklch(100% 0 0 / 0.035);
+      line-height: 1.5;
+    }
+
+    .state-note[hidden] { display: none; }
+
+    .is-loading {
+      position: relative;
+      color: transparent !important;
+      pointer-events: none;
+    }
+
+    .is-loading::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      inset: 50% auto auto 50%;
+      margin: -9px 0 0 -9px;
+      border-radius: 50%;
+      border: 2px solid oklch(100% 0 0 / 0.36);
+      border-top-color: oklch(12% 0.035 296);
+      animation: spin 700ms linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 360px;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .sidebar, .topbar, .panel, .mission-card, .drawer {
+      background: linear-gradient(180deg, var(--surface), oklch(16% 0.052 296 / 0.84));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 18px;
+      height: calc(100vh - 36px);
+      border-radius: 22px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .brand {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .crystal {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, oklch(80% 0.18 304), oklch(55% 0.2 294) 52%, oklch(34% 0.1 260));
+      box-shadow: 0 0 32px oklch(72% 0.17 305 / 0.46);
+      position: relative;
+    }
+
+    .crystal::after {
+      content: "";
+      position: absolute;
+      inset: 9px 12px;
+      border: 1px solid oklch(96% 0.04 302 / 0.64);
+      transform: skew(-12deg);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font: 600 22px/1.05 var(--font-display);
+      letter-spacing: -0.01em;
+    }
+
+    .brand p, .eyebrow, .small, .meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-group { display: grid; gap: 8px; }
+    .nav-btn {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      color: var(--muted);
+      background: transparent;
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: 22px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      text-align: left;
+      transition: 160ms ease;
+    }
+
+    .nav-btn svg { width: 18px; height: 18px; stroke-width: 1.7; }
+    .nav-btn.active, .nav-btn:hover {
+      color: var(--fg);
+      border-color: oklch(72% 0.17 305 / 0.34);
+      background: oklch(42% 0.13 300 / 0.22);
+    }
+
+    .side-status {
+      margin-top: auto;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      background: oklch(10% 0.04 296 / 0.42);
+    }
+
+    .progress-track {
+      height: 8px;
+      background: oklch(100% 0 0 / 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+
+    .progress-fill {
+      width: 58%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: inherit;
+    }
+
+    main {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+    }
+
+    .topbar {
+      border-radius: 24px;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero-title {
+      margin: 4px 0 0;
+      max-width: 760px;
+      font: 600 clamp(34px, 5vw, 64px)/1.02 var(--font-display);
+      letter-spacing: -0.025em;
+      text-wrap: pretty;
+    }
+
+    .search-box {
+      width: min(360px, 100%);
+      min-height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: oklch(8% 0.032 296 / 0.52);
+      color: var(--fg);
+      padding: 0 14px;
+    }
+
+    .command-ribbon {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid oklch(100% 0 0 / 0.08);
+    }
+
+    .ribbon-item {
+      min-height: 72px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      background: oklch(100% 0 0 / 0.04);
+      display: grid;
+      align-content: center;
+      gap: 4px;
+    }
+
+    .ribbon-label {
+      color: var(--muted);
+      font: 12px/1.2 var(--font-mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ribbon-value {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
+      color: var(--fg);
+      text-wrap: pretty;
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      border-radius: 24px;
+      padding: 18px;
+      min-width: 0;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .panel h2, .panel h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      letter-spacing: -0.015em;
+    }
+
+    .panel h2 { font-size: 26px; line-height: 1.15; }
+    .panel h3 { font-size: 18px; line-height: 1.25; }
+
+    .segmented {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: oklch(9% 0.035 296 / 0.5);
+    }
+
+    .segmented button {
+      min-height: 44px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      padding: 0 12px;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+
+    .segmented button.active {
+      color: var(--fg);
+      background: oklch(72% 0.17 305 / 0.18);
+    }
+
+    .mission-card {
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+    }
+
+    .mission-card h3 { margin-bottom: 8px; }
+    .mission-card p {
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 9px;
+      color: var(--muted);
+      font: 12px/1.2 var(--font-mono);
+      letter-spacing: 0.02em;
+      background: oklch(100% 0 0 / 0.04);
+    }
+
+    .primary-btn, .ghost-btn {
+      min-height: 42px;
+      border-radius: 14px;
+      padding: 0 14px;
+      letter-spacing: 0.02em;
+      transition: 150ms ease;
+    }
+
+    .primary-btn {
+      border: 1px solid oklch(86% 0.12 305 / 0.5);
+      color: oklch(12% 0.035 296);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-weight: 600;
+    }
+
+    .ghost-btn {
+      border: 1px solid var(--border);
+      color: var(--fg);
+      background: oklch(100% 0 0 / 0.04);
+    }
+
+    .primary-btn:active, .ghost-btn:active { transform: translateY(1px); }
+
+    .kanban {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .kanban-col {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px;
+      background: oklch(8% 0.032 296 / 0.36);
+      min-height: 220px;
+    }
+
+    .kanban-col header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .task {
+      border: 1px solid oklch(100% 0 0 / 0.09);
+      border-radius: 14px;
+      padding: 10px;
+      background: oklch(100% 0 0 / 0.045);
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    .task strong {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 550;
+    }
+
+    .heatmap {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(24px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .heat-cell {
+      aspect-ratio: 1;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: color-mix(in oklch, var(--accent) calc(var(--v) * 1%), oklch(100% 0 0 / 0.05));
+      position: relative;
+    }
+
+    .heat-cell:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 8px);
+      transform: translateX(-50%);
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: oklch(12% 0.04 296);
+      color: var(--fg);
+      padding: 6px 8px;
+      font-size: 12px;
+      z-index: 3;
+    }
+
+    .right-rail {
+      position: sticky;
+      top: 18px;
+      height: calc(100vh - 36px);
+      display: grid;
+      gap: 18px;
+      align-content: start;
+      overflow: auto;
+      scrollbar-width: thin;
+    }
+
+    .ai-compose {
+      display: grid;
+      gap: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 118px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      background: oklch(8% 0.032 296 / 0.5);
+      color: var(--fg);
+      line-height: 1.5;
+    }
+
+    .answer-box {
+      min-height: 112px;
+      border: 1px solid oklch(78% 0.14 205 / 0.28);
+      border-radius: 16px;
+      padding: 12px;
+      color: var(--muted);
+      background: oklch(13% 0.05 260 / 0.46);
+      line-height: 1.55;
+    }
+
+    .stat-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 1px solid oklch(100% 0 0 / 0.08);
+      padding-bottom: 10px;
+    }
+
+    .stat-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+    .status {
+      border-radius: 999px;
+      padding: 5px 9px;
+      font: 12px/1.2 var(--font-mono);
+      letter-spacing: 0.02em;
+      border: 1px solid currentColor;
+    }
+
+    .status.ok { color: var(--success); background: oklch(72% 0.13 155 / 0.1); }
+    .status.warn { color: var(--warn); background: oklch(78% 0.13 82 / 0.1); }
+    .status.danger { color: var(--danger); background: oklch(68% 0.18 25 / 0.09); }
+
+    .drawer {
+      position: fixed;
+      inset: auto 18px 18px auto;
+      width: min(460px, calc(100vw - 36px));
+      border-radius: 22px;
+      padding: 18px;
+      transform: translateY(130%);
+      transition: 220ms ease;
+      z-index: 10;
+    }
+
+    .drawer.open { transform: translateY(0); }
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--fg);
+      background: oklch(100% 0 0 / 0.05);
+      display: grid;
+      place-items: center;
+    }
+
+    .icon-btn svg { width: 18px; height: 18px; }
+
+    @media (max-width: 1180px) {
+      .app-shell { grid-template-columns: 230px minmax(0, 1fr); }
+      .right-rail {
+        grid-column: 1 / -1;
+        position: static;
+        height: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .workspace-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .app-shell { display: block; padding: 12px; }
+      .sidebar {
+        position: static;
+        height: auto;
+        margin-bottom: 12px;
+      }
+      .nav-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .topbar {
+        grid-template-columns: 1fr;
+        margin-bottom: 12px;
+      }
+      .command-ribbon { grid-template-columns: 1fr; }
+      .search-box { width: 100%; }
+      .workspace-grid, .right-rail { display: grid; grid-template-columns: 1fr; gap: 12px; }
+      .kanban { grid-template-columns: 1fr; }
+      .mission-card { grid-template-columns: 1fr; }
+      .panel, .topbar, .sidebar { border-radius: 18px; }
+      .hero-title { font-size: 34px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" data-od-id="sidebar-navigation">
+      <div class="brand" data-od-id="brand-block">
+        <div class="crystal" aria-hidden="true"></div>
+        <div>
+          <h1 data-od-id="brand-title">TALOS</h1>
+          <p>紫晶知识操作台</p>
+        </div>
+      </div>
+
+      <nav class="nav-group" aria-label="TALOS 页面导航" data-od-id="primary-nav">
+        <button class="nav-btn active" type="button" data-view="console" data-od-id="nav-console">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h7v7H4zM13 5h7v4h-7zM13 11h7v8h-7zM4 14h7v5H4z"/></svg>
+          <span>Home Console</span><span class="meta">01</span>
+        </button>
+        <a class="nav-btn" href="evidence-matrix.html" data-view="evidence" data-od-id="nav-evidence">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          <span>证据矩阵</span><span class="meta">02</span>
+        </a>
+        <a class="nav-btn" href="course-reading.html" data-view="course" data-od-id="nav-course">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v15H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M8 8h8M8 12h6"/></svg>
+          <span>课程指挥舱</span><span class="meta">04</span>
+        </a>
+        <button class="nav-btn" type="button" data-view="sleep" data-od-id="nav-sleep">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 15.5A8 8 0 0 1 8.5 4a7 7 0 1 0 11.5 11.5z"/></svg>
+          <span>睡觉模式</span><span class="meta">16</span>
+        </button>
+      </nav>
+
+      <div class="side-status" data-od-id="system-status">
+        <p class="eyebrow">Knowledge OS</p>
+        <div class="progress-track" aria-label="今日执行进度"><div class="progress-fill"></div></div>
+        <p class="small">今日推进：任务生成、证据归档、复盘摘要等待确认。</p>
+      </div>
+    </aside>
+
+    <main data-od-id="main-workspace">
+      <header class="topbar" data-od-id="topbar-command">
+        <div>
+          <p class="eyebrow">主动训练中心 / 项目推进台 / Review AI</p>
+          <h2 class="hero-title" data-od-id="hero-title">把学习、项目和证据变成一条可执行链路</h2>
+        </div>
+        <label class="sr-only" for="searchInput">搜索任务、课程、证据</label>
+        <input class="search-box" id="searchInput" type="search" placeholder="搜索任务、课程、证据…" data-od-id="global-search" />
+        <section class="command-ribbon" aria-label="当前指挥状态" data-od-id="command-ribbon">
+          <article class="ribbon-item" data-od-id="ribbon-focus">
+            <span class="ribbon-label">当前焦点</span>
+            <p class="ribbon-value" id="ribbonFocus">课程阅读 → 证据提炼</p>
+          </article>
+          <article class="ribbon-item" data-od-id="ribbon-gap">
+            <span class="ribbon-label">待补缺口</span>
+            <p class="ribbon-value" id="ribbonGap">项目推进台未同步</p>
+          </article>
+          <article class="ribbon-item" data-od-id="ribbon-next">
+            <span class="ribbon-label">下一动作</span>
+            <p class="ribbon-value" id="ribbonNext">生成复盘并绑定 Atlas</p>
+          </article>
+        </section>
+      </header>
+
+      <div class="workspace-grid">
+        <section class="panel" data-od-id="mission-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Daily Mission Generator</p>
+              <h2 data-od-id="mission-title">每日任务生成器</h2>
+            </div>
+            <button class="primary-btn" id="generateMission" type="button" data-od-id="generate-mission-button">生成任务</button>
+          </div>
+
+          <article class="mission-card" data-kind="console course" data-od-id="mission-card-focus">
+            <div>
+              <h3>课程阅读 → 证据提炼</h3>
+              <p>从课程阅读布局中抽取一个关键概念，写成可复用证据卡，并关联到 Project Atlas。</p>
+              <div class="tag-row">
+                <span class="tag">31_Course_Reading</span>
+                <span class="tag">TALOS_Evidence_Template</span>
+                <span class="tag">待绑定项目</span>
+              </div>
+            </div>
+            <span class="status ok">可执行</span>
+          </article>
+
+          <article class="mission-card" data-kind="evidence" data-od-id="mission-card-evidence">
+            <div>
+              <h3>证据矩阵补全</h3>
+              <p>检查已有证据热力图，找出覆盖空白的主题，并为下一次复盘标记优先级。</p>
+              <div class="tag-row">
+                <span class="tag">02_Evidence_Matrix</span>
+                <span class="tag">08_Heatmap</span>
+                <span class="tag">Review AI</span>
+              </div>
+            </div>
+            <span class="status warn">需复核</span>
+          </article>
+
+          <p class="state-note" id="searchEmpty" hidden data-od-id="search-empty-state">没有匹配的任务。可以换一个关键词，或先生成今日任务。</p>
+
+          <div class="kanban" data-od-id="project-kanban">
+            <div class="kanban-col">
+              <header><span>收集</span><span class="mono">03</span></header>
+              <div class="task"><strong>课程笔记</strong><span class="small">等待摘要</span></div>
+              <div class="task"><strong>开放知识对比</strong><span class="small">待选主题</span></div>
+            </div>
+            <div class="kanban-col">
+              <header><span>执行</span><span class="mono">02</span></header>
+              <div class="task"><strong>项目推进台</strong><span class="small">同步本周目标</span></div>
+              <div class="task"><strong>主动训练中心</strong><span class="small">生成训练指令</span></div>
+            </div>
+            <div class="kanban-col">
+              <header><span>复盘</span><span class="mono">01</span></header>
+              <div class="task"><strong>Review AI Center</strong><span class="small">输出复盘卡</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-od-id="evidence-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Evidence Matrix</p>
+              <h2 data-od-id="evidence-title">证据热力图</h2>
+            </div>
+            <div class="segmented" role="tablist" aria-label="证据筛选">
+              <button class="active" type="button" data-filter="all" data-od-id="filter-all">全部</button>
+              <button type="button" data-filter="course" data-od-id="filter-course">课程</button>
+              <button type="button" data-filter="project" data-od-id="filter-project">项目</button>
+            </div>
+          </div>
+          <p class="small">颜色越亮表示该知识点已有更多可复用证据。悬停方块查看当前状态。</p>
+          <div class="heatmap" id="heatmap" data-od-id="evidence-heatmap"></div>
+        </section>
+      </div>
+    </main>
+
+    <aside class="right-rail" data-od-id="right-rail">
+      <section class="panel" data-od-id="review-ai-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Review AI Center</p>
+            <h2>复盘助手</h2>
+          </div>
+          <button class="ghost-btn" id="copyReview" type="button" data-od-id="copy-review-button">复制摘要</button>
+        </div>
+        <div class="ai-compose">
+          <label class="sr-only" for="reviewInput">今日执行记录</label>
+          <textarea id="reviewInput" data-od-id="review-input">今天完成了课程阅读和证据矩阵整理，但项目推进台还没有更新。</textarea>
+          <button class="primary-btn" id="runReview" type="button" aria-describedby="reviewOutput" data-od-id="run-review-button">生成复盘</button>
+          <div class="answer-box" id="reviewOutput" role="status" aria-live="polite" data-od-id="review-output">复盘结果会在这里生成。</div>
+        </div>
+      </section>
+
+      <section class="panel" data-od-id="sleep-mode-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Sleep Mode Console</p>
+            <h2>睡觉模式执行台</h2>
+          </div>
+          <span class="status ok">待启动</span>
+        </div>
+        <div class="stat-list">
+          <div class="stat-row"><span>收尾任务</span><span class="mono">—</span></div>
+          <div class="stat-row"><span>明日第一动作</span><span>打开项目推进台</span></div>
+          <div class="stat-row"><span>睡前复盘</span><span class="status warn">未完成</span></div>
+        </div>
+      </section>
+
+      <section class="panel" data-od-id="atlas-panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Project Atlas</p>
+            <h2>项目图谱</h2>
+          </div>
+          <button class="ghost-btn" id="openDrawer" type="button" data-od-id="open-atlas-button">查看关系</button>
+        </div>
+        <p class="small">课程、证据、项目、复盘卡之间的关系将在图谱中持续沉淀。</p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="drawer" id="atlasDrawer" aria-live="polite" data-od-id="atlas-drawer">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">TALOS Graph</p>
+        <h3>当前关系链</h3>
+      </div>
+      <button class="icon-btn" id="closeDrawer" type="button" aria-label="关闭关系面板" data-od-id="close-atlas-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="task"><strong>课程阅读</strong><span class="small">产生概念摘要</span></div>
+    <div class="task"><strong>证据卡</strong><span class="small">绑定到项目推进台</span></div>
+    <div class="task"><strong>Review AI</strong><span class="small">输出下一步行动</span></div>
+  </section>
+
+  <script>
+    const heatmap = document.getElementById("heatmap");
+    const levels = [18, 44, 72, 35, 64, 28, 80, 12, 58, 46, 76, 24, 68, 40, 20, 52, 84, 32, 60, 48, 74];
+    levels.forEach((value, index) => {
+      const cell = document.createElement("button");
+      cell.type = "button";
+      cell.className = "heat-cell";
+      cell.style.setProperty("--v", value);
+      cell.dataset.tip = `证据节点 ${String(index + 1).padStart(2, "0")} · 覆盖 ${value}%`;
+      cell.setAttribute("aria-label", cell.dataset.tip);
+      heatmap.appendChild(cell);
+    });
+
+    const viewCopy = {
+      console: {
+        eyebrow: "主动训练中心 / 项目推进台 / Review AI",
+        title: "把学习、项目和证据变成一条可执行链路",
+        focus: "课程阅读 → 证据提炼",
+        gap: "项目推进台未同步",
+        next: "生成复盘并绑定 Atlas"
+      },
+      evidence: {
+        eyebrow: "Evidence Matrix / Heatmap / Review",
+        title: "先看证据覆盖，再决定下一步训练",
+        focus: "定位证据覆盖空白",
+        gap: "部分主题缺少复盘卡",
+        next: "筛选课程证据并标记优先级"
+      },
+      course: {
+        eyebrow: "Course Command / Reading Layout",
+        title: "把课程阅读拆成概念、证据和行动",
+        focus: "抽取本节关键概念",
+        gap: "概念尚未转入证据模板",
+        next: "生成一张 Evidence Card"
+      },
+      sleep: {
+        eyebrow: "Sleep Mode / Tomorrow First Action",
+        title: "用睡前收尾保护明天的第一动作",
+        focus: "收束今日执行记录",
+        gap: "明日第一动作待确认",
+        next: "写入睡前复盘"
+      }
+    };
+
+    document.querySelectorAll(".nav-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".nav-btn").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        const next = viewCopy[button.dataset.view];
+        if (next) {
+          document.querySelector(".topbar .eyebrow").textContent = next.eyebrow;
+          document.querySelector("[data-od-id='hero-title']").textContent = next.title;
+          document.getElementById("ribbonFocus").textContent = next.focus;
+          document.getElementById("ribbonGap").textContent = next.gap;
+          document.getElementById("ribbonNext").textContent = next.next;
+        }
+      });
+    });
+
+    document.querySelectorAll(".segmented button").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".segmented button").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        const offset = button.dataset.filter === "course" ? 12 : button.dataset.filter === "project" ? -10 : 0;
+        document.querySelectorAll(".heat-cell").forEach((cell, index) => {
+          const next = Math.max(8, Math.min(88, levels[index] + offset));
+          cell.style.setProperty("--v", next);
+          cell.dataset.tip = `${button.textContent} · 节点 ${String(index + 1).padStart(2, "0")} · 覆盖 ${next}%`;
+        });
+      });
+    });
+
+    const missionTitles = [
+      "整理一张 Review Card",
+      "补全项目推进台下一步",
+      "把课程阅读转成证据卡",
+      "检查开放知识交叉对比"
+    ];
+    document.getElementById("generateMission").addEventListener("click", (event) => {
+      const button = event.currentTarget;
+      button.classList.add("is-loading");
+      button.setAttribute("aria-busy", "true");
+      window.setTimeout(() => {
+        const title = missionTitles[Math.floor(Math.random() * missionTitles.length)];
+        const card = document.querySelector("[data-od-id='mission-card-focus'] h3");
+        card.textContent = title;
+        button.classList.remove("is-loading");
+        button.removeAttribute("aria-busy");
+      }, 420);
+    });
+
+    document.getElementById("runReview").addEventListener("click", () => {
+      const input = document.getElementById("reviewInput").value.trim();
+      const output = document.getElementById("reviewOutput");
+      if (!input) {
+        output.style.borderColor = "color-mix(in oklch, var(--danger) 58%, transparent)";
+        output.textContent = "请先写入今天的执行记录，再生成复盘。";
+        return;
+      }
+      const button = document.getElementById("runReview");
+      button.classList.add("is-loading");
+      button.setAttribute("aria-busy", "true");
+      output.style.borderColor = "";
+      output.textContent = "正在整理执行记录…";
+      window.setTimeout(() => {
+        output.textContent = "复盘摘要：今天的有效产出集中在课程阅读与证据整理。下一步应先更新项目推进台，再把证据卡绑定到 Project Atlas，避免知识停留在笔记层。";
+        button.classList.remove("is-loading");
+        button.removeAttribute("aria-busy");
+      }, 520);
+    });
+
+    document.getElementById("copyReview").addEventListener("click", async () => {
+      const text = document.getElementById("reviewOutput").textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        document.getElementById("copyReview").textContent = "已复制";
+      } catch (_) {
+        document.getElementById("copyReview").textContent = "复制受限";
+      }
+      window.setTimeout(() => document.getElementById("copyReview").textContent = "复制摘要", 1200);
+    });
+
+    const drawer = document.getElementById("atlasDrawer");
+    document.getElementById("openDrawer").addEventListener("click", () => drawer.classList.add("open"));
+    document.getElementById("closeDrawer").addEventListener("click", () => drawer.classList.remove("open"));
+
+    document.getElementById("searchInput").addEventListener("input", (event) => {
+      const query = event.target.value.trim().toLowerCase();
+      let visibleCount = 0;
+      document.querySelectorAll(".mission-card").forEach((card) => {
+        const visible = card.textContent.toLowerCase().includes(query) || !query;
+        card.style.display = visible ? "grid" : "none";
+        if (visible) visibleCount += 1;
+      });
+      document.getElementById("searchEmpty").hidden = visibleCount > 0;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1037 @@
+.talos-ui-kit-host {
+  padding: 0;
+  overflow: auto;
+}
+
+.talos-ui-kit {
+  --talos-bg: #11101a;
+  --talos-surface: rgba(25, 22, 39, 0.92);
+  --talos-surface-strong: rgba(39, 33, 62, 0.96);
+  --talos-fg: #f4f0ff;
+  --talos-muted: #b9afd4;
+  --talos-border: rgba(214, 196, 255, 0.16);
+  --talos-accent: #a985ff;
+  --talos-accent-strong: #d7c4ff;
+  --talos-success: #6ee7b7;
+  --talos-danger: #fb7185;
+  --talos-warn: #f8d66d;
+  --talos-radius: 18px;
+  --talos-font: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  position: relative;
+  min-height: 100%;
+  padding: 28px;
+  color: var(--talos-fg);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(169, 133, 255, 0.2), transparent 28%),
+    linear-gradient(135deg, #0f0d18 0%, #171326 52%, #0f1020 100%);
+  font-family: var(--talos-font);
+  isolation: isolate;
+}
+
+.talos-obsidian-preview {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  min-height: 720px;
+  padding: 8px;
+  grid-template-columns: 300px minmax(620px, 1fr) 340px;
+  grid-template-rows: 52px minmax(0, 1fr) 36px;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.talos-vault-rail,
+.talos-obsidian-topbar,
+.talos-note-workspace,
+.talos-right-rail,
+.talos-bottom-status {
+  border: 1px solid rgba(185, 157, 255, 0.14);
+  background:
+    linear-gradient(180deg, rgba(22, 20, 35, 0.96), rgba(14, 15, 29, 0.94)),
+    rgba(15, 13, 24, 0.92);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 20px 55px rgba(3, 2, 10, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.talos-vault-rail {
+  display: grid;
+  grid-row: 1 / 4;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.talos-vault-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(185, 157, 255, 0.12);
+}
+
+.talos-vault-brand strong,
+.talos-sidebar-card strong,
+.talos-mention-card strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.talos-vault-brand span,
+.talos-sidebar-card span {
+  display: block;
+  margin-top: 3px;
+  color: var(--talos-muted);
+  font-size: 12px;
+}
+
+.talos-vault-tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.talos-tree {
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.talos-tree-group {
+  margin-bottom: 12px;
+}
+
+.talos-tree-heading {
+  margin: 0 0 6px;
+  color: rgba(244, 240, 255, 0.62);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.talos-tree-item {
+  margin: 2px 0;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: rgba(244, 240, 255, 0.74);
+  font-size: 13px;
+}
+
+.talos-tree-item.is-nested {
+  margin-left: 18px;
+}
+
+.talos-tree-item.is-active {
+  color: var(--talos-fg);
+  background: linear-gradient(90deg, rgba(137, 92, 246, 0.48), rgba(124, 58, 237, 0.18));
+  box-shadow: inset 0 0 0 1px rgba(215, 196, 255, 0.12);
+}
+
+.talos-sidebar-card {
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid rgba(185, 157, 255, 0.15);
+  border-radius: 14px;
+  background:
+    url("assets/graph-network.svg") center bottom / 116% auto no-repeat,
+    radial-gradient(circle at 50% 26%, rgba(169, 133, 255, 0.36), transparent 34%),
+    rgba(255, 255, 255, 0.035);
+  text-align: center;
+}
+
+.talos-sidebar-crystal {
+  display: block;
+  width: 72px;
+  height: 90px;
+  margin: 2px auto 8px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 22px rgba(169, 133, 255, 0.55));
+}
+
+.talos-obsidian-topbar {
+  display: grid;
+  grid-column: 2 / 4;
+  grid-template-columns: minmax(0, 1fr) 360px auto;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 12px;
+  border-radius: 16px;
+}
+
+.talos-tab-strip {
+  display: flex;
+  min-width: 0;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.talos-os-tab,
+.talos-os-add,
+.talos-right-tabs button {
+  border: 1px solid rgba(185, 157, 255, 0.13);
+  color: rgba(244, 240, 255, 0.72);
+  background: rgba(255, 255, 255, 0.035);
+  font: 600 12px/1 var(--talos-font);
+  cursor: pointer;
+}
+
+.talos-os-tab {
+  min-width: 170px;
+  max-width: 240px;
+  padding: 11px 13px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.talos-os-tab.is-active {
+  color: var(--talos-fg);
+  background: linear-gradient(180deg, rgba(86, 63, 132, 0.74), rgba(33, 26, 54, 0.82));
+  border-color: rgba(215, 196, 255, 0.28);
+}
+
+.talos-os-add {
+  width: 38px;
+  border-radius: 10px;
+}
+
+.talos-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 12px;
+  border: 1px solid rgba(185, 157, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(8, 9, 18, 0.48);
+  color: rgba(244, 240, 255, 0.54);
+}
+
+.talos-search input {
+  width: 100%;
+  height: 36px;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--talos-fg);
+  background: transparent;
+  font: 13px/1 var(--talos-font);
+}
+
+.talos-search input::placeholder {
+  color: rgba(244, 240, 255, 0.45);
+}
+
+.talos-note-workspace {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  min-height: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.talos-editor-pane,
+.talos-live-pane {
+  display: grid;
+  grid-template-rows: 44px minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  border-right: 1px solid rgba(185, 157, 255, 0.13);
+}
+
+.talos-live-pane {
+  border-right: 0;
+}
+
+.talos-pane-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(185, 157, 255, 0.12);
+  color: rgba(244, 240, 255, 0.52);
+  font-size: 12px;
+}
+
+.talos-breadcrumb,
+.talos-pane-icons {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.talos-note-card,
+.talos-live-card {
+  min-height: 0;
+  padding: 26px 38px 40px;
+  overflow: auto;
+}
+
+.talos-note-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.talos-hash {
+  color: var(--talos-accent);
+  font-size: 24px;
+}
+
+.talos-note-card h1,
+.talos-live-card h1 {
+  margin: 0;
+  color: var(--talos-fg);
+  font-size: clamp(24px, 2.1vw, 31px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.talos-note-card h2,
+.talos-live-card h2 {
+  margin: 28px 0 10px;
+  color: var(--talos-fg);
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.talos-note-card h3,
+.talos-live-card h3 {
+  margin: 18px 0 8px;
+  color: var(--talos-accent-strong);
+  font-size: 15px;
+}
+
+.talos-note-card p,
+.talos-live-card p,
+.talos-note-card li,
+.talos-live-card li,
+.talos-check {
+  color: rgba(244, 240, 255, 0.74);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.talos-note-card ul,
+.talos-live-card ul {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+.talos-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.talos-tag-row span {
+  padding: 5px 9px;
+  border: 1px solid rgba(185, 157, 255, 0.12);
+  border-radius: 999px;
+  color: var(--talos-accent-strong);
+  background: rgba(137, 92, 246, 0.18);
+  font-size: 12px;
+}
+
+.talos-quote {
+  margin: 18px 0 26px;
+  padding: 18px 22px;
+  border: 1px solid rgba(185, 157, 255, 0.22);
+  border-left-color: rgba(169, 133, 255, 0.78);
+  border-radius: 10px;
+  color: rgba(244, 240, 255, 0.82);
+  background:
+    linear-gradient(90deg, rgba(137, 92, 246, 0.14), rgba(255, 255, 255, 0.035)),
+    rgba(255, 255, 255, 0.03);
+}
+
+.talos-quote span {
+  display: block;
+  margin-top: 10px;
+  color: rgba(244, 240, 255, 0.5);
+  text-align: right;
+  font-size: 12px;
+}
+
+.talos-callout {
+  margin: 18px 0 26px;
+  padding: 14px 16px;
+  border: 1px solid rgba(185, 157, 255, 0.18);
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(137, 92, 246, 0.32), rgba(77, 51, 132, 0.18));
+}
+
+.talos-callout strong,
+.talos-callout span {
+  display: block;
+}
+
+.talos-callout strong {
+  margin-bottom: 6px;
+  color: var(--talos-accent-strong);
+}
+
+.talos-check {
+  display: block;
+  margin: 8px 0;
+}
+
+.talos-check input {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  accent-color: var(--talos-accent);
+}
+
+.talos-code {
+  margin: 22px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(185, 157, 255, 0.13);
+  border-radius: 10px;
+  color: #cda7ff;
+  background: rgba(255, 255, 255, 0.04);
+  font: 13px/1.55 "JetBrains Mono", "Consolas", monospace;
+  overflow: auto;
+}
+
+.talos-flow-card {
+  margin-top: 28px;
+  padding: 0;
+  border: 1px solid rgba(185, 157, 255, 0.16);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.talos-flow-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.talos-right-rail {
+  display: grid;
+  grid-column: 3;
+  grid-row: 2;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.talos-right-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(185, 157, 255, 0.11);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.talos-right-tabs button {
+  min-height: 34px;
+  border-radius: 9px;
+}
+
+.talos-right-tabs button.is-active {
+  color: var(--talos-fg);
+  background: rgba(137, 92, 246, 0.42);
+  border-color: rgba(215, 196, 255, 0.24);
+}
+
+.talos-rail-panel {
+  padding: 15px;
+  border: 1px solid rgba(185, 157, 255, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.talos-rail-panel h2 {
+  margin: 0 0 12px;
+  color: rgba(244, 240, 255, 0.88);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.talos-outline {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(244, 240, 255, 0.72);
+  font-size: 12px;
+}
+
+.talos-outline .is-nested {
+  margin-left: 12px;
+  color: rgba(244, 240, 255, 0.52);
+}
+
+.talos-property-grid {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 9px 12px;
+  font-size: 12px;
+}
+
+.talos-property-grid span {
+  color: rgba(244, 240, 255, 0.48);
+}
+
+.talos-property-grid strong {
+  color: rgba(244, 240, 255, 0.78);
+  font-weight: 520;
+}
+
+.talos-property-grid i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: var(--talos-accent);
+}
+
+.talos-mention-card {
+  padding: 12px;
+  border: 1px solid rgba(185, 157, 255, 0.11);
+  border-radius: 11px;
+  background: rgba(13, 14, 27, 0.48);
+}
+
+.talos-mention-card + .talos-mention-card {
+  margin-top: 10px;
+}
+
+.talos-mention-card p {
+  margin: 6px 0 0;
+  color: rgba(244, 240, 255, 0.58);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.talos-empty-preview {
+  align-self: end;
+}
+
+.talos-empty-preview img {
+  display: block;
+  width: 100%;
+  max-height: 170px;
+  object-fit: contain;
+}
+
+.talos-bottom-status {
+  display: flex;
+  grid-column: 2 / 4;
+  grid-row: 3;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  padding: 0 14px;
+  border-radius: 12px;
+  color: rgba(244, 240, 255, 0.52);
+  font-size: 12px;
+}
+
+.talos-live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #62e36f;
+  box-shadow: 0 0 12px rgba(98, 227, 111, 0.7);
+}
+
+@media (max-width: 1280px) {
+  .talos-obsidian-preview {
+    grid-template-columns: 260px minmax(560px, 1fr) 300px;
+  }
+
+  .talos-obsidian-topbar {
+    grid-template-columns: minmax(0, 1fr) 280px auto;
+  }
+
+  .talos-note-card,
+  .talos-live-card {
+    padding: 24px 26px 34px;
+  }
+
+  .talos-os-tab {
+    min-width: 138px;
+  }
+}
+
+@media (max-width: 980px) {
+  .talos-obsidian-preview {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+  .talos-vault-rail,
+  .talos-obsidian-topbar,
+  .talos-note-workspace,
+  .talos-right-rail,
+  .talos-bottom-status {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .talos-vault-rail {
+    grid-template-rows: auto auto auto;
+    max-height: none;
+  }
+
+  .talos-tree {
+    max-height: 260px;
+  }
+
+  .talos-obsidian-topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .talos-note-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .talos-editor-pane,
+  .talos-live-pane {
+    border-right: 0;
+    border-bottom: 1px solid rgba(185, 157, 255, 0.13);
+  }
+
+  .talos-bottom-status {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    min-height: 44px;
+  }
+}
+
+.talos-bg-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(214, 196, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(214, 196, 255, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.talos-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.talos-brand {
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+}
+
+.talos-mark {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(215, 196, 255, 0.45);
+  border-radius: 14px;
+  color: var(--talos-accent-strong);
+  background: linear-gradient(145deg, rgba(169, 133, 255, 0.18), rgba(255, 255, 255, 0.04));
+  font-weight: 650;
+  box-shadow: 0 0 28px rgba(169, 133, 255, 0.18);
+}
+
+.talos-mark img {
+  width: 30px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.talos-eyebrow,
+.talos-kicker,
+.talos-card-state {
+  color: var(--talos-accent-strong);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.talos-header h1 {
+  margin: 2px 0 4px;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.talos-header p,
+.talos-hero-card p,
+.talos-feature-card p,
+.talos-evidence-card p,
+.talos-feedback-panel p,
+.talos-document-pane p {
+  color: var(--talos-muted);
+  line-height: 1.58;
+}
+
+.talos-view-nav,
+.talos-state-actions,
+.talos-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.talos-tab,
+.talos-button,
+.talos-icon-button {
+  min-height: 38px;
+  border: 1px solid var(--talos-border);
+  border-radius: 999px;
+  color: var(--talos-fg);
+  background: rgba(255, 255, 255, 0.05);
+  font: 600 13px/1 var(--talos-font);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.talos-tab,
+.talos-button {
+  padding: 0 14px;
+}
+
+.talos-icon-button {
+  display: grid;
+  width: 38px;
+  padding: 0;
+  place-items: center;
+}
+
+.talos-tab:hover,
+.talos-button:hover,
+.talos-icon-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(215, 196, 255, 0.42);
+  background: rgba(169, 133, 255, 0.14);
+}
+
+.talos-tab:focus-visible,
+.talos-button:focus-visible,
+.talos-icon-button:focus-visible {
+  outline: 2px solid var(--talos-accent-strong);
+  outline-offset: 3px;
+}
+
+.talos-tab.is-active,
+.talos-button.is-selected {
+  border-color: rgba(215, 196, 255, 0.58);
+  color: #160f25;
+  background: var(--talos-accent-strong);
+}
+
+.talos-state-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding: 12px;
+  border: 1px solid var(--talos-border);
+  border-radius: var(--talos-radius);
+  background: rgba(18, 16, 29, 0.72);
+}
+
+.talos-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: var(--talos-muted);
+  font-size: 13px;
+}
+
+.talos-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--talos-success);
+  box-shadow: 0 0 14px rgba(110, 231, 183, 0.7);
+}
+
+.talos-status.is-loading .talos-status-dot {
+  background: var(--talos-warn);
+  box-shadow: 0 0 14px rgba(248, 214, 109, 0.7);
+}
+
+.talos-status.is-error .talos-status-dot {
+  background: var(--talos-danger);
+  box-shadow: 0 0 14px rgba(251, 113, 133, 0.7);
+}
+
+.talos-main {
+  display: grid;
+  gap: 18px;
+}
+
+.talos-dashboard-grid,
+.talos-reading-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: 18px;
+}
+
+.talos-hero-card,
+.talos-side-panel,
+.talos-section,
+.talos-document-pane,
+.talos-action-pane,
+.talos-feedback-panel,
+.talos-feature-card,
+.talos-evidence-card {
+  border: 1px solid var(--talos-border);
+  border-radius: var(--talos-radius);
+  background: var(--talos-surface);
+  box-shadow: 0 18px 50px rgba(6, 4, 14, 0.24);
+}
+
+.talos-hero-card,
+.talos-side-panel,
+.talos-section,
+.talos-document-pane,
+.talos-action-pane,
+.talos-feedback-panel {
+  padding: 22px;
+}
+
+.talos-hero-card h2,
+.talos-section h2,
+.talos-document-pane h2,
+.talos-feedback-panel h2 {
+  margin: 8px 0 10px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+}
+
+.talos-metric-row,
+.talos-card-grid,
+.talos-evidence-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.talos-metric-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.talos-mini-metric,
+.talos-feature-card,
+.talos-evidence-card {
+  padding: 16px;
+}
+
+.talos-mini-metric {
+  border: 1px solid var(--talos-border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.talos-mini-metric span,
+.talos-action-row span {
+  display: block;
+  color: var(--talos-muted);
+  font-size: 12px;
+}
+
+.talos-mini-metric strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+}
+
+.talos-side-panel h3,
+.talos-action-pane h3,
+.talos-feature-card h3,
+.talos-evidence-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.talos-side-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.talos-side-panel li {
+  padding: 10px 12px;
+  border: 1px solid var(--talos-border);
+  border-radius: 12px;
+  color: var(--talos-muted);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.talos-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.talos-feature-card,
+.talos-evidence-card {
+  background: rgba(24, 21, 38, 0.8);
+}
+
+.talos-document-pane blockquote {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid rgba(215, 196, 255, 0.24);
+  border-radius: 14px;
+  color: var(--talos-fg);
+  background: rgba(169, 133, 255, 0.1);
+}
+
+.talos-action-pane {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.talos-action-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--talos-border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.talos-toolbar {
+  padding: 12px;
+  border: 1px solid var(--talos-border);
+  border-radius: var(--talos-radius);
+  background: rgba(18, 16, 29, 0.72);
+}
+
+.talos-evidence-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.talos-feedback-panel {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  text-align: center;
+}
+
+.talos-feedback-panel > * {
+  max-width: 520px;
+}
+
+.talos-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(215, 196, 255, 0.22);
+  border-top-color: var(--talos-accent-strong);
+  border-radius: 50%;
+  animation: talos-spin 900ms linear infinite;
+}
+
+.talos-empty-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--talos-border);
+  border-radius: 50%;
+  color: var(--talos-accent-strong);
+  font-size: 22px;
+}
+
+.talos-feedback-panel.is-error .talos-empty-icon {
+  color: var(--talos-danger);
+}
+
+@keyframes talos-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1100px) {
+  .talos-header,
+  .talos-state-bar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .talos-dashboard-grid,
+  .talos-reading-grid,
+  .talos-card-grid,
+  .talos-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .talos-ui-kit {
+    padding: 16px;
+  }
+
+  .talos-brand {
+    align-items: flex-start;
+  }
+
+  .talos-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .talos-metric-row {
+    grid-template-columns: 1fr;
+  }
+
+  .talos-hero-card,
+  .talos-side-panel,
+  .talos-section,
+  .talos-document-pane,
+  .talos-action-pane,
+  .talos-feedback-panel {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .talos-tab,
+  .talos-button,
+  .talos-icon-button,
+  .talos-spinner {
+    animation: none;
+    transition: none;
+  }
+}

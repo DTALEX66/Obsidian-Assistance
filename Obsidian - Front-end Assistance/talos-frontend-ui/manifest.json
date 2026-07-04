@@ -1,0 +1,10 @@
+{
+  "id": "talos-frontend-ui",
+  "name": "TALOS Frontend UI",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Frontend-only TALOS Obsidian workspace views for visual review. No vault indexing, note writes, AI calls, or backend services.",
+  "author": "TALOS",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

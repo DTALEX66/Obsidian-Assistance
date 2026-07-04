@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "hero",
+      "type": "text",
+      "text": "# TALOS Project Atlas\n课程 → 证据 → 复习 → 项目 → 日志",
+      "x": 0,
+      "y": 0,
+      "width": 380,
+      "height": 170,
+      "color": "4"
+    },
+    {
+      "id": "course",
+      "type": "text",
+      "text": "## Course Input\n- 课程门户\n- 阅读路线\n- 视觉索引",
+      "x": -520,
+      "y": -260,
+      "width": 320,
+      "height": 180,
+      "color": "1"
+    },
+    {
+      "id": "evidence",
+      "type": "text",
+      "text": "## Evidence\n- verified\n- pending\n- missing\n- reference-only",
+      "x": -520,
+      "y": 40,
+      "width": 320,
+      "height": 200,
+      "color": "5"
+    },
+    {
+      "id": "review",
+      "type": "text",
+      "text": "## Review + AI\n- 今日问题\n- Show Answer\n- Again/Hard/Good/Easy\n- 本地证据核验",
+      "x": 460,
+      "y": -260,
+      "width": 340,
+      "height": 220,
+      "color": "4"
+    },
+    {
+      "id": "project",
+      "type": "text",
+      "text": "## Project Conversion\n- Project Atlas\n- Kanban\n- 下一步动作\n- 输出物",
+      "x": 460,
+      "y": 40,
+      "width": 340,
+      "height": 220,
+      "color": "6"
+    },
+    {
+      "id": "log",
+      "type": "text",
+      "text": "## Execution Log\n- Round\n- Commit\n- Blocker\n- Resume Point",
+      "x": 0,
+      "y": 300,
+      "width": 380,
+      "height": 190,
+      "color": "3"
+    },
+    {
+      "id": "guardrail",
+      "type": "text",
+      "text": "## Guardrail\n不上传 / 不删源 / 不伪造 / 不移动课程",
+      "x": -80,
+      "y": -260,
+      "width": 520,
+      "height": 120,
+      "color": "2"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "course",
+      "fromSide": "right",
+      "toNode": "hero",
+      "toSide": "left"
+    },
+    {
+      "id": "e2",
+      "fromNode": "evidence",
+      "fromSide": "right",
+      "toNode": "hero",
+      "toSide": "left"
+    },
+    {
+      "id": "e3",
+      "fromNode": "hero",
+      "fromSide": "right",
+      "toNode": "review",
+      "toSide": "left"
+    },
+    {
+      "id": "e4",
+      "fromNode": "hero",
+      "fromSide": "right",
+      "toNode": "project",
+      "toSide": "left"
+    },
+    {
+      "id": "e5",
+      "fromNode": "hero",
+      "fromSide": "bottom",
+      "toNode": "log",
+      "toSide": "top"
+    },
+    {
+      "id": "e6",
+      "fromNode": "guardrail",
+      "fromSide": "bottom",
+      "toNode": "hero",
+      "toSide": "top"
+    }
+  ]
+}

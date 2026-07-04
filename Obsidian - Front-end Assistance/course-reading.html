@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TALOS 课程阅读工作区</title>
+  <style>
+    :root {
+      --bg: oklch(10% 0.035 286);
+      --shell: oklch(7% 0.032 286);
+      --surface: oklch(15% 0.048 286 / 0.92);
+      --surface-2: oklch(18% 0.055 292 / 0.82);
+      --surface-3: oklch(23% 0.07 296 / 0.72);
+      --fg: oklch(93% 0.018 288);
+      --muted: oklch(70% 0.035 288);
+      --subtle: oklch(55% 0.05 288);
+      --border: oklch(57% 0.095 296 / 0.28);
+      --accent: oklch(71% 0.18 300);
+      --accent-2: oklch(75% 0.13 252);
+      --success: oklch(72% 0.13 154);
+      --warn: oklch(79% 0.13 84);
+      --danger: oklch(66% 0.17 24);
+      --font-display: "Aptos Display", "Microsoft YaHei UI", "Segoe UI", system-ui, sans-serif;
+      --font-body: "Microsoft YaHei UI", "Segoe UI", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 102%, oklch(45% 0.16 296 / 0.28), transparent 26rem),
+        radial-gradient(circle at 92% 12%, oklch(35% 0.13 248 / 0.18), transparent 28rem),
+        linear-gradient(135deg, var(--shell), var(--bg));
+      color: var(--fg);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, textarea { font: inherit; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+
+    .workspace {
+      height: 100vh;
+      padding: 10px;
+      display: grid;
+      grid-template-rows: 54px minmax(0, 1fr) 36px;
+      gap: 8px;
+      position: relative;
+    }
+    .workspace::before {
+      content: "";
+      position: fixed;
+      inset: auto 0 0 0;
+      height: 170px;
+      pointer-events: none;
+      opacity: 0.48;
+      background:
+        linear-gradient(90deg, transparent, oklch(73% 0.18 300 / 0.22), transparent),
+        radial-gradient(circle at 14% 42%, oklch(77% 0.19 300 / 0.42) 0 3px, transparent 4px),
+        radial-gradient(circle at 72% 26%, oklch(80% 0.14 252 / 0.35) 0 2px, transparent 3px);
+      mask-image: linear-gradient(transparent, #000 48%, #000);
+    }
+
+    .top-tabs,
+    .vault,
+    .content-pane,
+    .right-rail,
+    .statusbar {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--surface), oklch(10% 0.04 286 / 0.92));
+      box-shadow: 0 22px 80px oklch(3% 0.03 286 / 0.44);
+      backdrop-filter: blur(18px);
+    }
+    .top-tabs {
+      border-radius: 14px;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 330px;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .gem {
+      width: 30px;
+      height: 34px;
+      clip-path: polygon(50% 0, 82% 17%, 95% 58%, 50% 100%, 5% 58%, 18% 17%);
+      background: linear-gradient(145deg, oklch(83% 0.17 300), oklch(47% 0.2 296), oklch(78% 0.13 252));
+      box-shadow: 0 0 22px oklch(72% 0.18 300 / 0.6);
+      flex: 0 0 auto;
+    }
+    .brand-title {
+      min-width: 0;
+      font-weight: 620;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tab-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .doc-tab {
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      background: transparent;
+      white-space: nowrap;
+    }
+    .doc-tab.active {
+      color: var(--fg);
+      border-color: var(--border);
+      background: linear-gradient(180deg, oklch(26% 0.09 296 / 0.74), oklch(17% 0.055 286 / 0.88));
+    }
+    .search {
+      min-height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--subtle);
+      font-size: 13px;
+      background: oklch(7% 0.03 286 / 0.72);
+    }
+
+    .app-grid {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 290px minmax(680px, 1fr) 336px;
+      gap: 8px;
+    }
+    .vault,
+    .right-rail {
+      min-height: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+    }
+    .pane-head {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .eyebrow {
+      margin: 0;
+      color: var(--muted);
+      font: 11px/1.2 var(--font-mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .icon-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--subtle);
+      font-size: 14px;
+    }
+    .vault-tree {
+      min-height: 0;
+      padding: 12px 10px 0;
+      overflow: auto;
+      scrollbar-color: oklch(58% 0.13 296 / 0.35) transparent;
+    }
+    .tree-group { margin-bottom: 10px; }
+    .tree-title {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+    .tree-item {
+      min-height: 30px;
+      padding: 0 9px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .tree-item.active {
+      color: var(--fg);
+      background: linear-gradient(90deg, oklch(35% 0.12 296 / 0.86), oklch(23% 0.08 296 / 0.32));
+    }
+    .tree-item.indent { padding-left: 24px; }
+    .tree-item.deep { padding-left: 42px; }
+    .new-note {
+      margin: 10px;
+      min-height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      background: oklch(100% 0 0 / 0.035);
+    }
+    .mini-graph {
+      height: 94px;
+      margin: 0 10px 10px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 16% 58%, var(--accent) 0 3px, transparent 4px),
+        radial-gradient(circle at 38% 36%, var(--accent-2) 0 2px, transparent 3px),
+        radial-gradient(circle at 66% 62%, var(--accent) 0 3px, transparent 4px),
+        radial-gradient(circle at 84% 28%, var(--accent-2) 0 2px, transparent 3px),
+        linear-gradient(160deg, oklch(14% 0.05 286), oklch(10% 0.035 286));
+    }
+    .mini-graph::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border-top: 1px solid oklch(72% 0.16 300 / 0.28);
+      border-bottom: 1px solid oklch(75% 0.13 252 / 0.2);
+      transform: skewY(-14deg);
+    }
+
+    .content-pane {
+      min-width: 0;
+      min-height: 0;
+      border-radius: 14px;
+      display: grid;
+      grid-template-rows: 48px minmax(0, 1fr);
+      overflow: hidden;
+    }
+    .crumbs {
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .command-actions { display: flex; align-items: center; gap: 8px; }
+    .ghost-btn,
+    .primary-btn {
+      min-height: 34px;
+      border-radius: 10px;
+      padding: 0 12px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      letter-spacing: 0.02em;
+    }
+    .ghost-btn {
+      color: var(--fg);
+      background: oklch(100% 0 0 / 0.04);
+    }
+    .primary-btn {
+      color: oklch(10% 0.035 286);
+      border-color: oklch(84% 0.14 300 / 0.56);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-weight: 620;
+    }
+    .note-workspace {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(360px, 0.96fr) minmax(360px, 1.04fr);
+      border-bottom: 1px solid var(--border);
+    }
+    .editor-pane,
+    .preview-pane {
+      min-width: 0;
+      min-height: 0;
+      overflow: auto;
+      padding: clamp(18px, 2.4vw, 34px);
+      scrollbar-color: oklch(58% 0.13 296 / 0.35) transparent;
+    }
+    .editor-pane { border-right: 1px solid var(--border); }
+    .note-title {
+      margin: 0 0 10px;
+      font: 620 clamp(28px, 3vw, 42px)/1.08 var(--font-display);
+      letter-spacing: -0.025em;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .tag {
+      border: 1px solid oklch(70% 0.16 300 / 0.22);
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: oklch(83% 0.12 300);
+      background: oklch(45% 0.16 296 / 0.18);
+      font: 12px/1.1 var(--font-mono);
+    }
+    .quote {
+      margin: 0 0 24px;
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 16px 18px;
+      color: oklch(86% 0.035 286);
+      background: linear-gradient(90deg, oklch(34% 0.13 296 / 0.22), oklch(100% 0 0 / 0.035));
+      line-height: 1.65;
+    }
+    .note-section { margin: 0 0 22px; }
+    .note-section h2 {
+      margin: 0 0 9px;
+      color: oklch(87% 0.055 296);
+      font: 620 22px/1.2 var(--font-display);
+      letter-spacing: -0.015em;
+    }
+    .note-section h3 {
+      margin: 14px 0 8px;
+      color: oklch(80% 0.1 300);
+      font: 590 17px/1.3 var(--font-display);
+      letter-spacing: -0.01em;
+    }
+    .note-section p,
+    .note-section li {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .note-section ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+    .callout {
+      border: 1px solid oklch(72% 0.16 300 / 0.26);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: oklch(86% 0.05 300);
+      background: linear-gradient(135deg, oklch(38% 0.15 296 / 0.32), oklch(18% 0.055 286 / 0.7));
+    }
+    .task {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin: 8px 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .box {
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+      color: var(--fg);
+      background: oklch(100% 0 0 / 0.035);
+    }
+    .box.done {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: oklch(12% 0.035 286);
+    }
+    .dataview {
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      color: oklch(80% 0.1 300);
+      background: oklch(7% 0.03 286 / 0.58);
+      font: 13px/1.55 var(--font-mono);
+      white-space: pre-wrap;
+    }
+    .evidence-panel {
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: oklch(100% 0 0 / 0.035);
+    }
+    .evidence-panel label { display: block; margin-bottom: 8px; }
+    textarea {
+      width: 100%;
+      min-height: 104px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 11px;
+      color: var(--fg);
+      background: oklch(7% 0.03 286 / 0.62);
+      line-height: 1.58;
+    }
+    .card-preview {
+      margin-top: 10px;
+      min-height: 88px;
+      border: 1px solid oklch(75% 0.13 252 / 0.28);
+      border-radius: 12px;
+      padding: 12px;
+      color: var(--muted);
+      background: oklch(12% 0.05 252 / 0.42);
+      line-height: 1.55;
+    }
+    .flow-card {
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      min-height: 132px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 50%, oklch(72% 0.18 300 / 0.28), transparent 5rem),
+        radial-gradient(circle at 82% 54%, oklch(75% 0.13 252 / 0.2), transparent 5rem),
+        oklch(100% 0 0 / 0.035);
+    }
+    .crystal {
+      width: 62px;
+      height: 78px;
+      margin: auto;
+      clip-path: polygon(50% 0, 82% 18%, 96% 58%, 50% 100%, 4% 58%, 18% 18%);
+      background: linear-gradient(145deg, oklch(85% 0.16 300), oklch(46% 0.19 296), oklch(78% 0.12 252));
+      box-shadow: 0 0 34px oklch(72% 0.18 300 / 0.55);
+    }
+    .flow-arrow {
+      color: var(--accent);
+      font: 28px/1 var(--font-mono);
+    }
+    .flow-label {
+      margin: 8px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .rail-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .rail-tab {
+      min-height: 34px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: var(--muted);
+      background: transparent;
+    }
+    .rail-tab.active {
+      color: var(--fg);
+      border-color: var(--border);
+      background: linear-gradient(180deg, oklch(34% 0.13 296 / 0.68), oklch(18% 0.055 286 / 0.7));
+    }
+    .rail-body {
+      min-height: 0;
+      padding: 10px;
+      overflow: auto;
+    }
+    .rail-panel { display: none; }
+    .rail-panel.active {
+      display: grid;
+      gap: 10px;
+    }
+    .outline-list,
+    .props,
+    .mentions {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: oklch(100% 0 0 / 0.035);
+    }
+    .outline-item {
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .outline-item.active { color: var(--fg); }
+    .outline-item.indent { padding-left: 18px; }
+    .prop-row {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 8px;
+      padding: 7px 0;
+      border-bottom: 1px solid oklch(100% 0 0 / 0.06);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .prop-row:last-child { border-bottom: 0; }
+    .prop-row strong { color: var(--subtle); font-weight: 520; }
+    .status-pill {
+      display: inline-flex;
+      width: max-content;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid oklch(71% 0.18 300 / 0.3);
+      border-radius: 999px;
+      padding: 4px 8px;
+      color: oklch(83% 0.12 300);
+      background: oklch(38% 0.14 296 / 0.22);
+      font: 12px/1 var(--font-mono);
+    }
+    .mention {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      color: var(--muted);
+      background: oklch(9% 0.035 286 / 0.55);
+      line-height: 1.5;
+      font-size: 13px;
+    }
+    .rail-footer {
+      padding: 10px;
+      border-top: 1px solid var(--border);
+      color: var(--subtle);
+      font: 12px/1.2 var(--font-mono);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .statusbar {
+      border-radius: 12px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--subtle);
+      font: 12px/1 var(--font-mono);
+    }
+    .status-left,
+    .status-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 14px var(--success);
+    }
+    .is-loading { pointer-events: none; opacity: 0.72; }
+
+    @media (max-width: 1180px) {
+      body { overflow: auto; }
+      .workspace {
+        height: auto;
+        min-height: 100vh;
+        grid-template-rows: auto auto auto;
+      }
+      .top-tabs,
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+      .vault,
+      .right-rail {
+        max-height: none;
+      }
+      .note-workspace {
+        grid-template-columns: 1fr;
+      }
+      .editor-pane { border-right: 0; border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 620px) {
+      .workspace { padding: 8px; }
+      .tab-row { display: none; }
+      .brand-title { white-space: normal; }
+      .flow-card { grid-template-columns: 1fr; }
+      .flow-arrow { transform: rotate(90deg); text-align: center; }
+      .statusbar { flex-direction: column; align-items: stretch; padding: 10px 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="workspace" data-od-id="course-page">
+    <header class="top-tabs" data-od-id="workspace-top-tabs">
+      <a class="brand" href="index.html" data-od-id="course-back-home" aria-label="返回 TALOS 首页">
+        <span class="gem" aria-hidden="true"></span>
+        <span class="brand-title">Obsidian Workspace</span>
+      </a>
+      <nav class="tab-row" aria-label="打开的笔记">
+        <button class="doc-tab active" type="button" data-od-id="tab-current-note">紫晶阅读 · 关键摘记</button>
+        <button class="doc-tab" type="button" data-od-id="tab-second-brain">Second Brain</button>
+        <button class="doc-tab" type="button" data-od-id="tab-project-atlas">Project Atlas</button>
+        <button class="doc-tab" type="button" data-od-id="tab-daily-journal">Daily Journal</button>
+      </nav>
+      <div class="search" role="search" data-od-id="workspace-search">
+        <span>搜索笔记、标签或链接...</span>
+        <span>⌘ K</span>
+      </div>
+    </header>
+
+    <section class="app-grid" aria-label="Obsidian 课程阅读工作台">
+      <aside class="vault" data-od-id="vault-sidebar">
+        <div class="pane-head">
+          <p class="eyebrow">Vault Explorer</p>
+          <div class="icon-row" aria-hidden="true">⌁ ⌂ ⊕</div>
+        </div>
+        <div class="vault-tree" aria-label="Vault 文件树">
+          <div class="tree-group">
+            <p class="tree-title">00 — Inbox</p>
+            <div class="tree-item">收集箱</div>
+          </div>
+          <div class="tree-group">
+            <p class="tree-title">01 — Personal</p>
+            <div class="tree-item indent">Daily Notes</div>
+            <div class="tree-item deep">2026-07-04</div>
+            <div class="tree-item deep active">课程阅读</div>
+            <div class="tree-item deep">复盘日志</div>
+          </div>
+          <div class="tree-group">
+            <p class="tree-title">02 — Knowledge</p>
+            <div class="tree-item active">紫晶阅读 · 关键摘记</div>
+            <div class="tree-item indent">Atomic Habits</div>
+            <div class="tree-item indent">Deep Work</div>
+            <div class="tree-item indent">TALOS Evidence</div>
+            <div class="tree-item indent">Obsidian Plugin Notes</div>
+          </div>
+          <div class="tree-group">
+            <p class="tree-title">03 — Projects</p>
+            <div class="tree-item">Project Atlas</div>
+            <div class="tree-item">AI in Knowledge Work</div>
+            <div class="tree-item">Second Brain Build</div>
+          </div>
+          <div class="tree-group">
+            <p class="tree-title">04 — Resources</p>
+            <div class="tree-item">Templates</div>
+            <div class="tree-item">Attachments</div>
+          </div>
+        </div>
+        <a class="new-note" href="evidence-matrix.html" data-od-id="new-evidence-note">+ 新建证据卡</a>
+        <div class="mini-graph" aria-label="Vault 图谱缩略图" data-od-id="vault-mini-graph"></div>
+      </aside>
+
+      <section class="content-pane" data-od-id="reading-content-pane">
+        <div class="crumbs" data-od-id="breadcrumb-bar">
+          <span>02 — Knowledge / Books / TALOS Course / 紫晶阅读 · 关键摘记</span>
+          <div class="command-actions">
+            <button class="ghost-btn" id="markDone" type="button" data-od-id="mark-reading-done">标记完成</button>
+            <a class="primary-btn" href="evidence-matrix.html" data-od-id="open-evidence-matrix">进入证据矩阵</a>
+          </div>
+        </div>
+
+        <div class="note-workspace">
+          <article class="editor-pane" data-od-id="editor-note-pane">
+            <h1 class="note-title" data-od-id="course-heading">紫晶阅读 · 关键摘记</h1>
+            <div class="tag-row" aria-label="笔记标签">
+              <span class="tag">#course</span>
+              <span class="tag">#evidence</span>
+              <span class="tag">#obsidian</span>
+              <span class="tag">#project-atlas</span>
+            </div>
+            <blockquote class="quote" data-od-id="course-quote">知识只有进入项目、证据和复盘链路，才会从“看过”变成可执行资产。</blockquote>
+
+            <section class="note-section" data-od-id="section-power-of-notes">
+              <h2>1. 阅读不是收集，而是建证据</h2>
+              <p>课程阅读页要保持两件事同时发生：左手不打断阅读，右手把关键片段压缩成可以归档、复核、迁移的 Evidence Card。</p>
+              <ul>
+                <li>每一段摘记都要能回答“它支撑哪个判断”。</li>
+                <li>不确定的内容先进入草稿，不伪造成结论。</li>
+                <li>可迁移字段优先：来源、主题、证据强度、下一步。</li>
+              </ul>
+            </section>
+
+            <section class="note-section" data-od-id="section-four-links">
+              <h2>2. 四段归档链路</h2>
+              <h3>2.1 提炼概念</h3>
+              <div class="task"><span class="box"></span><span>用一句话写出这段内容解决的问题。</span></div>
+              <div class="task"><span class="box done">✓</span><span>绑定当前课程来源，避免孤立卡片。</span></div>
+              <div class="task"><span class="box"></span><span>标出进入 Project Atlas 的行动位置。</span></div>
+              <h3>2.2 写成证据</h3>
+              <ul>
+                <li>概念负责压缩理解，证据负责支撑判断。</li>
+                <li>证据卡不追求长文，追求可检索、可复盘、可引用。</li>
+                <li>进入矩阵后再决定是否提升为项目资产。</li>
+              </ul>
+            </section>
+
+            <div class="callout" data-od-id="key-idea-callout">
+              <strong>Key Idea:</strong> TALOS 的阅读界面必须像 Obsidian 原生工作区一样组织信息，但数据结构要能迁移成 Markdown frontmatter、块引用和插件 ItemView。
+            </div>
+
+            <pre class="dataview" data-od-id="dataview-snippet">```dataview
+TABLE file.link, evidence.status, evidence.strength
+FROM #course-reading
+WHERE evidence.ready = true
+SORT evidence.strength DESC
+```</pre>
+          </article>
+
+          <article class="preview-pane" data-od-id="preview-note-pane">
+            <h1 class="note-title">紫晶阅读 · 关键摘记</h1>
+            <div class="tag-row" aria-label="预览标签">
+              <span class="tag">#course</span>
+              <span class="tag">#evidence</span>
+              <span class="tag">#obsidian</span>
+              <span class="tag">#project-atlas</span>
+            </div>
+            <blockquote class="quote">知识只有进入项目、证据和复盘链路，才会从“看过”变成可执行资产。</blockquote>
+
+            <section class="note-section" data-od-id="preview-argument">
+              <h2>1. 阅读不是收集，而是建证据</h2>
+              <p>参考图的核心气质是“编辑与预览同时存在”。这里保留双栏阅读：左侧像 Markdown 编辑器，右侧像 Live Preview。</p>
+              <ul>
+                <li>可读内容保持长线阅读节奏。</li>
+                <li>关键判断以紫晶 callout 固定在视觉中心。</li>
+                <li>证据生成放在预览侧，贴近真实工作流。</li>
+              </ul>
+            </section>
+
+            <section class="evidence-panel" data-od-id="evidence-draft-panel">
+              <div class="pane-head" style="padding:0 0 12px;border-bottom:0;">
+                <div>
+                  <p class="eyebrow">Evidence Draft</p>
+                  <h2 style="margin:0;font-size:20px;">证据卡草稿</h2>
+                </div>
+                <span class="status-pill" id="readStatus">in-progress</span>
+              </div>
+              <label class="eyebrow" for="noteInput">阅读摘记</label>
+              <textarea id="noteInput" data-od-id="note-input">这段内容说明：知识只有进入项目和复盘链路，才会成为可执行资产。</textarea>
+              <button class="primary-btn" id="generateCard" type="button" data-od-id="generate-evidence-card" style="margin-top:10px;">生成证据卡</button>
+              <div class="card-preview" id="cardPreview" role="status" aria-live="polite" data-od-id="card-preview">证据卡草稿会显示在这里。</div>
+            </section>
+
+            <div class="flow-card" data-od-id="compound-flow-card">
+              <div>
+                <div class="crystal" aria-hidden="true"></div>
+                <p class="flow-label">阅读片段</p>
+              </div>
+              <div class="flow-arrow" aria-hidden="true">→</div>
+              <div>
+                <div class="mini-graph" aria-hidden="true" style="height:76px;margin:0;"></div>
+                <p class="flow-label">Project Atlas 证据网络</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="right-rail" data-od-id="right-rail">
+        <div class="rail-tabs" role="tablist" aria-label="右侧面板">
+          <button class="rail-tab active" type="button" role="tab" aria-selected="true" data-panel="outline" data-od-id="tab-outline">Outline</button>
+          <button class="rail-tab" type="button" role="tab" aria-selected="false" data-panel="backlinks" data-od-id="tab-backlinks">Backlinks</button>
+          <button class="rail-tab" type="button" role="tab" aria-selected="false" data-panel="properties" data-od-id="tab-properties">Properties</button>
+        </div>
+
+        <div class="rail-body">
+          <section class="rail-panel active" id="panel-outline" data-od-id="panel-outline">
+            <div class="outline-list">
+              <div class="outline-item active">1. 阅读不是收集，而是建证据</div>
+              <div class="outline-item">2. 四段归档链路</div>
+              <div class="outline-item indent">2.1 提炼概念</div>
+              <div class="outline-item indent">2.2 写成证据</div>
+              <div class="outline-item">3. Key Idea</div>
+              <div class="outline-item">4. Evidence Draft</div>
+              <div class="outline-item">5. Project Atlas 证据网络</div>
+            </div>
+          </section>
+
+          <section class="rail-panel" id="panel-backlinks" data-od-id="panel-backlinks">
+            <div class="mentions">
+              <article class="mention"><strong>2026-07-04 Daily Log</strong><br />今天的课程阅读已经进入证据卡草稿，等待矩阵复核。</article>
+              <article class="mention"><strong>Project Atlas</strong><br />将“阅读片段 → 项目判断”的链路作为 KnowledgeOS 的核心视图。</article>
+              <article class="mention"><strong>Evidence Matrix</strong><br />当前卡片可归入“课程阅读 / Obsidian 迁移”交叉区域。</article>
+            </div>
+          </section>
+
+          <section class="rail-panel" id="panel-properties" data-od-id="panel-properties">
+            <div class="props">
+              <div class="prop-row"><strong>aliases</strong><span>TALOS Course Reading</span></div>
+              <div class="prop-row"><strong>type</strong><span>course-note</span></div>
+              <div class="prop-row"><strong>status</strong><span class="status-pill" id="propertyStatus">in-progress</span></div>
+              <div class="prop-row"><strong>source</strong><span>Vault Markdown</span></div>
+              <div class="prop-row"><strong>target</strong><span id="commandTarget">Evidence Card</span></div>
+              <div class="prop-row"><strong>next</strong><span id="commandNext">生成证据卡并进入矩阵</span></div>
+            </div>
+          </section>
+        </div>
+        <div class="rail-footer">
+          <span>Unlinked mentions</span>
+          <strong>3</strong>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="statusbar" data-od-id="workspace-statusbar">
+      <div class="status-left">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Live Preview</span>
+        <span id="commandSegment">知识资产化</span>
+      </div>
+      <div class="status-right">
+        <span>1,273 words</span>
+        <span>8,842 characters</span>
+        <span>0 backlinks</span>
+        <span>Graph</span>
+        <span>Aa</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const panelTabs = Array.from(document.querySelectorAll(".rail-tab"));
+    const railPanels = Array.from(document.querySelectorAll(".rail-panel"));
+
+    panelTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.panel;
+        panelTabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-selected", String(active));
+        });
+        railPanels.forEach((panel) => {
+          panel.classList.toggle("active", panel.id === `panel-${target}`);
+        });
+      });
+    });
+
+    document.getElementById("markDone").addEventListener("click", () => {
+      document.getElementById("readStatus").textContent = "completed";
+      document.getElementById("propertyStatus").textContent = "completed";
+      document.getElementById("commandSegment").textContent = "阅读已完成";
+      document.getElementById("commandNext").textContent = "进入证据矩阵复核";
+    });
+
+    document.getElementById("generateCard").addEventListener("click", () => {
+      const input = document.getElementById("noteInput").value.trim();
+      const preview = document.getElementById("cardPreview");
+      const button = document.getElementById("generateCard");
+      if (!input) {
+        preview.style.borderColor = "color-mix(in oklch, var(--warn) 62%, transparent)";
+        document.getElementById("commandNext").textContent = "先补充阅读摘记";
+        preview.textContent = "请先写入阅读摘记，再生成证据卡。";
+        return;
+      }
+      button.classList.add("is-loading");
+      button.setAttribute("aria-busy", "true");
+      preview.style.borderColor = "";
+      document.getElementById("commandNext").textContent = "正在生成证据卡";
+      preview.textContent = "正在整理 Evidence Card 草稿...";
+      window.setTimeout(() => {
+        preview.textContent = `Evidence Card 草稿：${input} 归档建议：写入 Vault Markdown frontmatter，并同步到证据矩阵等待复核。`;
+        document.getElementById("commandTarget").textContent = "Evidence Card 草稿";
+        document.getElementById("commandNext").textContent = "进入证据矩阵复核";
+        button.classList.remove("is-loading");
+        button.removeAttribute("aria-busy");
+      }, 420);
+    });
+  </script>
+</body>
+</html>

@@ -1,25 +1,31 @@
-# Local/private Obsidian data
+# Obsidian-Assistance cloud hygiene
+# The GitHub repo is the parent directory, containing backend + frontend subdirectories.
+
+# Local/private Obsidian vault data
 .obsidian/
 .smart-env/
+**/.smart-env/
 *.ajson
-*.canvas
-!examples/v4-demo-course/*.canvas
 
-# Generated project outputs
+# Generated outputs / caches
 outputs/
 work/
 temp/
 cache/
-.ci-v4-demo/
-.ci-v4-spec-demo/
-.ci-v4-report/
-reports/generate-course-pack-report.json
+**/outputs/
+**/work/
+**/temp/
+**/cache/
+**/.ci-v4-demo/
+**/.ci-v4-spec-demo/
+**/.ci-v4-report/
+**/reports/generate-course-pack-report.json
 *.sqlite
 *.db
 *.log
 *.bak*
 
-# Course/source materials
+# Course/source materials and large archive dumps
 *.mp3
 *.mp4
 *.m4a
@@ -44,16 +50,23 @@ transcripts/
 ocr/
 asr/
 pdf_pages/
+**/transcripts/
+**/ocr/
+**/asr/
+**/pdf_pages/
 
-# Python
+# Python / Node / editor
 __pycache__/
 *.pyc
 .venv/
 venv/
-
-# OS/editor
+node_modules/
+dist/
+build/
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 
+# Local Open Design runtime/cache skills, not project source
+**/.od-skills/

@@ -1,0 +1,26 @@
+{
+  "kind": "critique-panel",
+  "score": 4,
+  "axes": {
+    "clarity": {
+      "score": 4,
+      "notes": "页面已从单页阅读区升级为 Obsidian 式工作台，Vault、双栏阅读、右侧面板和状态栏关系清楚。"
+    },
+    "hierarchy": {
+      "score": 4,
+      "notes": "顶部标签、左侧文件树、中间主阅读、右侧 Outline/Properties 形成接近参考图的视觉层级。"
+    },
+    "typography": {
+      "score": 4,
+      "notes": "标题、标签、正文和代码块使用分层字体与字距，贴近 Obsidian 阅读密度。"
+    },
+    "motion": {
+      "score": 3,
+      "notes": "保留轻量交互：右侧面板切换、证据卡生成、完成状态更新，没有加入干扰阅读的动效。"
+    },
+    "brand": {
+      "score": 4,
+      "notes": "紫晶暗色、玻璃边框、微光图谱和 Obsidian 工作区壳层已对齐参考图。"
+    }
+  }
+}

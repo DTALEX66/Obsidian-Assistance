@@ -1,0 +1,33 @@
+<svg width="520" height="180" viewBox="0 0 520 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">阅读到结果流程图</title>
+  <desc id="desc">紫晶、箭头和知识图谱组成的阅读流程图。</desc>
+  <defs>
+    <linearGradient id="arrow" x1="180" y1="90" x2="330" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7C4FF"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="gem" x1="74" y1="38" x2="128" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6D7FF"/>
+      <stop offset="0.48" stop-color="#9D6CFF"/>
+      <stop offset="1" stop-color="#2B1A55"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="518" height="178" rx="18" fill="#151324" fill-opacity="0.88" stroke="#B99DFF" stroke-opacity="0.18"/>
+  <path d="M102 36L136 56L148 104L102 148L56 104L68 56L102 36Z" fill="url(#gem)" stroke="#D7C4FF" stroke-opacity="0.45"/>
+  <path d="M68 56L102 78L136 56M56 104L102 78L148 104M102 78V148" stroke="#F4EEFF" stroke-opacity="0.25"/>
+  <path d="M190 90H326" stroke="url(#arrow)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M314 78L326 90L314 102" stroke="#D7C4FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#8F6BFF" stroke-opacity="0.34">
+    <path d="M375 104L416 70L466 96L438 132L375 104Z"/>
+    <path d="M416 70L438 132M466 96L416 70M375 104L438 132"/>
+  </g>
+  <g fill="#D7C4FF">
+    <circle cx="375" cy="104" r="4"/>
+    <circle cx="416" cy="70" r="4"/>
+    <circle cx="466" cy="96" r="4"/>
+    <circle cx="438" cy="132" r="4"/>
+  </g>
+  <text x="102" y="164" text-anchor="middle" fill="#B9AFD4" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12">Tiny improvements</text>
+  <text x="258" y="72" text-anchor="middle" fill="#D7C4FF" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13" font-weight="600">compound</text>
+  <text x="422" y="164" text-anchor="middle" fill="#B9AFD4" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12">Remarkable results</text>
+</svg>
