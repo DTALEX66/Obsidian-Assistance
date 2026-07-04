@@ -60,6 +60,13 @@ def test_audit_does_not_skip_unrelated_same_named_audit_script(tmp_path):
     assert "dangerous_delete_logic" in issues_for(tmp_path)
 
 
+def test_audit_does_not_skip_nested_backend_named_audit_script(tmp_path):
+    bad = tmp_path / "archive" / "Obsidian - Backend Assistance" / "scripts" / "v4" / "obsidian_v4_audit.py"
+    bad.parent.mkdir(parents=True)
+    bad.write_text("import shutil\nshutil.rmtree('somewhere')\n", encoding="utf-8")
+    assert "dangerous_delete_logic" in issues_for(tmp_path)
+
+
 def test_audit_flags_tracked_obsidian_runtime_paths(tmp_path):
     snippet = tmp_path / "pack" / ".obsidian" / "snippets" / "demo.css"
     snippet.parent.mkdir(parents=True)
