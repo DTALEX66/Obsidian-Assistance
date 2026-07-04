@@ -14,10 +14,7 @@ FORBIDDEN_EXT = {
 }
 FORBIDDEN_DIR_NAMES = {".obsidian", ".smart-env"}
 FORBIDDEN_FILE_SUFFIXES = (".artifact.json",)
-SELF_AUDIT_SCRIPT_RELS = {
-    "scripts/v4/obsidian_v4_audit.py",
-    "Obsidian - Backend Assistance/scripts/v4/obsidian_v4_audit.py",
-}
+SELF_AUDIT_SCRIPT = Path(__file__).resolve()
 CODE_EXT = {".py", ".ps1", ".sh", ".bash", ".cmd", ".bat", ".yml", ".yaml"}
 SECRET_RE = re.compile(
     r"(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|"
@@ -40,9 +37,16 @@ def rel_parts(rel: str) -> tuple[str, ...]:
     return PurePosixPath(rel).parts
 
 
+def is_self_audit_script(path: Path) -> bool:
+    try:
+        return path.resolve() == SELF_AUDIT_SCRIPT
+    except OSError:
+        return False
+
+
 def should_scan_dangerous_delete(rel: str, path: Path) -> bool:
     parts = rel_parts(rel)
-    if rel in SELF_AUDIT_SCRIPT_RELS:
+    if is_self_audit_script(path):
         return False
     if "tests" in parts:
         return False
