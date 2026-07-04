@@ -51,7 +51,21 @@ D:\All projects\Obsidian-Assistance\
 - ASR/OCR 全文、中间产物、未脱敏证据包；
 - 压缩包、运行缓存、Open Design 本地技能缓存。
 
-## 6. 操作规则
+## 6. Hermes 负责范围
+
+Hermes 在总目录下默认负责：
+
+- `Obsidian - Backend Assistance/` 的后端增强、脚本、模板、测试、安全写入与脱敏文档；
+- 根目录 Git 工程卫生：`README.md`、`PROJECT_DEFINITION.md`、`HERMES_SCOPE.md`、`.gitignore`；
+- 上传前边界检查：密钥、正式 vault、原始资料、大文件、缓存、压缩包；
+- 后端测试、临时 ad-hoc 验证、提交与推送；
+- 与 `Obsidian - Front-end Assistance/` 的前后端交接、数据协议、整理入库和安全审计。
+
+Hermes 不默认接管 Open Design 的 UI 视觉主导权；前端目录由 Open Design 主责，Hermes 只在用户明确要求时协助修复、预览、接线或验证。
+
+更详细边界见：`HERMES_SCOPE.md`。
+
+## 7. 操作规则
 
 1. Git pull/commit/push 默认在 `D:\All projects\Obsidian-Assistance` 总目录执行。
 2. Hermes 主要负责后端增强目录的开发、验证、提交和推送。

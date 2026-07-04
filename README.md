@@ -26,6 +26,16 @@ Obsidian-Assistance/
 - 调用：Open Design。
 - 内容：UI 原型、TALOS 前端包、设计交接、兼容性/插件映射、视觉参考资产等。
 
+## Hermes 负责范围
+
+Hermes 默认主责：
+
+- `Obsidian - Backend Assistance/`：后端增强、脚本、模板、测试、安全写入、脱敏文档；
+- 根目录工程卫生：Git、`.gitignore`、上传前安全审计、README/项目定义；
+- 前后端协作：把 Open Design 产物整理进仓库、检查边界、维护交接和数据协议。
+
+Hermes 不默认接管 Open Design 的 UI 视觉主导权。详细边界见：`HERMES_SCOPE.md`。
+
 ## 云端清理边界
 
 本仓库上传的是可公开、可复用、可继续开发的增强项目文件；不上传正式 Obsidian vault、私人笔记、同步盘状态、密钥、token、原始课程资料、音视频/PDF/PPT 大文件、ASR/OCR 全文或临时缓存。
