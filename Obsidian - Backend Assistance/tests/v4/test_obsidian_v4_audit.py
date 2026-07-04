@@ -1,6 +1,7 @@
 from pathlib import Path
 
-from scripts.v4.obsidian_v4_audit import audit
+from scripts.v4 import obsidian_v4_audit
+from scripts.v4.obsidian_v4_audit import audit, should_scan_dangerous_delete
 
 
 def issues_for(root):
@@ -27,11 +28,7 @@ def test_audit_allows_safe_text(tmp_path):
     assert result["issues"] == []
 
 
-def test_audit_skips_own_script_and_tests_from_nested_repo_root(tmp_path):
-    audit_script = tmp_path / "Obsidian - Backend Assistance" / "scripts" / "v4" / "obsidian_v4_audit.py"
-    audit_script.parent.mkdir(parents=True)
-    audit_script.write_text("DANGEROUS_DELETE_RE = 'rm -rf'\n", encoding="utf-8")
-
+def test_audit_skips_tests_from_nested_repo_root(tmp_path):
     test_file = tmp_path / "Obsidian - Backend Assistance" / "tests" / "v4" / "test_obsidian_v4_audit.py"
     test_file.parent.mkdir(parents=True)
     test_file.write_text("def test_example():\n    assert 'rm -rf'\n", encoding="utf-8")
@@ -65,6 +62,13 @@ def test_audit_does_not_skip_nested_backend_named_audit_script(tmp_path):
     bad.parent.mkdir(parents=True)
     bad.write_text("import shutil\nshutil.rmtree('somewhere')\n", encoding="utf-8")
     assert "dangerous_delete_logic" in issues_for(tmp_path)
+
+
+def test_audit_skips_actual_script_by_resolved_path_not_relative_name():
+    script = Path(obsidian_v4_audit.__file__)
+    rel_from_parent_audit_root = "Obsidian-Assistance/Obsidian - Backend Assistance/scripts/v4/obsidian_v4_audit.py"
+
+    assert should_scan_dangerous_delete(rel_from_parent_audit_root, script) is False
 
 
 def test_audit_flags_tracked_obsidian_runtime_paths(tmp_path):
