@@ -47,6 +47,19 @@ def test_audit_flags_open_design_artifact_metadata(tmp_path):
     assert "open_design_artifact_metadata" in issues_for(tmp_path)
 
 
+def test_audit_flags_open_design_artifact_metadata_case_insensitive(tmp_path):
+    artifact = tmp_path / "preview.HTML.ARTIFACT.JSON"
+    artifact.write_text('{"tool": "open-design"}\n', encoding="utf-8")
+    assert "open_design_artifact_metadata" in issues_for(tmp_path)
+
+
+def test_audit_does_not_skip_unrelated_same_named_audit_script(tmp_path):
+    bad = tmp_path / "other_project" / "scripts" / "v4" / "obsidian_v4_audit.py"
+    bad.parent.mkdir(parents=True)
+    bad.write_text("import shutil\nshutil.rmtree('somewhere')\n", encoding="utf-8")
+    assert "dangerous_delete_logic" in issues_for(tmp_path)
+
+
 def test_audit_flags_tracked_obsidian_runtime_paths(tmp_path):
     snippet = tmp_path / "pack" / ".obsidian" / "snippets" / "demo.css"
     snippet.parent.mkdir(parents=True)
