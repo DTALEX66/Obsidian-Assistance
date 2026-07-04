@@ -2,7 +2,14 @@
 
 一个用于辅助本地 Obsidian 知识库的工具与流程项目。
 
-本仓库只保存 **Obsidian 辅助工具、流程规范、脚本模板和本地核验模块**，不保存正式 Obsidian vault、原始课程资料、音视频转写、OCR 全文、私人笔记或同步盘内容。
+## 项目归类
+
+- **GitHub 云端仓库**：`DTALEX66/Obsidian-Assistance`
+- **本地后端增强工作区**：`D:\All projects\Obsidian-Assistance\Obsidian - Backend Assistance`
+- **归属定义**：本云端仓库只归属于 **Obsidian 后端增强**，由 Hermes 调用、开发、验证和推送。
+- **前端/UI 工作区**：`D:\All projects\Obsidian-Assistance\Obsidian - Front-end Assistance` 是本地 Open Design UI 增强工作区，不属于本 Git 仓库的提交范围；如需云端管理，应另行定义独立前端仓库或后续再迁移。
+
+本仓库只保存 **Obsidian 后端辅助工具、流程规范、脚本模板、本地核验模块和脱敏交接文档**，不保存正式 Obsidian vault、原始课程资料、音视频转写、OCR 全文、私人笔记或同步盘内容。
 
 ## 目标
 
@@ -52,6 +59,7 @@ tests/v4/                           V4 回归测试与安全边界测试
 tests/v5/                           V5 KnowledgeOS 模板/CSS/参考资产测试
 .github/workflows/v4-validation.yml GitHub Actions 自动验证
 docs/
+  project-definition.md              项目归类：云端仓库只归属后端增强，前端为本地 Open Design 工作区
   data-boundary.md                  数据边界与防外溢规则
   pipeline-acceleration.md          加速转化与状态机方案
   pipeline-v2-full-flow.md          课程处理全流程规范
