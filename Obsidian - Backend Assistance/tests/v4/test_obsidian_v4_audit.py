@@ -25,3 +25,30 @@ def test_audit_allows_safe_text(tmp_path):
     result = audit(tmp_path)
     assert result["ok"] is True
     assert result["issues"] == []
+
+
+def test_audit_skips_own_script_and_tests_from_nested_repo_root(tmp_path):
+    audit_script = tmp_path / "Obsidian - Backend Assistance" / "scripts" / "v4" / "obsidian_v4_audit.py"
+    audit_script.parent.mkdir(parents=True)
+    audit_script.write_text("DANGEROUS_DELETE_RE = 'rm -rf'\n", encoding="utf-8")
+
+    test_file = tmp_path / "Obsidian - Backend Assistance" / "tests" / "v4" / "test_obsidian_v4_audit.py"
+    test_file.parent.mkdir(parents=True)
+    test_file.write_text("def test_example():\n    assert 'rm -rf'\n", encoding="utf-8")
+
+    result = audit(tmp_path)
+    assert result["ok"] is True
+    assert result["issues"] == []
+
+
+def test_audit_flags_open_design_artifact_metadata(tmp_path):
+    artifact = tmp_path / "index.html.artifact.json"
+    artifact.write_text('{"tool": "open-design"}\n', encoding="utf-8")
+    assert "open_design_artifact_metadata" in issues_for(tmp_path)
+
+
+def test_audit_flags_tracked_obsidian_runtime_paths(tmp_path):
+    snippet = tmp_path / "pack" / ".obsidian" / "snippets" / "demo.css"
+    snippet.parent.mkdir(parents=True)
+    snippet.write_text("body {}\n", encoding="utf-8")
+    assert "obsidian_runtime_path" in issues_for(tmp_path)

@@ -1,0 +1,72 @@
+name: Repository Validation
+
+on:
+  push:
+    branches:
+      - main
+      - 'fix/**'
+      - 'ci/**'
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  repo-validation:
+    name: Tests and cloud-boundary audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile backend Python scripts
+        working-directory: Obsidian - Backend Assistance
+        run: |
+          python -m py_compile scripts/*.py scripts/v4/*.py pytest.py
+
+      - name: Run backend tests
+        working-directory: Obsidian - Backend Assistance
+        run: |
+          python -m pytest tests -q
+
+      - name: Run backend scoped audit
+        working-directory: Obsidian - Backend Assistance
+        run: |
+          python scripts/v4/obsidian_v4_audit.py .
+
+      - name: Run repository root cloud-boundary audit
+        run: |
+          python "Obsidian - Backend Assistance/scripts/v4/obsidian_v4_audit.py" .
+
+      - name: Block tracked generated archives, artifact metadata, runtime vault paths, and large files
+        shell: bash
+        run: |
+          set -euo pipefail
+          forbidden=$(git ls-files '*.zip' '*.artifact.json' '*.mp4' '*.pdf' '*.pptx' '*.sqlite' '*.db' '.obsidian/*' '**/.obsidian/*' '*/.obsidian/*' || true)
+          if [ -n "$forbidden" ]; then
+            echo "Forbidden tracked files detected:"
+            echo "$forbidden"
+            exit 1
+          fi
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          large = []
+          for line in subprocess.check_output(['git', 'ls-files'], text=True).splitlines():
+              path = Path(line)
+              if path.exists() and path.is_file() and path.stat().st_size > 1_000_000:
+                  large.append(f"{line}\t{path.stat().st_size} bytes")
+          if large:
+              print('Tracked files over 1MB are not allowed in this helper repository:')
+              print('\n'.join(large))
+              raise SystemExit(1)
+          print('No forbidden tracked files or large files found.')
+          PY
