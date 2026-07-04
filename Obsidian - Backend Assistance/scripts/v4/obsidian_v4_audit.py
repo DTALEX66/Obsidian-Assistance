@@ -6,12 +6,14 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 FORBIDDEN_EXT = {
     ".mp3", ".mp4", ".wav", ".flac", ".ape", ".m4a", ".mov", ".avi", ".mkv",
     ".pdf", ".ppt", ".pptx", ".zip", ".rar", ".7z", ".sqlite",
 }
+FORBIDDEN_DIR_NAMES = {".obsidian", ".smart-env"}
+FORBIDDEN_FILE_SUFFIXES = (".artifact.json",)
 CODE_EXT = {".py", ".ps1", ".sh", ".bash", ".cmd", ".bat", ".yml", ".yaml"}
 SECRET_RE = re.compile(
     r"(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|"
@@ -30,10 +32,15 @@ def is_code_file(path: Path) -> bool:
     return path.suffix.lower() in CODE_EXT or path.name in {"Dockerfile", "Makefile"}
 
 
+def rel_parts(rel: str) -> tuple[str, ...]:
+    return PurePosixPath(rel).parts
+
+
 def should_scan_dangerous_delete(rel: str, path: Path) -> bool:
-    if rel == "scripts/v4/obsidian_v4_audit.py":
+    parts = rel_parts(rel)
+    if rel.endswith("scripts/v4/obsidian_v4_audit.py"):
         return False
-    if rel.startswith("tests/"):
+    if "tests" in parts:
         return False
     return is_code_file(path)
 
@@ -44,8 +51,13 @@ def audit(root: Path):
         if ".git" in p.parts or "__pycache__" in p.parts:
             continue
         rel = p.relative_to(root).as_posix()
+        parts = rel_parts(rel)
         if p.is_file() and p.suffix.lower() in FORBIDDEN_EXT:
             issues.append({"file": rel, "issue": "forbidden_ext"})
+        if p.is_file() and p.name.endswith(FORBIDDEN_FILE_SUFFIXES):
+            issues.append({"file": rel, "issue": "open_design_artifact_metadata"})
+        if p.is_file() and any(part in FORBIDDEN_DIR_NAMES for part in parts):
+            issues.append({"file": rel, "issue": "obsidian_runtime_path"})
         if p.is_file() and p.stat().st_size <= 1_000_000:
             text = p.read_text(encoding="utf-8", errors="ignore")
             if SECRET_RE.search(text):
