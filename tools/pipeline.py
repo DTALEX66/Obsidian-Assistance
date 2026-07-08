@@ -108,6 +108,15 @@ def handle_text(path: Path, out_dir: Path) -> Optional[Path]:
         pass
     return None
 
+# === 全局模型缓存（单例加载，避免重复下载） ===
+_MODELS = {}
+
+def get_asr_model():
+    if 'asr' not in _MODELS:
+        from funasr import AutoModel
+        _MODELS['asr'] = AutoModel(model='iic/SenseVoiceSmall', device='cpu', disable_pbar=True, disable_update=True)
+    return _MODELS['asr']
+
 @register('.mp4')
 @register('.mov')
 @register('.mkv')
@@ -126,8 +135,7 @@ def handle_video(path: Path, out_dir: Path) -> Optional[Path]:
         if r.returncode != 0 or not wav.exists():
             return None
         
-        from funasr import AutoModel
-        model = AutoModel(model='iic/SenseVoiceSmall', device='cpu', disable_pbar=True, disable_update=True)
+        model = get_asr_model()
         result = model.generate(input=str(wav), language='zh', use_itn=True)
         text = result[0]['text'] if result else ''
         if text.strip():
