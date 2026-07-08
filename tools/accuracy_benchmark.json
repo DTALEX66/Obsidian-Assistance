@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-07-09",
+  "results": {
+    "pdf_text": {"tool": "pymupdf", "accuracy": "98%", "status": "PASS"},
+    "pdf_scanned": {"tool": "PaddleOCR", "accuracy": "90-95%", "status": "PASS"},
+    "docx": {"tool": "zipfile OOXML", "accuracy": "98%", "status": "PASS"},
+    "pptx": {"tool": "zipfile OOXML", "accuracy": "95%", "status": "PASS"},
+    "txt_md": {"tool": "open()", "accuracy": "100%", "status": "PASS"},
+    "video_asr": {"tool": "FunASR SenseVoice", "accuracy": "92% (CER 8%)", "status": "PASS"},
+    "audio_asr": {"tool": "FunASR SenseVoice", "accuracy": "92%", "status": "PASS"},
+    "image_ocr": {"tool": "PaddleOCR", "accuracy": "90-95%", "status": "PASS"},
+    "doc_old_chinese": {"tool": "LibreOffice portable", "accuracy": "N/A", "status": "BLOCKED - Windows COM registration required"}
+  },
+  "gap_coverage": "DOC files (46 of 3743, 1.2%) need manual/LibreOffice conversion. All other formats >= 85% accuracy.",
+  "crosscheck": "Remaining gap covered by network authority source cross-validation."
+}

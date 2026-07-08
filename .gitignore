@@ -77,3 +77,5 @@ Thumbs.db
 
 # Local Open Design runtime/cache skills, not project source
 **/.od-skills/
+*.paf.exe
+tools/libreoffice_portable/

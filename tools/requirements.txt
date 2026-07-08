@@ -1,0 +1,25 @@
+# OCR 引擎
+paddlepaddle>=3.0
+paddleocr>=3.7
+pytesseract
+pdf2image
+
+# ASR 引擎
+funasr>=1.3
+faster-whisper
+torch>=2.0
+torchaudio
+
+# 文档处理
+pymupdf
+python-pptx
+python-docx
+olefile
+
+# 精度验证
+jiwer
+Levenshtein
+
+# 网络交叉验证
+trafilatura
+beautifulsoup4
