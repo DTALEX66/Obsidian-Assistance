@@ -16,9 +16,9 @@
 | PDF 文字型 | pymupdf | 98% | ✅ 98% | - |
 | PDF 扫描型 | PaddleOCR | 90% | 待测 | Tesseract 备用 |
 | DOCX | zipfile OOXML | 98% | ✅ 98% | - |
-| DOC 新格式 | antiword | 90% | ✅ 90% | - |
-| DOC 老中文 | LibreOffice | 85% | ❌ 不可用 | 需解决安装 |
-| PPTX | zipfile OOXML | 95% | ✅ 95% | - |
+| DOC 新格式 | pandoc + antiword | 90% | ✅ |
+| DOC 老中文 | antiword (已知限制) | 50% | ⚠️ 需手动/LibreOffice |
+| PPTX | zipfile OOXML | 95% | ✅ |
 | TXT/MD | open() | 100% | ✅ 100% | - |
 | 视频 ASR | FunASR SenseVoice | 92% (CER<8%) | ✅ | 网络交叉验证 |
 | 音频 ASR | FunASR SenseVoice | 92% | ✅ | 网络交叉验证 |

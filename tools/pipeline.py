@@ -61,19 +61,47 @@ def handle_pdf(path: Path, out_dir: Path) -> Optional[Path]:
     return None
 
 @register('.docx')
+@register('.doc')
 def handle_docx(path: Path, out_dir: Path) -> Optional[Path]:
+    """DOCX 用 pandoc 转换，DOC 尝试 antiword/pandoc"""
+    out = out_dir / f'{path.stem}.md'
+    if out.exists():
+        return out
+    
+    # Try pandoc first
     try:
-        import zipfile
-        with zipfile.ZipFile(path) as z:
-            xml = z.read('word/document.xml').decode('utf-8', errors='ignore')
-        text = re.sub(r'<[^>]+>', '', xml)
-        text = re.sub(r'\s+', ' ', text).strip()
-        if text:
-            out = out_dir / f'{path.stem}.md'
-            out.write_text(f'# {path.stem}\n\n> 来源：{path.relative_to(DISK_ROOT)}\n\n{text[:8000]}', encoding='utf-8')
+        r = subprocess.run(['pandoc', str(path), '-t', 'markdown', '--wrap=none'],
+                         capture_output=True, text=True, timeout=60)
+        if r.returncode == 0 and r.stdout.strip():
+            out.write_text(f'# {path.stem}\n\n> pandoc\n\n{r.stdout[:8000]}', encoding='utf-8')
             return out
     except:
         pass
+    
+    # Fallback: zipfile for DOCX
+    if path.suffix.lower() == '.docx':
+        try:
+            import zipfile
+            with zipfile.ZipFile(path) as z:
+                xml = z.read('word/document.xml').decode('utf-8', errors='ignore')
+            text = re.sub(r'<[^>]+>', '', xml)
+            text = re.sub(r'\s+', ' ', text).strip()
+            if text:
+                out.write_text(f'# {path.stem}\n\n{text[:8000]}', encoding='utf-8')
+                return out
+        except:
+            pass
+    
+    # Fallback: antiword for .doc
+    if path.suffix.lower() == '.doc':
+        try:
+            r = subprocess.run(['antiword', str(path)], capture_output=True, text=True, timeout=30)
+            if r.returncode == 0 and r.stdout.strip():
+                out.write_text(f'# {path.stem}\n\n> antiword\n\n{r.stdout[:8000]}', encoding='utf-8')
+                return out
+        except:
+            pass
+    
     return None
 
 @register('.pptx')
