@@ -1,0 +1,102 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T16:11:23+00:00",
+  "course": "记忆圣经学习力合集",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 455,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 5,
+    "visual_sidecars": 5,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\8次世界冠军世界首席记忆大师秘诀\\大脑密码思维训练系统训练指导手册(1).pdf",
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\text\\01_大脑密码思维训练系统训练指导手册(1).txt",
+        "method": "pymupdf",
+        "chars": 4878,
+        "formal_overlap_terms": 4
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\8次世界冠军世界首席记忆大师秘诀\\大脑密码思维训练系统训练指导手册.pdf",
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\text\\02_大脑密码思维训练系统训练指导手册.txt",
+        "method": "pymupdf",
+        "chars": 4878,
+        "formal_overlap_terms": 4
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\--------记忆圣经-------\\记忆宫殿\\01礼包一 记忆宫殿全套资料\\05FBI教你破解身体语言.pdf",
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\text\\03_05FBI教你破解身体语言.txt",
+        "method": "pymupdf",
+        "chars": 1734,
+        "formal_overlap_terms": 2
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\--------记忆圣经-------\\记忆宫殿\\01礼包一 记忆宫殿全套资料\\10.风靡全球的快速记忆训练教程.pdf",
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\text\\04_10.风靡全球的快速记忆训练教程.txt",
+        "method": "pymupdf",
+        "chars": 813,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\王学贤全脑速读学习法\\王学贤全脑速读学习法\\王学贤速读课程精华(1).pdf",
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\text\\05_王学贤速读课程精华(1).txt",
+        "method": "pymupdf",
+        "chars": 1303,
+        "formal_overlap_terms": 1
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\visual\\01_大脑密码思维训练系统训练指导手册(1)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 43,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\8次世界冠军世界首席记忆大师秘诀\\大脑密码思维训练系统训练指导手册(1).pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\visual\\02_大脑密码思维训练系统训练指导手册_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 43,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\8次世界冠军世界首席记忆大师秘诀\\大脑密码思维训练系统训练指导手册.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\visual\\03_05FBI教你破解身体语言_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 75,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\--------记忆圣经-------\\记忆宫殿\\01礼包一 记忆宫殿全套资料\\05FBI教你破解身体语言.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\visual\\04_10.风靡全球的快速记忆训练教程_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 325,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\--------记忆圣经-------\\记忆宫殿\\01礼包一 记忆宫殿全套资料\\10.风靡全球的快速记忆训练教程.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\visual\\05_王学贤速读课程精华(1)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 2,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\王学贤全脑速读学习法\\王学贤全脑速读学习法\\王学贤速读课程精华(1).pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\记忆圣经学习力合集\\keyframes\\01_1轻松记忆古文(1).jpg",
+        "written": true,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆圣经\\记忆圣经更新拓展资料\\《考试不用记教程》\\1轻松记忆古文(1).wmv"
+      }
+    ],
+    "asr": []
+  }
+}

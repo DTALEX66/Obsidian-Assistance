@@ -1,0 +1,102 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T16:11:14+00:00",
+  "course": "新媒体高阶运营增长实战训练",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 182,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 5,
+    "visual_sidecars": 5,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\03.第二周-内容生产：如何生产高质量内容\\【瑞客论坛 www.ruike1.com】05.信息搜索-建立素材库.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\text\\01_【瑞客论坛_www.ruike1.com】05.信息搜索-建立素材库.txt",
+        "method": "pymupdf",
+        "chars": 211,
+        "formal_overlap_terms": 4
+      },
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\05.第四周-用户增长：打造增长的飞轮效应（上）\\【瑞客论坛 www.ruike1.com】03.KPI的拆解①.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\text\\02_【瑞客论坛_www.ruike1.com】03.KPI的拆解①.txt",
+        "method": "pymupdf",
+        "chars": 234,
+        "formal_overlap_terms": 4
+      },
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\03.第二周-内容生产：如何生产高质量内容\\【瑞客论坛 www.ruike1.com】04.系列选题.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\text\\03_【瑞客论坛_www.ruike1.com】04.系列选题.txt",
+        "method": "pymupdf",
+        "chars": 136,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\05.第四周-用户增长：打造增长的飞轮效应（上）\\【瑞客论坛 www.ruike1.com】【作业1】为健身号做营收指标拆解.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\text\\04_【瑞客论坛_www.ruike1.com】【作业1】为健身号做营收指标拆解.txt",
+        "method": "pymupdf",
+        "chars": 650,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\07.第六周-用户管理：提升用户ARPU\\【瑞客论坛 www.ruike1.com】00.导读.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\text\\05_【瑞客论坛_www.ruike1.com】00.导读.txt",
+        "method": "pymupdf",
+        "chars": 861,
+        "formal_overlap_terms": 3
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\visual\\01_【瑞客论坛_www.ruike1.com】05.信息搜索-建立素材库_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 2,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\03.第二周-内容生产：如何生产高质量内容\\【瑞客论坛 www.ruike1.com】05.信息搜索-建立素材库.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\visual\\02_【瑞客论坛_www.ruike1.com】03.KPI的拆解①_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 2,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\05.第四周-用户增长：打造增长的飞轮效应（上）\\【瑞客论坛 www.ruike1.com】03.KPI的拆解①.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\visual\\03_【瑞客论坛_www.ruike1.com】04.系列选题_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 1,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\03.第二周-内容生产：如何生产高质量内容\\【瑞客论坛 www.ruike1.com】04.系列选题.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\visual\\04_【瑞客论坛_www.ruike1.com】【作业1】为健身号做营收指标拆解_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 2,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\05.第四周-用户增长：打造增长的飞轮效应（上）\\【瑞客论坛 www.ruike1.com】【作业1】为健身号做营收指标拆解.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\visual\\05_【瑞客论坛_www.ruike1.com】00.导读_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 3,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\07.第六周-用户管理：提升用户ARPU\\【瑞客论坛 www.ruike1.com】00.导读.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体高阶运营增长实战训练\\keyframes\\01_【瑞客论坛_www.ruike1.com】01.新媒体人到底是做什么的？.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\01.导论-重新认知新媒体岗位\\【瑞客论坛 www.ruike1.com】01.新媒体人到底是做什么的？.mp4"
+      }
+    ],
+    "asr": []
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:19:30+00:00",
+  "course": "设计转岗运营加速版",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 44,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 0,
+    "visual_sidecars": 0,
+    "keyframes": 3,
+    "asr_transcripts": 2
+  },
+  "artifacts": {
+    "text": [],
+    "visual": [],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\设计转岗运营加速版\\keyframes\\01_01-「必听」先导课.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷丨人生加速-【设计转岗运营20加速版L1L2L3番外篇含转岗面试技巧方法默认班级】-129800圆-43节\\01-「必听」先导课.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计转岗运营加速版\\keyframes\\02_02-掌握基础文案知识.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷丨人生加速-【设计转岗运营20加速版L1L2L3番外篇含转岗面试技巧方法默认班级】-129800圆-43节\\02-掌握基础文案知识.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计转岗运营加速版\\keyframes\\03_03-文案写作三步法.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷丨人生加速-【设计转岗运营20加速版L1L2L3番外篇含转岗面试技巧方法默认班级】-129800圆-43节\\03-文案写作三步法.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\设计转岗运营加速版\\asr\\01-「必听」先导课_transcript.txt",
+        "written": true,
+        "segments": 51,
+        "language": "zh",
+        "duration": 120.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷丨人生加速-【设计转岗运营20加速版L1L2L3番外篇含转岗面试技巧方法默认班级】-129800圆-43节\\01-「必听」先导课.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计转岗运营加速版\\asr\\02-掌握基础文案知识_transcript.txt",
+        "written": true,
+        "segments": 1,
+        "language": "zh",
+        "duration": 16.4415625,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷丨人生加速-【设计转岗运营20加速版L1L2L3番外篇含转岗面试技巧方法默认班级】-129800圆-43节\\02-掌握基础文案知识.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计转岗运营加速版\\asr\\03-文案写作三步法_transcript.txt",
+        "written": false,
+        "segments": 0,
+        "language": "zh",
+        "duration": 0.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷丨人生加速-【设计转岗运营20加速版L1L2L3番外篇含转岗面试技巧方法默认班级】-129800圆-43节\\03-文案写作三步法.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  }
+}

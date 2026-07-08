@@ -1,0 +1,79 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:13:47+00:00",
+  "course": "设计师职业加速营",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 74,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 1,
+    "visual_sidecars": 0,
+    "keyframes": 3,
+    "asr_transcripts": 3
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\更多资源下载地址.txt",
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\text\\01_更多资源下载地址.txt",
+        "method": "text-read",
+        "chars": 54,
+        "formal_overlap_terms": 0
+      }
+    ],
+    "visual": [],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\keyframes\\01_10_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何处理职场上的竞争？.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\10_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何处理职场上的竞争？.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\keyframes\\02_11_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何和领导构建统一目标？.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\11_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何和领导构建统一目标？.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\keyframes\\03_12_「设计师的管理学课」—Basic-【入营必看】职场关系｜设计师如何和领导构建统一目标？.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\12_「设计师的管理学课」—Basic-【入营必看】职场关系｜设计师如何和领导构建统一目标？.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\asr\\10_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何处理职场上的竞争？_transcript.txt",
+        "written": true,
+        "segments": 21,
+        "language": "zh",
+        "duration": 90.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\10_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何处理职场上的竞争？.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\asr\\11_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何和领导构建统一目标？_transcript.txt",
+        "written": true,
+        "segments": 16,
+        "language": "zh",
+        "duration": 90.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\11_「设计师的管理学课」—Basic-【入营必看】职场关系｜如何和领导构建统一目标？.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\设计师职业加速营\\asr\\12_「设计师的管理学课」—Basic-【入营必看】职场关系｜设计师如何和领导构建统一目标？_transcript.txt",
+        "written": true,
+        "segments": 22,
+        "language": "zh",
+        "duration": 90.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\邢开捷-人生加速 年课设计师加速营【五期】\\12_「设计师的管理学课」—Basic-【入营必看】职场关系｜设计师如何和领导构建统一目标？.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  }
+}

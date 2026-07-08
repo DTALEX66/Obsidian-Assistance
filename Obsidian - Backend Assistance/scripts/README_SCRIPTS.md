@@ -105,6 +105,60 @@ python scripts/v9/oer_crosswalk_generator.py --vault "<formal-vault-path>" --cou
 python scripts/v9/oer_crosswalk_generator.py --vault "<formal-vault-path>" --course "<course-name>" --sample --apply --backup-dir "<external-backup-dir>"
 ```
 
+## V10 — Cognitive-Loop-OS 能力吸收
+
+| 脚本 | 作用 | 默认 |
+|---|---|---|
+| `scripts/v10/cognitive_vault_garden.py` | 吸收 Cognitive-Loop-OS 的 auto-tagging / backlinks / knowledge-gardener 思路，对 Obsidian vault 做只读知识花园审计、孤岛笔记发现、薄弱主题雷达、候选连接建议 | read-only |
+| `scripts/v10/obs_task_ledger.py` | 吸收 Cognitive-Loop-OS sleep-loop 的 SQLite 任务账本/真实证据规则，为 OBS 课程转化循环记录本地任务；虚拟/预览/dry-run 任务不能计入 done | local-only |
+| `scripts/v10/course_transform_ledger.py` | 扫描正式 vault 的课程页、`93_导入报告`、`99_附件` registry，生成“原始来源 → 扫描报告 → 生成资产 → registry → 课程页 → 下一步”总账，并可显式写入 V10 SQLite 任务账本 | read-only / explicit ledger write |
+| `scripts/v10/course_intake_adapter.py` | 吸收 Cognitive-Loop-OS multi-format ingestion 思路，统一扫描 PDF/DOCX/PPTX/HTML/图片/音视频源文件并懒加载可选转换引擎 | read-only / candidate-only |
+| `scripts/v10/obs_dataview_query.py` | 吸收 Dataview-like DSL，查询 `courses`/`tasks`/`sources` 三张只读虚拟表，支持 WHERE/SORT/LIMIT/LIST/TABLE | read-only |
+| `scripts/v10/course_fact_extractor.py` | 吸收 fact_extractor 思路并做中文课程适配，输出术语/事实/图谱边候选 | candidate-only |
+| `scripts/v10/course_pipeline_candidate.py` | 吸收 pipeline/cross_reference 思路，串联 tag/summarize/facts/credibility/crossref/fuse，输出 OBS-safe 候选 JSON | read-only / candidate-only |
+| `scripts/v10/obs_v10_index_exporter.py` | 把 V10 course/source/task 索引导出为前端/Bridge/Open Design 可消费的轻量 JSON | stdout by default / explicit write |
+| `scripts/v10/course_verification_audit.py` | 对全部课程执行本地转化多源交叉识别：正式页、原始源、二次文本抽取、报告、视觉资产、OER，未多源印证则 `needs_review` | read-only / conservative verification |
+| `scripts/v10/course_evidence_sidecar.py` | 为单门课程生成补证 sidecar：PDF 文本、PDF 源页图、视频关键帧、可选 faster-whisper ASR，不写正式正文 | sidecar evidence only |
+
+示例：
+
+```bash
+python scripts/v10/cognitive_vault_garden.py --vault "<formal-vault-path>" --include "02_课程库" --limit 30
+python scripts/v10/cognitive_vault_garden.py --vault "<formal-vault-path>" --include "02_课程库" --apply --output-dir "<report-output-dir>"
+
+python scripts/v10/obs_task_ledger.py init
+python scripts/v10/obs_task_ledger.py add --title "读取课程处理工作台" --executor file_read --payload "{\"path\":\"02_课程库/01_课程处理工作台.md\"}"
+python scripts/v10/obs_task_ledger.py summary
+
+python scripts/v10/course_transform_ledger.py --vault "<formal-vault-path>" --format markdown --limit 30
+python scripts/v10/course_transform_ledger.py --vault "<formal-vault-path>" --tasks --limit 10
+python scripts/v10/course_transform_ledger.py --vault "<formal-vault-path>" --tasks --seed-ledger --limit 10
+
+python scripts/v10/course_intake_adapter.py engines
+python scripts/v10/course_intake_adapter.py inventory "<source-root>" --limit 50
+python scripts/v10/course_intake_adapter.py convert "<source-file>"
+
+python scripts/v10/obs_dataview_query.py --vault "<formal-vault-path>" "FROM courses WHERE missing_count>0 SORT missing_count DESC LIMIT 10"
+python scripts/v10/obs_dataview_query.py "LIST course FROM tasks WHERE status='pending' LIMIT 10"
+python scripts/v10/obs_dataview_query.py --source-root "<source-root>" "TABLE relative_path, format FROM sources WHERE format='pdf' LIMIT 20"
+
+python scripts/v10/course_fact_extractor.py "<markdown-or-transcript-file>" --mode graph
+python scripts/v10/course_fact_extractor.py "<markdown-or-transcript-file>" --mode terms --limit 20
+
+python scripts/v10/course_pipeline_candidate.py text --text "RAG 依赖向量数据库和知识库检索。"
+python scripts/v10/course_pipeline_candidate.py file --root "<safe-root>" --path "<safe-root>/note.md"
+python scripts/v10/course_pipeline_candidate.py crossref --root "<safe-root>" --paths "<safe-root>/a.md" "<safe-root>/b.md"
+
+python scripts/v10/obs_v10_index_exporter.py --vault "<formal-vault-path>" --source-root "<source-root>" --limit 200
+python scripts/v10/obs_v10_index_exporter.py --vault "<formal-vault-path>" --source-root "<source-root>" --output-dir "<light-index-output-dir>"
+
+python scripts/v10/course_verification_audit.py --vault "<formal-vault-path>" --source-root "<source-root>" --sidecar-root docs/course-evidence-sidecars --format markdown --output "docs/course-local-verification-audit-YYYY-MM-DD.md"
+
+python scripts/v10/course_evidence_sidecar.py --course "<course>" --vault "<formal-vault-path>" --source-root "<source-root>" --output-root docs/course-evidence-sidecars --max-text-files 3 --max-media-files 1 --asr --asr-model tiny
+```
+
+边界：V10 建议全部是 `candidate-only`；脚本不修改课程正文、不读取原始媒体（除 `course_evidence_sidecar.py` 按单门课程显式读取少量源文件并写 helper repo sidecar 证据）。`obs_task_ledger.py` 默认把 SQLite 写到用户本地状态目录（`LOCALAPPDATA/obsidian-assistance/`），不进仓库、不启动守护进程、不提交/推送、不写正式 vault；`course_transform_ledger.py` 默认只读，只有 `--seed-ledger` 才写 SQLite 任务账本；`course_intake_adapter.py` 的 inventory 不包含文件正文，convert 只对指定文件执行且重型引擎懒加载；`obs_dataview_query.py` 只查询 V10 派生虚拟表；`course_fact_extractor.py` 和 `course_pipeline_candidate.py` 输出候选事实/术语/图谱边/融合摘要，必须人工或课程管线核验后才能写入正式页；`obs_v10_index_exporter.py` 默认只输出 stdout，只有显式 `--output-dir` 才写轻量 JSON；`course_verification_audit.py` 不声称绝对零错误，只有本地源、二次文本抽取、报告、视觉资产、OER 等多种证据互相印证时才标 `verified_by_available_methods`；`course_evidence_sidecar.py` 只写 `docs/course-evidence-sidecars/`，不修改正式课程正文；`echo`、`heartbeat`、`context_pack_build`、`taskpack_generate`、`preview`、`dry_run` 不能标记为真实完成。
+
 ## 旧 OCR / ASR 说明
 
 早期 01–06 PowerShell 流水线已不再是主入口。后续若恢复 OCR/ASR ingestion，应先生成 manifest / course spec，再接入 V4–V9 工具链；不得把转写全文、OCR 全文或原始媒体提交到云端仓库。

@@ -1,0 +1,74 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T16:11:22+00:00",
+  "course": "考试数学与学习方法",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 18364,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 5,
+    "visual_sidecars": 1,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\00_从服务器移动建议.md",
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\text\\01_00_从服务器移动建议.txt",
+        "method": "text-read",
+        "chars": 4572,
+        "formal_overlap_terms": 16
+      },
+      {
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\视频课程\\30天考霸训练营，北大博士后教你通关任何考试（完结）\\zfdev_tree.txt",
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\text\\02_zfdev_tree.txt",
+        "method": "text-read",
+        "chars": 3069,
+        "formal_overlap_terms": 4
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\宇宙没有光全案作业.pdf",
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\text\\03_宇宙没有光全案作业.txt",
+        "method": "pymupdf",
+        "chars": 1045,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\素材资产\\aiki007-视觉设计实战班5期【已完结】\\正式课素材\\第三课分享\\reeper204\\reeper_changelog.txt",
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\text\\04_reeper_changelog.txt",
+        "method": "text-read",
+        "chars": 450,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\素材资产\\aiki007-视觉设计实战班5期【已完结】\\正式课素材\\第三课分享\\拓扑插件-win\\QuadRemesher\\QuadRemesherEngine\\QuadRemesher_EULA.txt",
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\text\\05_QuadRemesher_EULA.txt",
+        "method": "text-read",
+        "chars": 6000,
+        "formal_overlap_terms": 1
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\visual\\01_宇宙没有光全案作业_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 38,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\宇宙没有光全案作业.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\考试数学与学习方法\\keyframes\\01_00【购课须知】-购买了课程的同学看过来#重点#（建议别发给顾客了）.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\文档资料\\30天考霸训练营，北大博士后教你通关任何考试，助你高分拿下证书、岗位、考试(2)\\01预热课\\00【购课须知】-购买了课程的同学看过来#重点#（建议别发给顾客了）.mp4"
+      }
+    ],
+    "asr": []
+  }
+}

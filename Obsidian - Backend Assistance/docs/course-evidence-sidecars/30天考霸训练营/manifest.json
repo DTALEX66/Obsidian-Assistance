@@ -1,0 +1,66 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T16:10:36+00:00",
+  "course": "30天考霸训练营",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 181,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 5,
+    "visual_sidecars": 0,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\视频课程\\30天考霸训练营，北大博士后教你通关任何考试（完结）\\zfdev_tree.txt",
+        "path": "docs\\course-evidence-sidecars\\30天考霸训练营\\text\\01_zfdev_tree.txt",
+        "method": "text-read",
+        "chars": 3069,
+        "formal_overlap_terms": 41
+      },
+      {
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\文档资料\\30天考霸训练营，北大博士后教你通关任何考试，助你高分拿下证书、岗位、考试(2)\\02正课\\Day01.txt",
+        "path": "docs\\course-evidence-sidecars\\30天考霸训练营\\text\\02_Day01.txt",
+        "method": "text-read",
+        "chars": 52,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\文档资料\\30天考霸训练营，北大博士后教你通关任何考试，助你高分拿下证书、岗位、考试(2)\\02正课\\Day05-直播答疑.txt",
+        "path": "docs\\course-evidence-sidecars\\30天考霸训练营\\text\\03_Day05-直播答疑.txt",
+        "method": "text-read",
+        "chars": 53,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\文档资料\\30天考霸训练营，北大博士后教你通关任何考试，助你高分拿下证书、岗位、考试(2)\\02正课\\Day08.txt",
+        "path": "docs\\course-evidence-sidecars\\30天考霸训练营\\text\\04_Day08.txt",
+        "method": "text-read",
+        "chars": 35,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\文档资料\\30天考霸训练营，北大博士后教你通关任何考试，助你高分拿下证书、岗位、考试(2)\\02正课\\Day19 直播答疑.txt",
+        "path": "docs\\course-evidence-sidecars\\30天考霸训练营\\text\\05_Day19_直播答疑.txt",
+        "method": "text-read",
+        "chars": 32,
+        "formal_overlap_terms": 0
+      }
+    ],
+    "visual": [],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\30天考霸训练营\\keyframes\\01_00【购课须知】-购买了课程的同学看过来#重点#（建议别发给顾客了）.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\08_考试数学与学习方法\\文档资料\\30天考霸训练营，北大博士后教你通关任何考试，助你高分拿下证书、岗位、考试(2)\\01预热课\\00【购课须知】-购买了课程的同学看过来#重点#（建议别发给顾客了）.mp4"
+      }
+    ],
+    "asr": []
+  }
+}

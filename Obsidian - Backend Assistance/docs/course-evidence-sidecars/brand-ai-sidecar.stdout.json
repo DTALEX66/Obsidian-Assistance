@@ -1,0 +1,77 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:30:37+00:00",
+  "course": "品牌全案AI设计实战班",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 8,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 2,
+    "visual_sidecars": 3,
+    "keyframes": 1,
+    "asr_transcripts": 1
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\云味缘全案提案_复制.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\01_云味缘全案提案_复制.txt",
+        "method": "pymupdf",
+        "chars": 1315
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\伊童-椰林甜舍全案.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\02_伊童-椰林甜舍全案.txt",
+        "method": "pymupdf",
+        "chars": 2627
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\01_08-吉玖_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 31,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\08-吉玖.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\02_云味缘全案提案_复制_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 36,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\云味缘全案提案_复制.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\03_伊童-椰林甜舍全案_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 33,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\伊童-椰林甜舍全案.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\keyframes\\01_第20节_AIGC辅助三维效果图输出.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\09.第九章 品牌全案+AIGC篇\\第20节 AIGC辅助三维效果图输出.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\asr\\第20节_AIGC辅助三维效果图输出_transcript.txt",
+        "written": true,
+        "segments": 1,
+        "language": "zh",
+        "duration": 19.8676875,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\09.第九章 品牌全案+AIGC篇\\第20节 AIGC辅助三维效果图输出.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  },
+  "manifest_path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\manifest.json"
+}

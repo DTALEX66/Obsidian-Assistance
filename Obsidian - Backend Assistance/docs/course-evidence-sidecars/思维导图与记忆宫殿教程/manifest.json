@@ -1,0 +1,71 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:45:11+00:00",
+  "course": "思维导图与记忆宫殿教程",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 342,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 3,
+    "visual_sidecars": 3,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\记忆大师教程\\教程(1).pdf",
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\text\\01_教程(1).txt",
+        "method": "pymupdf",
+        "chars": 50
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\记忆大师教程\\教程.pdf",
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\text\\02_教程.txt",
+        "method": "pymupdf",
+        "chars": 50
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\记忆大师教程\\附全部56幅彩图(1).pdf",
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\text\\03_附全部56幅彩图(1).txt",
+        "method": "pymupdf",
+        "chars": 50
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\visual\\01_教程(1)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 78,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\记忆大师教程\\教程(1).pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\visual\\02_教程_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 78,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\记忆大师教程\\教程.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\visual\\03_附全部56幅彩图(1)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 412,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\记忆大师教程\\附全部56幅彩图(1).pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\思维导图与记忆宫殿教程\\keyframes\\01_打造最强大脑一(1).jpg",
+        "written": true,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\思维导图教程\\叶瑞财打造最强大脑\\打造最强大脑一(1).flv"
+      }
+    ],
+    "asr": []
+  }
+}

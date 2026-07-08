@@ -1,0 +1,78 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:48:02+00:00",
+  "course": "生活策略与沟通",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 18364,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 3,
+    "visual_sidecars": 4,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\00_从服务器移动建议.md",
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\text\\01_00_从服务器移动建议.txt",
+        "method": "text-read",
+        "chars": 4572
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\KEKE-孔晨-UI系统全能班第3期【已完结】\\UI系统班资料汇总\\UI系统班资料汇总\\03图形设计篇\\04设计思维.pdf",
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\text\\02_04设计思维.txt",
+        "method": "pymupdf",
+        "chars": 86
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\KEKE-孔晨-UI系统全能班第3期【已完结】\\UI系统班资料汇总\\UI系统班资料汇总\\04用户界面\\10交互设计.pdf",
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\text\\03_10交互设计.txt",
+        "method": "pymupdf",
+        "chars": 387
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\visual\\01_品牌设计学习手册丨尚道设研第一版_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 30,
+        "source": "E:\\学习数据\\01_设计系统\\单文件文档\\品牌设计学习手册丨尚道设研第一版.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\visual\\02_视觉传达学习手册与避坑指南_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 72,
+        "source": "E:\\学习数据\\01_设计系统\\单文件文档\\视觉传达学习手册与避坑指南.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\visual\\03_04设计思维_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 23,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\KEKE-孔晨-UI系统全能班第3期【已完结】\\UI系统班资料汇总\\UI系统班资料汇总\\03图形设计篇\\04设计思维.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\visual\\04_10交互设计_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 12,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\KEKE-孔晨-UI系统全能班第3期【已完结】\\UI系统班资料汇总\\UI系统班资料汇总\\04用户界面\\10交互设计.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\生活策略与沟通\\keyframes\\01_VIP第01课教会你如何去正确的爱.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\06_生活策略与沟通\\视频课程\\2018年素云vip精英班恋爱课程\\VIP第01课教会你如何去正确的爱.mp4"
+      }
+    ],
+    "asr": []
+  }
+}

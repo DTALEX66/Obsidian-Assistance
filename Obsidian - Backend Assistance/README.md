@@ -51,6 +51,16 @@ scripts/
   v8/training_streak_radar.py            V8 训练复盘/连续打卡雷达，默认 dry-run
   v8/retro_summary_generator.py          V8 自动复盘汇总器，默认 dry-run
   v9/oer_crosswalk_generator.py          V9 OER/开放知识交叉对比页生成器，默认 dry-run
+  v10/cognitive_vault_garden.py          V10 吸收 Cognitive-Loop-OS 知识花园审计：auto-tagging/backlinks/gardener，只读
+  v10/obs_task_ledger.py                 V10 吸收 Cognitive-Loop-OS sleep-loop 真实任务账本：SQLite 本地任务、真实证据才能 done
+  v10/course_transform_ledger.py         V10 课程转化/处理产物总账：课程页+93报告+99附件registry → ledger任务
+  v10/course_intake_adapter.py           V10 课程源文件统一 intake：PDF/DOCX/PPTX/HTML/图片/音视频 manifest + 懒加载转换
+  v10/obs_dataview_query.py              V10 Dataview-like 只读查询：courses/tasks/sources 表过滤、排序、投影
+  v10/course_fact_extractor.py           V10 课程术语/事实/图谱候选抽取：中文适配，candidate-only
+  v10/course_pipeline_candidate.py       V10 OBS-safe 候选管道：tag/summarize/facts/crossref/fuse，不写库
+  v10/obs_v10_index_exporter.py          V10 前端/Bridge 轻量 JSON 索引导出器，默认 stdout
+  v10/course_verification_audit.py       V10 全课程本地转化多源核验：正式页+原始源+报告+视觉+OER
+  v10/course_evidence_sidecar.py         V10 课程补证 sidecar：PDF文本/源页图/关键帧/ASR 转写，不写正式正文
 templates/v4/                       V4 Markdown/Canvas 模板
 templates/obsidian/                 V5 通用 Obsidian 知识库模板
 snippets/v4/                        V4 Obsidian CSS snippets
@@ -62,6 +72,7 @@ tests/v6/                           V6 证据/关键帧工具链测试
 tests/v7/                           V7 课程项目转化测试
 tests/v8/                           V8 主动训练/复盘测试
 tests/v9/                           V9 OER 交叉对比测试
+tests/v10/                          V10 Cognitive-Loop-OS 能力吸收测试
 ../.github/workflows/repo-validation.yml  GitHub Actions：测试与 cloud-boundary 审计
 docs/
   project-definition.md              后端增强目录定义：云端总仓库中的后端子目录，与前端目录同级
@@ -82,6 +93,8 @@ docs/
   obsidian-knowledgeos-project-status-2026-07-04.md  Obsidian KnowledgeOS 项目状态快照（脱敏公开版）
   cloud-upload-safety-report-2026-07-04.md       云仓库上传安全边界与检查报告
   open-source-counterparts.md       开源对标项目
+  cognitive-loop-os-backend-absorption-2026-07-07.md  Cognitive-Loop-OS 后端能力吸收记录
+  course-pipeline-open-source-research-2026-07-07.md  课程全流程开源项目调研与吸收优先级
 ```
 
 ## 不上传的内容

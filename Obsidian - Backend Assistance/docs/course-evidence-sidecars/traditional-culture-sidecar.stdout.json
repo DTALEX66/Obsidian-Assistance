@@ -1,0 +1,101 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:23:13+00:00",
+  "course": "传统文化与术数",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 74,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 3,
+    "visual_sidecars": 8,
+    "keyframes": 0,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\三命通会.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\01_三命通会.txt",
+        "method": "pymupdf",
+        "chars": 999
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\四柱八字基础知识大全.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\02_四柱八字基础知识大全.txt",
+        "method": "pymupdf",
+        "chars": 4277
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\徐乐吾  《子平真诠评注》.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\03_徐乐吾_《子平真诠评注》.txt",
+        "method": "pymupdf",
+        "chars": 732
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\01_三命通会_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 389,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\三命通会.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\02_三命通会注评_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 610,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\三命通会注评.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\03_任铁樵_《滴天髓阐微》_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 520,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\任铁樵  《滴天髓阐微》.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\04_四柱八字基础知识大全_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 846,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\四柱八字基础知识大全.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\05_子平精粹2_秘授滴天髓阐微_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 408,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\子平精粹2 秘授滴天髓阐微.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\06_子平精粹3_穷通宝鉴_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 379,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\子平精粹3 穷通宝鉴.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\07_子平精粹4-神峰通考_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 405,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\子平精粹4-神峰通考.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\08_徐乐吾_《子平真诠评注》_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 166,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\徐乐吾  《子平真诠评注》.pdf"
+      }
+    ],
+    "keyframes": [],
+    "asr": []
+  },
+  "manifest_path": "docs\\course-evidence-sidecars\\传统文化与术数\\manifest.json"
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T16:11:07+00:00",
+  "course": "心理记忆学习力",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 18364,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 5,
+    "visual_sidecars": 2,
+    "keyframes": 0,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\00_从服务器移动建议.md",
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\text\\01_00_从服务器移动建议.txt",
+        "method": "text-read",
+        "chars": 4572,
+        "formal_overlap_terms": 33
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\宇宙没有光全案作业.pdf",
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\text\\02_宇宙没有光全案作业.txt",
+        "method": "pymupdf",
+        "chars": 1045,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\醉茉力全案编排_复制.pdf",
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\text\\03_醉茉力全案编排_复制.txt",
+        "method": "pymupdf",
+        "chars": 2077,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\素材资产\\aiki007-视觉设计实战班5期【已完结】\\正式课素材\\第三课分享\\reeper204\\reeper_changelog.txt",
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\text\\04_reeper_changelog.txt",
+        "method": "text-read",
+        "chars": 450,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\素材资产\\aiki007-视觉设计实战班5期【已完结】\\正式课素材\\第九课分享\\MAC好用的插件\\reeper204\\reeper_changelog.txt",
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\text\\05_reeper_changelog.txt",
+        "method": "text-read",
+        "chars": 450,
+        "formal_overlap_terms": 1
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\visual\\01_宇宙没有光全案作业_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 38,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\宇宙没有光全案作业.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\心理记忆学习力\\visual\\02_醉茉力全案编排_复制_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 29,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\醉茉力全案编排_复制.pdf"
+      }
+    ],
+    "keyframes": [],
+    "asr": []
+  }
+}

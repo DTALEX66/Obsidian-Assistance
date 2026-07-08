@@ -1,0 +1,71 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:19:11+00:00",
+  "course": "有趣有料心理学",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 3,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 0,
+    "visual_sidecars": 0,
+    "keyframes": 3,
+    "asr_transcripts": 3
+  },
+  "artifacts": {
+    "text": [],
+    "visual": [],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\有趣有料心理学\\keyframes\\01_1、自我概念及其三种类型.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\万门大学-有趣有料心理学\\1、课程：社会心理学（上）\\1、自我概念及其三种类型.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\有趣有料心理学\\keyframes\\02_2、自我概念与文化.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\万门大学-有趣有料心理学\\1、课程：社会心理学（上）\\2、自我概念与文化.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\有趣有料心理学\\keyframes\\03_3、自尊及其形成.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\万门大学-有趣有料心理学\\1、课程：社会心理学（上）\\3、自尊及其形成.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\有趣有料心理学\\asr\\1、自我概念及其三种类型_transcript.txt",
+        "written": true,
+        "segments": 13,
+        "language": "zh",
+        "duration": 120.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\万门大学-有趣有料心理学\\1、课程：社会心理学（上）\\1、自我概念及其三种类型.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\有趣有料心理学\\asr\\2、自我概念与文化_transcript.txt",
+        "written": true,
+        "segments": 79,
+        "language": "zh",
+        "duration": 120.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\万门大学-有趣有料心理学\\1、课程：社会心理学（上）\\2、自我概念与文化.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\有趣有料心理学\\asr\\3、自尊及其形成_transcript.txt",
+        "written": true,
+        "segments": 49,
+        "language": "zh",
+        "duration": 120.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\万门大学-有趣有料心理学\\1、课程：社会心理学（上）\\3、自尊及其形成.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  }
+}
