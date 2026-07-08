@@ -1,0 +1,42 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:32:49+00:00",
+  "course": "Photoshop AIGC商业设计",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 99,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 0,
+    "visual_sidecars": 0,
+    "keyframes": 1,
+    "asr_transcripts": 1
+  },
+  "artifacts": {
+    "text": [],
+    "visual": [],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\Photoshop_AIGC商业设计\\keyframes\\01_000_Photoshop+AIGC商业设计-导学视频.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\165、【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战\\第01章 风景装饰画设计+软件快速入门\\01_标准视频\\000_Photoshop+AIGC商业设计-导学视频.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\Photoshop_AIGC商业设计\\asr\\000_Photoshop+AIGC商业设计-导学视频_transcript.txt",
+        "written": true,
+        "segments": 10,
+        "language": "zh",
+        "duration": 25.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\01_设计系统\\视频课程\\165、【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战\\第01章 风景装饰画设计+软件快速入门\\01_标准视频\\000_Photoshop+AIGC商业设计-导学视频.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  },
+  "manifest_path": "docs\\course-evidence-sidecars\\Photoshop_AIGC商业设计\\manifest.json"
+}

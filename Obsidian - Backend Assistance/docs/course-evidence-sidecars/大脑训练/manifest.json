@@ -1,0 +1,40 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:02:19+00:00",
+  "course": "大脑训练",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 5,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 1,
+    "visual_sidecars": 1,
+    "keyframes": 0,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\文档资料\\大脑训练\\潜意识巨人\\21天潜意识巨人训练.pdf",
+        "path": "docs\\course-evidence-sidecars\\大脑训练\\text\\01_21天潜意识巨人训练.txt",
+        "method": "pymupdf",
+        "chars": 103,
+        "formal_overlap_terms": 0
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\大脑训练\\visual\\01_21天潜意识巨人训练_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 18,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\文档资料\\大脑训练\\潜意识巨人\\21天潜意识巨人训练.pdf"
+      }
+    ],
+    "keyframes": [],
+    "asr": []
+  }
+}

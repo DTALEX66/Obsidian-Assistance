@@ -1,0 +1,63 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:32:58+00:00",
+  "course": "牛客算法直通套餐",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 164,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 2,
+    "visual_sidecars": 1,
+    "keyframes": 1,
+    "asr_transcripts": 1
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.1 课前预习（课件+源码）\\算法基础入门班第一课.pdf",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\01_算法基础入门班第一课.txt",
+        "method": "pymupdf",
+        "chars": 517
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.3 课后练习1.md",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\02_1.3_课后练习1.txt",
+        "method": "text-read",
+        "chars": 480
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\visual\\01_算法基础入门班第一课_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 11,
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.1 课前预习（课件+源码）\\算法基础入门班第一课.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\keyframes\\01_1.2课程学习.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.2课程学习.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\asr\\1.2课程学习_transcript.txt",
+        "written": true,
+        "segments": 6,
+        "language": "zh",
+        "duration": 25.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.2课程学习.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  },
+  "manifest_path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\manifest.json"
+}

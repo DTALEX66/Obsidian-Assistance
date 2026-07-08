@@ -1,0 +1,71 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:45:12+00:00",
+  "course": "海马记忆法与记忆宫殿",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 303,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 3,
+    "visual_sidecars": 3,
+    "keyframes": 1,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\海马记忆法 (2).pdf",
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\text\\01_海马记忆法_(2).txt",
+        "method": "pymupdf",
+        "chars": 719
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\海马记忆法(1).pdf",
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\text\\02_海马记忆法(1).txt",
+        "method": "pymupdf",
+        "chars": 719
+      },
+      {
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\海马记忆法.pdf",
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\text\\03_海马记忆法.txt",
+        "method": "pymupdf",
+        "chars": 719
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\visual\\01_海马记忆法_(2)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 293,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\海马记忆法 (2).pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\visual\\02_海马记忆法(1)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 293,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\海马记忆法(1).pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\visual\\03_海马记忆法_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 293,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\海马记忆法.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\海马记忆法与记忆宫殿\\keyframes\\01_1000桩子讲解1_(2).jpg",
+        "written": true,
+        "source": "E:\\学习数据\\04_心理记忆学习力\\视频课程\\记忆宫殿\\1000桩子讲解1 (2).flv"
+      }
+    ],
+    "asr": []
+  }
+}

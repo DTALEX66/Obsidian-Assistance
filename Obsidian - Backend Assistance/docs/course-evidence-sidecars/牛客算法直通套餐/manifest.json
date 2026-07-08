@@ -1,0 +1,113 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:02:49+00:00",
+  "course": "牛客算法直通套餐",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 164,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 8,
+    "visual_sidecars": 0,
+    "keyframes": 2,
+    "asr_transcripts": 1
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\04.算法高级班（第十一期）\\第2章 第二章\\2.4 课后练习2.html",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\01_2.4_课后练习2.txt",
+        "method": "text-read",
+        "chars": 6000,
+        "formal_overlap_terms": 4
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\02.算法基础提升班（第五期）\\第4章 滑动窗口、单调栈结构等\\4.5 课后练习3.md",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\02_4.5_课后练习3.txt",
+        "method": "text-read",
+        "chars": 1503,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\02.算法基础提升班（第五期）\\第5章 二叉树的Morris遍历等\\5.5 课后练习3.html",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\03_5.5_课后练习3.txt",
+        "method": "text-read",
+        "chars": 4220,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\03.算法中级班（第十一期）\\第5章 第五章\\5.5 课后练习3.html",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\04_5.5_课后练习3.txt",
+        "method": "text-read",
+        "chars": 4942,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\03.算法中级班（第十一期）\\第6章 第六章\\6.4 课后练习2.html",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\05_6.4_课后练习2.txt",
+        "method": "text-read",
+        "chars": 5152,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\04.算法高级班（第十一期）\\第2章 第二章\\2.3 课后练习1.html",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\06_2.3_课后练习1.txt",
+        "method": "text-read",
+        "chars": 6000,
+        "formal_overlap_terms": 3
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第6章 图\\6.4 课后练习2.md",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\07_6.4_课后练习2.txt",
+        "method": "text-read",
+        "chars": 1243,
+        "formal_overlap_terms": 2
+      },
+      {
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\02.算法基础提升班（第五期）\\第4章 滑动窗口、单调栈结构等\\4.3 课后练习1.md",
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\text\\08_4.3_课后练习1.txt",
+        "method": "text-read",
+        "chars": 1318,
+        "formal_overlap_terms": 2
+      }
+    ],
+    "visual": [],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\keyframes\\01_1.2课程学习.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.2课程学习.mp4"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\keyframes\\02_2.2_课程学习.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第2章 认识O(NlogN)的排序\\2.2 课程学习.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\asr\\1.2课程学习_transcript.txt",
+        "written": true,
+        "segments": 33,
+        "language": "zh",
+        "duration": 90.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第1章 认识复杂度和简单排序算法\\1.2课程学习.mp4",
+        "audio_sample_deleted": true
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\牛客算法直通套餐\\asr\\2.2_课程学习_transcript.txt",
+        "written": false,
+        "segments": 0,
+        "language": "zh",
+        "duration": 90.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\02_编程系统与AI开发\\视频课程\\牛客算法直通套餐\\01.算法基础入门班（第五期）\\第2章 认识O(NlogN)的排序\\2.2 课程学习.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  }
+}

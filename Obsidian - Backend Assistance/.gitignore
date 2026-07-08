@@ -45,6 +45,12 @@ ocr/
 asr/
 pdf_pages/
 
+# Local course evidence sidecar extracts: keep manifests/reports, do not upload
+# extracted course text, screenshots/keyframes, or ASR transcripts.
+docs/course-evidence-sidecars/**/text/
+docs/course-evidence-sidecars/**/visual/
+docs/course-evidence-sidecars/**/keyframes/
+
 # Python
 __pycache__/
 *.pyc

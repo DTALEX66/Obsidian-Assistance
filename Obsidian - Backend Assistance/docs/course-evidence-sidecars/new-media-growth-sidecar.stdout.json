@@ -1,0 +1,70 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T15:32:54+00:00",
+  "course": "新媒体运营与增长",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 4369,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 2,
+    "visual_sidecars": 2,
+    "keyframes": 1,
+    "asr_transcripts": 1
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\单文件文档\\全媒体运营师相关政策法规复习材料.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\text\\01_全媒体运营师相关政策法规复习材料.txt",
+        "method": "pymupdf",
+        "chars": 67
+      },
+      {
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\单文件文档\\增长黑客.pdf",
+        "path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\text\\02_增长黑客.txt",
+        "method": "pymupdf",
+        "chars": 487
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\visual\\01_全媒体运营师相关政策法规复习材料_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 60,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\单文件文档\\全媒体运营师相关政策法规复习材料.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\visual\\02_增长黑客_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 52,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\单文件文档\\增长黑客.pdf"
+      }
+    ],
+    "keyframes": [
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\keyframes\\01_【瑞客论坛_www.ruike1.com】01.新媒体人到底是做什么的？.jpg",
+        "written": true,
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\01.导论-重新认知新媒体岗位\\【瑞客论坛 www.ruike1.com】01.新媒体人到底是做什么的？.mp4"
+      }
+    ],
+    "asr": [
+      {
+        "path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\asr\\【瑞客论坛_www.ruike1.com】01.新媒体人到底是做什么的？_transcript.txt",
+        "written": true,
+        "segments": 1,
+        "language": "zh",
+        "duration": 25.0,
+        "model": "tiny",
+        "source": "E:\\学习数据\\03_新媒体运营与增长\\文档资料\\新媒体高阶运营&增长实战训练（完结）\\01.导论-重新认知新媒体岗位\\【瑞客论坛 www.ruike1.com】01.新媒体人到底是做什么的？.mp4",
+        "audio_sample_deleted": true
+      }
+    ]
+  },
+  "manifest_path": "docs\\course-evidence-sidecars\\新媒体运营与增长\\manifest.json"
+}

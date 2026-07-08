@@ -1,0 +1,138 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:02:04+00:00",
+  "course": "传统文化与术数",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 74,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 8,
+    "visual_sidecars": 8,
+    "keyframes": 0,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\三命通会.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\01_三命通会.txt",
+        "method": "pymupdf",
+        "chars": 999,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\四柱八字基础知识大全.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\02_四柱八字基础知识大全.txt",
+        "method": "pymupdf",
+        "chars": 4277,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\徐乐吾  《子平真诠评注》.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\03_徐乐吾_《子平真诠评注》.txt",
+        "method": "pymupdf",
+        "chars": 732,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\滴天髓.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\04_滴天髓.txt",
+        "method": "pymupdf",
+        "chars": 4741,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\盲派命理(修订版)  段建业著.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\05_盲派命理(修订版)_段建业著.txt",
+        "method": "pymupdf",
+        "chars": 47,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\韦千里  《千里命稿》.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\06_韦千里_《千里命稿》.txt",
+        "method": "pymupdf",
+        "chars": 2491,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\六爻\\清 野鶴老人 《增删卜易》(附白话).pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\07_清_野鶴老人_《增删卜易》(附白话).txt",
+        "method": "pymupdf",
+        "chars": 3403,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\六爻\\清 野鶴老人 《增删卜易》.pdf",
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\text\\08_清_野鶴老人_《增删卜易》.txt",
+        "method": "pymupdf",
+        "chars": 926,
+        "formal_overlap_terms": 0
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\01_三命通会_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 389,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\三命通会.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\02_四柱八字基础知识大全_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 846,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\四柱八字基础知识大全.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\03_徐乐吾_《子平真诠评注》_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 166,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\徐乐吾  《子平真诠评注》.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\04_滴天髓_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 99,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\滴天髓.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\05_盲派命理(修订版)_段建业著_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 233,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\盲派命理(修订版)  段建业著.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\06_韦千里_《千里命稿》_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 186,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\八字\\韦千里  《千里命稿》.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\07_清_野鶴老人_《增删卜易》(附白话)_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 194,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\六爻\\清 野鶴老人 《增删卜易》(附白话).pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\传统文化与术数\\visual\\08_清_野鶴老人_《增删卜易》_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 205,
+        "source": "E:\\学习数据\\07_传统文化与术数\\文档资料\\术数资料\\术数资料\\六爻\\清 野鶴老人 《增删卜易》.pdf"
+      }
+    ],
+    "keyframes": [],
+    "asr": []
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "obs-course-evidence-sidecar/v1",
+  "generated_at": "2026-07-07T17:02:18+00:00",
+  "course": "品牌全案AI设计实战班",
+  "boundary": "sidecar evidence only; no formal vault body writes",
+  "inputs": {
+    "vault": "E:\\BaiduSyncdisk\\Obsidian知识库",
+    "source_root": "E:\\学习数据",
+    "raw_matches": 35,
+    "local_refs": 0
+  },
+  "evidence": {
+    "text_sidecars": 5,
+    "visual_sidecars": 5,
+    "keyframes": 0,
+    "asr_transcripts": 0
+  },
+  "artifacts": {
+    "text": [
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\酷果品牌全案设计.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\01_酷果品牌全案设计.txt",
+        "method": "pymupdf",
+        "chars": 1146,
+        "formal_overlap_terms": 1
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\云味缘全案提案_复制.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\02_云味缘全案提案_复制.txt",
+        "method": "pymupdf",
+        "chars": 1315,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\伊童-椰林甜舍全案.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\03_伊童-椰林甜舍全案.txt",
+        "method": "pymupdf",
+        "chars": 2627,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\宇宙没有光全案作业.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\04_宇宙没有光全案作业.txt",
+        "method": "pymupdf",
+        "chars": 1045,
+        "formal_overlap_terms": 0
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\醉茉力全案编排_复制.pdf",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\text\\05_醉茉力全案编排_复制.txt",
+        "method": "pymupdf",
+        "chars": 2077,
+        "formal_overlap_terms": 0
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\01_酷果品牌全案设计_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 47,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\酷果品牌全案设计.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\02_云味缘全案提案_复制_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 36,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\云味缘全案提案_复制.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\03_伊童-椰林甜舍全案_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 33,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\伊童-椰林甜舍全案.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\04_宇宙没有光全案作业_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 38,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\宇宙没有光全案作业.pdf"
+      },
+      {
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\visual\\05_醉茉力全案编排_复制_p1.png",
+        "written": true,
+        "page": 1,
+        "pages": 29,
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\资料\\作品集资料包\\醉茉力全案编排_复制.pdf"
+      }
+    ],
+    "keyframes": [],
+    "asr": [
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\06.第六章 品牌IP+AIGC篇\\第12节 品牌IP设定 .sz",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\asr\\第12节_品牌IP设定_transcript.txt",
+        "written": false,
+        "error": "urn code -1145393733 (Error number -1145393733 occurred)\n[out#0/wav @ 00000196c3523780] video:0KiB audio:2KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 3.869048%\nsize=       2KiB time=00:01:22.87 bitrate=   0.2kbits/s speed= 566x elapsed=0:00:00.14    \nConversion failed!\n"
+      },
+      {
+        "source": "E:\\学习数据\\01_设计系统\\文档资料\\卢帅-2025年品牌全案·AI设计实战班【已完结】\\06.第六章 品牌IP+AIGC篇\\第13节 AIGC工具详解与IP多形态延展 .sz",
+        "path": "docs\\course-evidence-sidecars\\品牌全案AI设计实战班\\asr\\第13节_AIGC工具详解与IP多形态延展_transcript.txt",
+        "written": false,
+        "error": "urn code -1145393733 (Error number -1145393733 occurred)\n[out#0/wav @ 0000021457a64900] video:0KiB audio:1KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 6.000000%\nsize=       1KiB time=00:00:55.33 bitrate=   0.2kbits/s speed= 245x elapsed=0:00:00.22    \nConversion failed!\n"
+      }
+    ]
+  }
+}
