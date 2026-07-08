@@ -1,0 +1,2708 @@
+{
+  "schema": "obs-course-local-verification-audit/v1",
+  "generated_at": "2026-07-08T14:02:27+00:00",
+  "boundary": {
+    "absolute_zero_error_claim": false,
+    "rule": "Only courses with multiple agreeing evidence channels are marked verified_by_available_methods; all others remain needs_review.",
+    "no_vault_body_write": true,
+    "network_oer_not_substitute_for_local_source": true
+  },
+  "environment": {
+    "pymupdf_available": true,
+    "markitdown_available": true,
+    "pdftotext_available": true,
+    "ffmpeg_available": true,
+    "tesseract_available": true,
+    "whisper_available": true
+  },
+  "summary": {
+    "courses_total": 39,
+    "verified_by_available_methods": 29,
+    "needs_review": 10,
+    "source_files_total": 18419,
+    "report_files_total": 482,
+    "asset_files_total": 145,
+    "oer_files_total": 60,
+    "risk_counts": {
+      "raw_text_not_cross_confirmed": 10,
+      "audio_video_asr_unusable": 1,
+      "missing_raw_source": 3,
+      "missing_visual_evidence": 2
+    }
+  },
+  "courses": [
+    {
+      "course": "30天考霸训练营",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "text": 27,
+        "word": 38,
+        "pdf": 21,
+        "video": 75,
+        "slides": 5,
+        "audio": 6,
+        "image": 9
+      },
+      "raw_matches": 181,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 7,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {
+        "text_sidecars": 5,
+        "visual_sidecars": 0,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 1,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 32,
+        "overlap_sample": [
+          "pdf",
+          "北大博士后教你通关任何考",
+          "增幅学习效果",
+          "复现所学内容",
+          "天内暴力突破学习低谷",
+          "天考霸训练营",
+          "如何提出一个好问题",
+          "学习的终极算法",
+          "完结",
+          "建立专业水准",
+          "快速找到学习的捷径",
+          "惠勒提问法",
+          "战胜拖延",
+          "打造学霸的超强记忆力",
+          "打造极致心态"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "记忆力与学习力/30天考霸训练营，北大博士后教你通关任何考试（完结）/00核聚考霸训练营资料包/课程资料包网盘链接.txt",
+        "记忆力与学习力/30天考霸训练营，北大博士后教你通关任何考试（完结）/00核聚考霸训练营资料包/资料包/1.我的史诗般的高考逆袭路（大字体）.docx",
+        "记忆力与学习力/30天考霸训练营，北大博士后教你通关任何考试（完结）/00核聚考霸训练营资料包/资料包/10.进步本日记汇总-卜子良-北大光华管理学院（上）.pdf",
+        "记忆力与学习力/30天考霸训练营，北大博士后教你通关任何考试（完结）/00核聚考霸训练营资料包/资料包/10.进步本日记汇总-卜子良-北大光华管理学院（下）.pdf",
+        "记忆力与学习力/30天考霸训练营，北大博士后教你通关任何考试（完结）/00核聚考霸训练营资料包/资料包/11.熟练才能上瘾（大字体）.docx"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-03_TALOS_sleep_mode_exam_oer_rounds/manual-backups/02_课程库/30天考霸训练营/00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__30天考霸训练营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__30天考霸训练营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__30天考霸训练营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__30天考霸训练营__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/30天考霸训练营/round10_ref_01.jpg",
+        "99_附件/course-reference-images/30天考霸训练营/round10_ref_02.jpg",
+        "99_附件/course-visuals/general-courses/30天考霸训练营.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/开放知识与OER/30天考霸训练营_OER交叉对比样板.md"
+      ]
+    },
+    {
+      "course": "AI Agent Skills 实战课",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 6,
+      "reports": 4,
+      "visual_assets": 0,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 51,
+        "overlap_sample": [
+          "active",
+          "agent",
+          "agent-skills",
+          "api",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "clawskills",
+          "cli",
+          "codex",
+          "com",
+          "created",
+          "git",
+          "github",
+          "hermes"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_awesome_skills_full_project_integration/backups/02_课程库__AI Agent Skills 实战课__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__AI Agent Skills 实战课__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__AI Agent Skills 实战课__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__AI Agent Skills 实战课__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "AI LLM工具生态与Skill工程",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 29,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "cli",
+          "com",
+          "composio",
+          "composio-connect",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "llm",
+          "obsidian",
+          "oer"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__AI LLM工具生态与Skill工程__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__AI LLM工具生态与Skill工程__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__AI LLM工具生态与Skill工程__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/AI-LLM工具生态与Skill工程/round10_ref_01.jpg",
+        "99_附件/course-reference-images/AI-LLM工具生态与Skill工程/round10_ref_02.webp",
+        "99_附件/course-visuals/awesome-skills-cn/AI-LLM工具生态与Skill工程.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "AI研究搜索与OER交叉验证",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 14,
+      "reports": 47,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 13,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 27,
+        "overlap_sample": [
+          "active",
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "com",
+          "created",
+          "faq",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "oer",
+          "pdf"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json",
+        "50_领域知识/开放知识与OER/06_OER覆盖率清单.md",
+        "93_导入报告/2026-07-02_V8_retro_summary/v8-retro-summary.md",
+        "50_领域知识/开放知识与OER/UI系统全能班_OER交叉对比样板.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-02_OER_open_knowledge_crosswalk/开放知识交叉对比接入报告.md",
+        "93_导入报告/2026-07-03_TALOS_nocode_overlap_fix/backups/00_主页__18_TALOS_OER覆盖率仪表盘.md",
+        "93_导入报告/2026-07-03_TALOS_oer_coverage_dashboard/OER覆盖率仪表盘执行报告.md",
+        "93_导入报告/2026-07-03_TALOS_oer_coverage_dashboard/backups/.obsidian/bookmarks.json",
+        "93_导入报告/2026-07-03_TALOS_oer_coverage_dashboard/backups/00_主页/11_TALOS执行日志.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/AI研究搜索与OER交叉验证/round10_ref_01.webp",
+        "99_附件/course-reference-images/AI研究搜索与OER交叉验证/round10_ref_02.jpg",
+        "99_附件/course-visuals/awesome-skills-cn/AI研究搜索与OER交叉验证.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "Agent技能安全审计",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 26,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "cli",
+          "com",
+          "composio-connect",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "oer",
+          "openai",
+          "pdf"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__Agent技能安全审计__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__Agent技能安全审计__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__Agent技能安全审计__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/Agent技能安全审计/round10_ref_01.jpg",
+        "99_附件/course-reference-images/Agent技能安全审计/round10_ref_02.webp",
+        "99_附件/course-visuals/awesome-skills-cn/Agent技能安全审计.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "GitHub自动化与代码审查工作流",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 5,
+      "visual_assets": 2,
+      "embedded_visuals": 9,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 22,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "com",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "oer",
+          "pdf",
+          "skill",
+          "skills",
+          "复习卡片"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__GitHub自动化与代码审查工作流__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__GitHub自动化与代码审查工作流__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__GitHub自动化与代码审查工作流__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_12_github_source_screenshot/backups/02_课程库__GitHub自动化与代码审查工作流__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_12_github_source_screenshot/backups/02_课程库__GitHub自动化与代码审查工作流__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-visuals/awesome-skills-cn/GitHub自动化与代码审查工作流.svg",
+        "99_附件/verified-keyframes/GitHub自动化与代码审查工作流/round12_github_source_screenshot.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "Obsidian与PKM自动化实战",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 28,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "com",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "ocr",
+          "oer",
+          "openclaw",
+          "pdf",
+          "pkm"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__Obsidian与PKM自动化实战__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__Obsidian与PKM自动化实战__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__Obsidian与PKM自动化实战__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/Obsidian与PKM自动化实战/round10_ref_01.jpg",
+        "99_附件/course-reference-images/Obsidian与PKM自动化实战/round10_ref_02.jpg",
+        "99_附件/course-visuals/awesome-skills-cn/Obsidian与PKM自动化实战.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "Photoshop AIGC商业设计",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {
+        "video": 99
+      },
+      "raw_matches": 99,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 9,
+      "visual_assets": 5,
+      "embedded_visuals": 48,
+      "sidecar_evidence": {
+        "text_sidecars": 0,
+        "visual_sidecars": 0,
+        "keyframes": 3,
+        "asr_transcripts": 3
+      },
+      "oer_matches": 3,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 3,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 1,
+        "overlap_sample": [
+          "图层"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "设计课程/【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战/第01章 风景装饰画设计+软件快速入门/01_标准视频/000_Photoshop+AIGC商业设计-导学视频.mp4",
+        "设计课程/【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战/第01章 风景装饰画设计+软件快速入门/01_标准视频/001_PS界面工作区认识-快速体验.mp4",
+        "设计课程/【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战/第01章 风景装饰画设计+软件快速入门/01_标准视频/002_自由变换功能-地铁海报合成案例.mp4",
+        "设计课程/【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战/第01章 风景装饰画设计+软件快速入门/01_标准视频/003_选区工具+填色功能-绘制微软logo案例.mp4",
+        "设计课程/【黑马程序员】-2024最新Photoshop+AIGC商业设计从入门到实战/第01章 风景装饰画设计+软件快速入门/01_标准视频/004_图层编辑与选区固定大小-绘制书籍封面案例-上.mp4"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_04_visual_audit_precision/backups/02_课程库__Photoshop AIGC商业设计__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__Photoshop AIGC商业设计__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__Photoshop AIGC商业设计__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__Photoshop AIGC商业设计__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__Photoshop AIGC商业设计__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/Photoshop-AIGC商业设计/ref_01.png",
+        "99_附件/course-reference-images/Photoshop-AIGC商业设计/ref_02.jpg",
+        "99_附件/course-reference-images/Photoshop-AIGC商业设计/ref_03.png",
+        "99_附件/course-visuals/verified-gap-fill/Photoshop-AIGC商业设计.svg",
+        "99_附件/verified-keyframes/Photoshop-AIGC商业设计/round14_keyframe_01.png"
+      ],
+      "sample_oer": [
+        "50_领域知识/10_项目输出/学习计划 - Photoshop+AIGC商业设计.md",
+        "50_领域知识/10_项目输出/课程拆解 - Photoshop+AIGC商业设计.md",
+        "50_领域知识/10_项目输出/输出项目 - Photoshop+AIGC商业设计.md"
+      ]
+    },
+    {
+      "course": "UI UX Agent设计系统实战",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 23,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "cli",
+          "com",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "oer",
+          "react",
+          "skill",
+          "skills"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__UI UX Agent设计系统实战__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__UI UX Agent设计系统实战__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__UI UX Agent设计系统实战__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/UI-UX-Agent设计系统实战/round10_ref_01.png",
+        "99_附件/course-reference-images/UI-UX-Agent设计系统实战/round10_ref_02.jpg",
+        "99_附件/course-visuals/awesome-skills-cn/UI-UX-Agent设计系统实战.svg"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "UI系统全能班",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "image": 2,
+        "word": 4,
+        "pdf": 6
+      },
+      "raw_matches": 12,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 9,
+      "visual_assets": 5,
+      "embedded_visuals": 24,
+      "sidecar_evidence": {},
+      "oer_matches": 1,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pymupdf",
+          "text-read"
+        ],
+        "overlap_terms": 9,
+        "overlap_sample": [
+          "baidusyncdisk",
+          "design",
+          "pdf",
+          "prd",
+          "序号",
+          "灵感库",
+          "系统全能班",
+          "设计类课程本地参考素材索",
+          "边界"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "设计课程/KEKE-孔晨-UI系统全能班第3期【已完结】/UI系统班资料汇总/UI系统班资料汇总/02行业任职篇/学习资源.jpg",
+        "设计课程/KEKE-孔晨-UI系统全能班第3期【已完结】/UI系统班资料汇总/UI系统班资料汇总/02行业任职篇/行业认知.docx",
+        "设计课程/KEKE-孔晨-UI系统全能班第3期【已完结】/UI系统班资料汇总/UI系统班资料汇总/03图形设计篇/04设计思维.pdf",
+        "设计课程/KEKE-孔晨-UI系统全能班第3期【已完结】/UI系统班资料汇总/UI系统班资料汇总/03图形设计篇/学习资源.jpg",
+        "设计课程/KEKE-孔晨-UI系统全能班第3期【已完结】/UI系统班资料汇总/UI系统班资料汇总/04用户界面/10交互设计.pdf"
+      ],
+      "sample_local_sources": [
+        "93_导入报告/设计类课程本地参考素材索引_2026-07-02/design-reference-index.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-03_TALOS_sleep_mode_ui_oer_rounds/manual-backups/02_课程库/UI系统全能班/00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__UI系统全能班__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__UI系统全能班__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__UI系统全能班__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__UI系统全能班__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/UI系统全能班/auto_ref_01.png",
+        "99_附件/course-reference-images/UI系统全能班/auto_ref_02.jpg",
+        "99_附件/course-reference-images/UI系统全能班/auto_ref_03.jpg",
+        "99_附件/course-visuals/general-courses/UI系统全能班.svg",
+        "99_附件/verified-keyframes/UI系统全能班/round17_pdf_page_01.png"
+      ],
+      "sample_oer": [
+        "50_领域知识/开放知识与OER/UI系统全能班_OER交叉对比样板.md"
+      ]
+    },
+    {
+      "course": "中央美院美术基础教学",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "video": 28
+      },
+      "raw_matches": 28,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 6,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 1,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 10,
+        "overlap_sample": [
+          "baidusyncdisk",
+          "images",
+          "info",
+          "library",
+          "pdf",
+          "中央美院美术基础教学",
+          "序号",
+          "灵感库",
+          "设计类课程本地参考素材索",
+          "边界"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "设计课程/中央美院美术基础教学14套/中国美术学院《rent素描》朝戈 视频教程（三讲全）/[中央美术学院：朝戈主讲：rent素描].朝戈.第1讲.WMV",
+        "设计课程/中央美院美术基础教学14套/中国美术学院《rent素描》朝戈 视频教程（三讲全）/[中央美术学院：朝戈主讲：rent素描].朝戈.第2讲.WMV",
+        "设计课程/中央美院美术基础教学14套/中国美术学院《rent素描》朝戈 视频教程（三讲全）/[中央美术学院：朝戈主讲：rent素描].朝戈.第3讲.WMV",
+        "设计课程/中央美院美术基础教学14套/中国美术学院《基础设计》卢少夫 视频教程/〖q87〗[中国美术学院：卢少夫主讲：基础设计教程].卢少夫.第一集.WMV",
+        "设计课程/中央美院美术基础教学14套/中国美术学院《基础设计》卢少夫 视频教程/〖q87〗[中国美术学院：卢少夫主讲：基础设计教程].卢少夫.第三集.WMV"
+      ],
+      "sample_local_sources": [
+        "93_导入报告/设计类课程本地参考素材索引_2026-07-02/design-reference-index.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__中央美院美术基础教学__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__中央美院美术基础教学__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__中央美院美术基础教学__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__中央美院美术基础教学__00_课程总览.md",
+        "93_导入报告/中央美院美术基础教学_全网比校与可信度报告.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/中央美院美术基础教学/auto_ref_01.jpg",
+        "99_附件/course-reference-images/中央美院美术基础教学/auto_ref_02.jpg",
+        "99_附件/course-reference-images/中央美院美术基础教学/auto_ref_03.jpg",
+        "99_附件/course-visuals/general-courses/中央美院美术基础教学.svg"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "传统文化与术数",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {
+        "text_sidecars": 8,
+        "visual_sidecars": 8,
+        "keyframes": 0,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__传统文化与术数__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    },
+    {
+      "course": "全栈新媒体运营",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "video": 125,
+        "image": 90,
+        "word": 18,
+        "pdf": 1,
+        "text": 3,
+        "doc": 2
+      },
+      "raw_matches": 239,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 5,
+      "embedded_visuals": 24,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pdftotext",
+          "text-read"
+        ],
+        "overlap_terms": 14,
+        "overlap_sample": [
+          "docx",
+          "idea",
+          "jpg",
+          "markdown",
+          "mp4",
+          "png",
+          "人物",
+          "修辞学",
+          "全栈新媒体运营",
+          "工作流",
+          "情节",
+          "目录",
+          "目的",
+          "竞品分析"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/1导语/1了解传播学理论的意义.avi",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/2传播学导论/1什么是传播学.avi",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/2传播学导论/2作业上.png",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/2传播学导论/2作业下.png",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/2传播学导论/3.1传播学研究的三个视角.avi"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__全栈新媒体运营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__全栈新媒体运营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__全栈新媒体运营__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__全栈新媒体运营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_14_more_real_keyframes/backups/02_课程库__全栈新媒体运营__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/全栈新媒体运营/auto_ref_01.jpg",
+        "99_附件/course-reference-images/全栈新媒体运营/auto_ref_02.jpg",
+        "99_附件/course-reference-images/全栈新媒体运营/auto_ref_03.webp",
+        "99_附件/course-visuals/general-courses/全栈新媒体运营.svg",
+        "99_附件/verified-keyframes/全栈新媒体运营/round14_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "品牌全案AI设计实战班",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed",
+        "audio_video_asr_unusable"
+      ],
+      "source_type_counts": {
+        "video": 28,
+        "pdf": 6,
+        "image": 1
+      },
+      "raw_matches": 35,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 7,
+      "visual_assets": 4,
+      "embedded_visuals": 43,
+      "sidecar_evidence": {
+        "text_sidecars": 5,
+        "visual_sidecars": 5,
+        "keyframes": 0,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "设计课程/卢帅-2025年品牌全案·AI设计实战班【已完结】/06.第六章 品牌IP+AIGC篇/第12节 品牌IP设定 .sz",
+        "设计课程/卢帅-2025年品牌全案·AI设计实战班【已完结】/06.第六章 品牌IP+AIGC篇/第13节 AIGC工具详解与IP多形态延展 .sz",
+        "设计课程/卢帅-2025年品牌全案·AI设计实战班【已完结】/07.第七章 品牌版式+AIGC篇/第14节 辅助图形四大分类与设定 .sz",
+        "设计课程/卢帅-2025年品牌全案·AI设计实战班【已完结】/07.第七章 品牌版式+AIGC篇/第15节 AIGC辅助版式创意延展 .sz",
+        "设计课程/卢帅-2025年品牌全案·AI设计实战班【已完结】/07.第七章 品牌版式+AIGC篇/第16节 VI系统设计专题 .sz"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_04_visual_audit_precision/backups/02_课程库__品牌全案AI设计实战班__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__品牌全案AI设计实战班__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__品牌全案AI设计实战班__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__品牌全案AI设计实战班__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__品牌全案AI设计实战班__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/品牌全案AI设计实战班/ref_01.jpg",
+        "99_附件/course-reference-images/品牌全案AI设计实战班/ref_02.jpg",
+        "99_附件/course-reference-images/品牌全案AI设计实战班/ref_03.jpg",
+        "99_附件/course-visuals/verified-gap-fill/品牌全案AI设计实战班.svg"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "多Agent工程与任务编排",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 27,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "claude",
+          "cli",
+          "com",
+          "composio-connect",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "oer",
+          "openai"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__多Agent工程与任务编排__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__多Agent工程与任务编排__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__多Agent工程与任务编排__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/多Agent工程与任务编排/round10_ref_01.jpg",
+        "99_附件/course-reference-images/多Agent工程与任务编排/round10_ref_02.png",
+        "99_附件/course-visuals/awesome-skills-cn/多Agent工程与任务编排.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "大模型应用开发介绍",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "pdf": 1
+      },
+      "raw_matches": 1,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 9,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 1,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "pymupdf",
+          "text-read"
+        ],
+        "overlap_terms": 26,
+        "overlap_sample": [
+          "active",
+          "agent",
+          "created",
+          "exchange",
+          "faq",
+          "mdn",
+          "oer",
+          "pdf",
+          "pymupdf",
+          "rag",
+          "stack",
+          "status",
+          "tags",
+          "type",
+          "verified"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "编程系统与AI开发/大模型应用开发介绍/大模型应用开发介绍-0715.pdf"
+      ],
+      "sample_local_sources": [
+        "50_领域知识/开放知识与OER/04_大模型应用开发介绍_技术文档问答样板.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-03_TALOS_sleep_mode_llm_oer_rounds/backups/02_课程库/大模型应用开发介绍/00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__大模型应用开发介绍__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__大模型应用开发介绍__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__大模型应用开发介绍__14_开放知识交叉对比.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__大模型应用开发介绍__15_FAQ问题驱动入口.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/大模型应用开发介绍/round10_ref_01.png",
+        "99_附件/course-reference-images/大模型应用开发介绍/round10_ref_02.jpg",
+        "99_附件/course-visuals/general-courses/大模型应用开发介绍.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/开放知识与OER/04_大模型应用开发介绍_技术文档问答样板.md"
+      ]
+    },
+    {
+      "course": "大脑训练",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": true
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {
+        "text": 1,
+        "word": 2,
+        "pdf": 2
+      },
+      "raw_matches": 5,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {
+        "text_sidecars": 1,
+        "visual_sidecars": 1,
+        "keyframes": 0,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pymupdf",
+          "text-read"
+        ],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "记忆力与学习力/大脑训练/全脑开发巨人/www.ffjj.com.cn_albert.txt",
+        "记忆力与学习力/大脑训练/全脑开发巨人/赠送/《超级记忆法》教材(完整版).doc",
+        "记忆力与学习力/大脑训练/全脑开发巨人/赠送/本站资源免费下载指导教程.doc",
+        "记忆力与学习力/大脑训练/潜意识巨人/21天潜意识巨人训练.pdf",
+        "记忆力与学习力/大脑训练/潜意识巨人/全脑系列说明书.pdf"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__大脑训练__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__大脑训练__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__大脑训练__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__大脑训练__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_17_pdf_source_pages/backups/02_课程库__大脑训练__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/大脑训练/round10_ref_01.jpg",
+        "99_附件/course-reference-images/大脑训练/round10_ref_02.jpg",
+        "99_附件/course-visuals/general-courses/大脑训练.svg",
+        "99_附件/verified-keyframes/大脑训练/round17_pdf_page_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "心理记忆学习力",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {
+        "text_sidecars": 5,
+        "visual_sidecars": 2,
+        "keyframes": 0,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 1,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 27,
+        "overlap_sample": [
+          "万门大学",
+          "世界记忆大师深入浅出学记",
+          "九节课练就你的超强大脑",
+          "升级你的学习力",
+          "大脑时代课程",
+          "大脑训练",
+          "学习数据",
+          "完结",
+          "心理记忆学习力",
+          "思维导图教程",
+          "文档资料",
+          "有趣有料心理学",
+          "格式完美音质",
+          "淘宝热销的全脑速读教程含",
+          "混合资料"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__心理记忆学习力__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": [
+        "50_领域知识/08_心理记忆学习力/00_心理记忆学习力总览.md"
+      ]
+    },
+    {
+      "course": "思维导图与记忆宫殿教程",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {
+        "text_sidecars": 3,
+        "visual_sidecars": 3,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 3,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 7,
+        "overlap_sample": [
+          "com",
+          "tymsjz",
+          "www",
+          "学习决定竞争力",
+          "更多讲座学习请登陆",
+          "添翼名师讲座网",
+          "知识为您添双翼"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__思维导图与记忆宫殿教程__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__思维导图与记忆宫殿教程__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__思维导图与记忆宫殿教程__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__思维导图与记忆宫殿教程__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_14_more_real_keyframes/backups/02_课程库__思维导图与记忆宫殿教程__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/思维导图与记忆宫殿教程/round10_ref_01.jpg",
+        "99_附件/course-reference-images/思维导图与记忆宫殿教程/round10_ref_02.jpg",
+        "99_附件/course-visuals/general-courses/思维导图与记忆宫殿教程.svg",
+        "99_附件/verified-keyframes/思维导图与记忆宫殿教程/round14_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "敏感与待确认",
+      "status": "needs_review",
+      "evidence_methods": 3,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": false,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": false,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "missing_raw_source",
+        "raw_text_not_cross_confirmed",
+        "missing_visual_evidence"
+      ],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 0,
+        "methods": [],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": false
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__敏感与待确认__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    },
+    {
+      "course": "文档OCR与课程入库自动化",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 2,
+      "embedded_visuals": 9,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 26,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "com",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "ocr",
+          "oer",
+          "pdf",
+          "pkm",
+          "skill"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__文档OCR与课程入库自动化__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__文档OCR与课程入库自动化__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__文档OCR与课程入库自动化__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/文档OCR与课程入库自动化/round10_ref_01.jpg",
+        "99_附件/course-visuals/awesome-skills-cn/文档OCR与课程入库自动化.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "新媒体运营与增长",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {
+        "image": 209,
+        "pdf": 110,
+        "video": 203,
+        "word": 21,
+        "text": 3,
+        "doc": 6,
+        "slides": 4
+      },
+      "raw_matches": 556,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 4,
+      "sidecar_evidence": {
+        "text_sidecars": 8,
+        "visual_sidecars": 7,
+        "keyframes": 2,
+        "asr_transcripts": 2
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 2,
+        "overlap_sample": [
+          "jpg",
+          "增长"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "新媒体运营与增长/全媒体/抖音矩阵号怎么搭建，抖音矩阵运营攻略！_3_小平聊互联网推广_来自小红书网页版.jpg",
+        "新媒体运营与增长/全媒体运营师相关政策法规复习材料.pdf",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/1导语/1了解传播学理论的意义.avi",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/2传播学导论/1什么是传播学.avi",
+        "新媒体运营与增长/全栈新媒体运营/2新媒体应用传播学/2传播学导论/2作业上.png"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__新媒体运营与增长__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    },
+    {
+      "course": "新媒体高阶运营增长实战训练",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "word": 1,
+        "video": 77,
+        "pdf": 101,
+        "doc": 3
+      },
+      "raw_matches": 182,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 19,
+      "visual_assets": 7,
+      "embedded_visuals": 9,
+      "sidecar_evidence": {
+        "text_sidecars": 5,
+        "visual_sidecars": 5,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 1,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 8,
+        "overlap_sample": [
+          "kpi",
+          "信息搜索",
+          "内容生产",
+          "拆解",
+          "案例",
+          "用户画像",
+          "系列选题",
+          "选题"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "新媒体运营与增长/新媒体高阶运营&增长实战训练（完结）/00.课前必读/【瑞客论坛 www.ruike1.com】这里有个蠢萌老师等你翻牌.docx",
+        "新媒体运营与增长/新媒体高阶运营&增长实战训练（完结）/01.导论-重新认知新媒体岗位/【瑞客论坛 www.ruike1.com】01.新媒体人到底是做什么的？.mp4",
+        "新媒体运营与增长/新媒体高阶运营&增长实战训练（完结）/01.导论-重新认知新媒体岗位/【瑞客论坛 www.ruike1.com】01.新媒体人到底是做什么的？.pdf",
+        "新媒体运营与增长/新媒体高阶运营&增长实战训练（完结）/01.导论-重新认知新媒体岗位/【瑞客论坛 www.ruike1.com】02.新媒体人的3种境界（能力进阶）.mp4",
+        "新媒体运营与增长/新媒体高阶运营&增长实战训练（完结）/01.导论-重新认知新媒体岗位/【瑞客论坛 www.ruike1.com】02.新媒体人的3种境界（能力进阶）.pdf"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__全栈新媒体运营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__新媒体高阶运营增长实战训练__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__全栈新媒体运营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__全栈新媒体运营__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__新媒体高阶运营增长实战训练__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/全栈新媒体运营/auto_ref_01.jpg",
+        "99_附件/course-reference-images/全栈新媒体运营/auto_ref_02.jpg",
+        "99_附件/course-reference-images/全栈新媒体运营/auto_ref_03.webp",
+        "99_附件/course-visuals/general-courses/全栈新媒体运营.svg",
+        "99_附件/course-visuals/general-courses/新媒体高阶运营增长实战训练.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/07_新媒体运营/00_新媒体运营总览.md"
+      ]
+    },
+    {
+      "course": "有趣有料心理学",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {
+        "video": 3
+      },
+      "raw_matches": 3,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {
+        "text_sidecars": 0,
+        "visual_sidecars": 0,
+        "keyframes": 3,
+        "asr_transcripts": 3
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 3,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "心理学/万门大学-有趣有料心理学/1、课程：社会心理学（上）/1、自我概念及其三种类型.mp4",
+        "心理学/万门大学-有趣有料心理学/1、课程：社会心理学（上）/2、自我概念与文化.mp4",
+        "心理学/万门大学-有趣有料心理学/1、课程：社会心理学（上）/3、自尊及其形成.mp4"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__有趣有料心理学__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__有趣有料心理学__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__有趣有料心理学__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__有趣有料心理学__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_16_learning_ops_keyframes/backups/02_课程库__有趣有料心理学__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/有趣有料心理学/round10_ref_01.jpg",
+        "99_附件/course-reference-images/有趣有料心理学/round10_ref_02.jpg",
+        "99_附件/course-visuals/general-courses/有趣有料心理学.svg",
+        "99_附件/verified-keyframes/有趣有料心理学/round16_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "浏览器自动化与桌面控制",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 2,
+      "reports": 3,
+      "visual_assets": 3,
+      "embedded_visuals": 14,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 2,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 24,
+        "overlap_sample": [
+          "agent",
+          "awesome-skills-cn",
+          "b3fa101cf6361c69e781f0a019057fc",
+          "be7",
+          "cli",
+          "com",
+          "github",
+          "hermes",
+          "https",
+          "lingxling",
+          "obsidian",
+          "oer",
+          "openclaw",
+          "pdf",
+          "skill"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md",
+        "50_领域知识/AI Agent技能库/source-summary.json"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__浏览器自动化与桌面控制__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__浏览器自动化与桌面控制__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__浏览器自动化与桌面控制__12_视觉索引与配图.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/浏览器自动化与桌面控制/round10_ref_01.jpg",
+        "99_附件/course-reference-images/浏览器自动化与桌面控制/round10_ref_02.jpg",
+        "99_附件/course-visuals/awesome-skills-cn/浏览器自动化与桌面控制.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/AI Agent技能库/00_awesome-skills-cn吸收总览.md",
+        "50_领域知识/AI Agent技能库/01_技能分类矩阵.md",
+        "50_领域知识/AI Agent技能库/02_可吸收技能候选清单.md",
+        "50_领域知识/AI Agent技能库/03_Hermes与Obsidian吸收路线.md",
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ]
+    },
+    {
+      "course": "海马记忆法与记忆宫殿",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {
+        "text_sidecars": 3,
+        "visual_sidecars": 3,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 3,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 7,
+        "overlap_sample": [
+          "ilovebook",
+          "www",
+          "封面",
+          "感谢",
+          "提供图书模板",
+          "海马记忆法",
+          "爱书网"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__海马记忆法与记忆宫殿__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__海马记忆法与记忆宫殿__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__海马记忆法与记忆宫殿__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__海马记忆法与记忆宫殿__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_17_pdf_source_pages/backups/02_课程库__海马记忆法与记忆宫殿__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/海马记忆法与记忆宫殿/round10_ref_01.jpg",
+        "99_附件/course-reference-images/海马记忆法与记忆宫殿/round10_ref_02.webp",
+        "99_附件/course-visuals/general-courses/海马记忆法与记忆宫殿.svg",
+        "99_附件/verified-keyframes/海马记忆法与记忆宫殿/round17_pdf_page_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "清华视觉传达设计思维与方法",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 9,
+      "visual_assets": 5,
+      "embedded_visuals": 33,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 1,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 10,
+        "overlap_sample": [
+          "baidusyncdisk",
+          "images",
+          "info",
+          "library",
+          "pdf",
+          "序号",
+          "清华视觉传达设计思维与方",
+          "灵感库",
+          "设计类课程本地参考素材索",
+          "边界"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "93_导入报告/设计类课程本地参考素材索引_2026-07-02/design-reference-index.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_04_visual_audit_precision/backups/02_课程库__清华视觉传达设计思维与方法__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__清华视觉传达设计思维与方法__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__清华视觉传达设计思维与方法__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__清华视觉传达设计思维与方法__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__清华视觉传达设计思维与方法__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/清华视觉传达设计思维与方法/ref_01.png",
+        "99_附件/course-reference-images/清华视觉传达设计思维与方法/ref_02.png",
+        "99_附件/course-reference-images/清华视觉传达设计思维与方法/ref_03.png",
+        "99_附件/course-visuals/verified-gap-fill/清华视觉传达设计思维与方法.svg",
+        "99_附件/verified-keyframes/清华视觉传达设计思维与方法/round15_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "版式设计",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "pdf": 22,
+        "video": 38,
+        "image": 1
+      },
+      "raw_matches": 61,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 9,
+      "visual_assets": 5,
+      "embedded_visuals": 48,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pymupdf",
+          "text-read"
+        ],
+        "overlap_terms": 13,
+        "overlap_sample": [
+          "baidusyncdisk",
+          "images",
+          "info",
+          "library",
+          "pdf",
+          "对比",
+          "序号",
+          "灵感库",
+          "版式设计",
+          "网格",
+          "设计类课程本地参考素材索",
+          "边界",
+          "重复"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "各类书籍/清华大学出版社2237册图书/T_工业技术/3202094_版式设计——设计师必备宝典.pdf",
+        "各类书籍/清华大学出版社2237册图书/文泉sp1补丁/3207577_版式设计（第2版）.pdf",
+        "设计课程/优设青爵版式设计全能特训/01-课前测试.mp4",
+        "设计课程/优设青爵版式设计全能特训/02-第一课-艺术设计鉴赏.mp4",
+        "设计课程/优设青爵版式设计全能特训/03-版式设计艺术鉴赏.mp4"
+      ],
+      "sample_local_sources": [
+        "93_导入报告/设计类课程本地参考素材索引_2026-07-02/design-reference-index.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_04_visual_audit_precision/backups/02_课程库__版式设计__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__版式设计__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_06_reference_image_walls/backups/02_课程库__版式设计__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__版式设计__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__版式设计__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/版式设计/ref_01.jpg",
+        "99_附件/course-reference-images/版式设计/ref_02.jpg",
+        "99_附件/course-reference-images/版式设计/ref_03.jpg",
+        "99_附件/course-visuals/verified-gap-fill/版式设计.svg",
+        "99_附件/verified-keyframes/版式设计/round15_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "牛客算法直通套餐",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "pdf": 32,
+        "video": 39,
+        "text": 93
+      },
+      "raw_matches": 164,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 2,
+      "embedded_visuals": 9,
+      "sidecar_evidence": {
+        "text_sidecars": 8,
+        "visual_sidecars": 0,
+        "keyframes": 2,
+        "asr_transcripts": 1
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 4,
+        "overlap_sample": [
+          "name",
+          "png",
+          "title",
+          "type"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "编程系统与AI开发/牛客算法直通套餐/01.算法基础入门班（第五期）/第1章 认识复杂度和简单排序算法/1.1 课前预习（课件+源码）/算法基础入门班第一课.pdf",
+        "编程系统与AI开发/牛客算法直通套餐/01.算法基础入门班（第五期）/第1章 认识复杂度和简单排序算法/1.2课程学习.mp4",
+        "编程系统与AI开发/牛客算法直通套餐/01.算法基础入门班（第五期）/第1章 认识复杂度和简单排序算法/1.3 课后练习1.md",
+        "编程系统与AI开发/牛客算法直通套餐/01.算法基础入门班（第五期）/第1章 认识复杂度和简单排序算法/1.4 课后练习2.md",
+        "编程系统与AI开发/牛客算法直通套餐/01.算法基础入门班（第五期）/第1章 认识复杂度和简单排序算法/1.5 课后练习3.md"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__牛客算法直通套餐__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__牛客算法直通套餐__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__牛客算法直通套餐__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__牛客算法直通套餐__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_11_real_keyframes/backups/02_课程库__牛客算法直通套餐__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-visuals/general-courses/牛客算法直通套餐.svg",
+        "99_附件/verified-keyframes/牛客算法直通套餐/round11_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "生活策略与沟通",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {
+        "text_sidecars": 3,
+        "visual_sidecars": 4,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 3,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 12,
+        "overlap_sample": [
+          "学习数据",
+          "年素云",
+          "成年人必看",
+          "曼森方法",
+          "柯李思",
+          "生活策略与沟通",
+          "精英班恋爱课程",
+          "视频",
+          "视频课程",
+          "酒局饭桌攻略",
+          "音频",
+          "音频课程"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__生活策略与沟通__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    },
+    {
+      "course": "知识内化训练营",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "audio": 16,
+        "pdf": 22,
+        "video": 9,
+        "text": 1,
+        "image": 16
+      },
+      "raw_matches": 64,
+      "explicit_source_files": 0,
+      "local_source_refs": 3,
+      "reports": 11,
+      "visual_assets": 22,
+      "embedded_visuals": 98,
+      "sidecar_evidence": {},
+      "oer_matches": 5,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pdftotext",
+          "text-read"
+        ],
+        "overlap_terms": 23,
+        "overlap_sample": [
+          "created",
+          "day14",
+          "images",
+          "oer",
+          "status",
+          "tags",
+          "type",
+          "verified",
+          "复习卡片",
+          "天北大学霸科学记忆系统",
+          "完结",
+          "实操工作流",
+          "工作流",
+          "术语索引",
+          "来源"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "记忆力与学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）/00发刊词： 从「读书不忘」开始，带你训练出一个强健大脑.mp3",
+        "记忆力与学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）/00发刊词： 从「读书不忘」开始，带你训练出一个强健大脑.pdf",
+        "记忆力与学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）/01DAY1 _论语式阅读 (上) _ 和作者对话，让读书成为「私教课」.mp3",
+        "记忆力与学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）/01DAY1 _论语式阅读 (上) _ 和作者对话，让读书成为「私教课」.pdf",
+        "记忆力与学习力/知识内化训练营：21天北大学霸科学记忆系统（完结）/02DAY2：论语式阅读 (下)  不再走马观花，读书变身「深度游」.pdf"
+      ],
+      "sample_local_sources": [
+        "93_导入报告/知识内化训练营_导入报告.md",
+        "50_领域知识/开放知识与OER/03_知识内化训练营_交叉对比样板.md",
+        "50_领域知识/开放知识与OER/02_课程转化交叉对比流程.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-03_TALOS_sleep_mode_oer_ui_rounds/backups/02_课程库/知识内化训练营/00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__知识内化训练营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__知识内化训练营__14_开放知识交叉对比.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__知识内化训练营__15_OER行动面板.md",
+        "93_导入报告/V6_Anki复盘真实证据页图_知识内化训练营_2026-07-02.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/images/知识内化训练营/v6-evidence/知识内化训练营-pdf-p001-0b2715c5.json",
+        "99_附件/images/知识内化训练营/v6-evidence/知识内化训练营-pdf-p001-0b2715c5.png",
+        "99_附件/images/知识内化训练营/v6-evidence/知识内化训练营-pdf-p001-0e5ad2da.json",
+        "99_附件/images/知识内化训练营/v6-evidence/知识内化训练营-pdf-p001-0e5ad2da.png",
+        "99_附件/images/知识内化训练营/v6-evidence/知识内化训练营-pdf-p001-4245d64f.json"
+      ],
+      "sample_oer": [
+        "50_领域知识/10_项目输出/学习计划 - 知识内化训练营.md",
+        "50_领域知识/10_项目输出/知识内化训练营_真实课程总结.md",
+        "50_领域知识/10_项目输出/课程拆解 - 知识内化训练营.md",
+        "50_领域知识/10_项目输出/输出项目 - 知识内化训练营.md",
+        "50_领域知识/开放知识与OER/03_知识内化训练营_交叉对比样板.md"
+      ]
+    },
+    {
+      "course": "编程系统与AI开发",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "video": 48,
+        "image": 2515,
+        "text": 321,
+        "word": 10,
+        "pdf": 70,
+        "slides": 4
+      },
+      "raw_matches": 2968,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pymupdf",
+          "text-read"
+        ],
+        "overlap_terms": 4,
+        "overlap_sample": [
+          "com",
+          "https",
+          "type",
+          "编程"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "编程系统与AI开发/t514——风变编程/风变编程/Python基础语法与爬虫精进（风变编程）/12关参考代码/2019-02-11 233212.mov",
+        "编程系统与AI开发/t514——风变编程/风变编程/Python基础语法与爬虫精进（风变编程）/Python 软件和安装视频/01.jpg",
+        "编程系统与AI开发/t514——风变编程/风变编程/Python基础语法与爬虫精进（风变编程）/Python 软件和安装视频/02.jpg",
+        "编程系统与AI开发/t514——风变编程/风变编程/Python基础语法与爬虫精进（风变编程）/Python 软件和安装视频/03.jpg",
+        "编程系统与AI开发/t514——风变编程/风变编程/Python基础语法与爬虫精进（风变编程）/Python 软件和安装视频/04.jpg"
+      ],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__编程系统与AI开发__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    },
+    {
+      "course": "网易视觉设计师养成计划",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": true,
+        "pdf_present": true
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {
+        "image": 2925,
+        "text": 2,
+        "video": 14,
+        "pdf": 4
+      },
+      "raw_matches": 2945,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 6,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "pymupdf",
+          "text-read"
+        ],
+        "overlap_terms": 11,
+        "overlap_sample": [
+          "ai2psd",
+          "baidusyncdisk",
+          "file",
+          "illustrator",
+          "images",
+          "info",
+          "library",
+          "pdf",
+          "photoshop",
+          "psd",
+          "灵感库"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [
+        "设计课程/大河-网易”视觉设计师养成计划【已完结】/合成电商类好图/合成类海报（电商外卖）/2022.2.jpg",
+        "设计课程/大河-网易”视觉设计师养成计划【已完结】/合成电商类好图/合成类海报（电商外卖）/2022.5.7 表白季feeds.jpg",
+        "设计课程/大河-网易”视觉设计师养成计划【已完结】/合成电商类好图/合成类海报（电商外卖）/573d4539df6881511f0f6be010f909894d8c8a0b7a459-W78C0k.jpg",
+        "设计课程/大河-网易”视觉设计师养成计划【已完结】/合成电商类好图/合成类海报（电商外卖）/640 1080×1800.jpg",
+        "设计课程/大河-网易”视觉设计师养成计划【已完结】/合成电商类好图/合成类海报（电商外卖）/@农夫山泉 的个人主页 - 微博.jpg"
+      ],
+      "sample_local_sources": [
+        "93_导入报告/设计类课程本地参考素材索引_2026-07-02/design-reference-index.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__网易视觉设计师养成计划__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__网易视觉设计师养成计划__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__网易视觉设计师养成计划__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__网易视觉设计师养成计划__00_课程总览.md",
+        "93_导入报告/网易视觉设计师养成计划_全网比校与可信度报告.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/网易视觉设计师养成计划/auto_ref_01.jpg",
+        "99_附件/course-reference-images/网易视觉设计师养成计划/auto_ref_02.jpg",
+        "99_附件/course-reference-images/网易视觉设计师养成计划/auto_ref_03.jpg",
+        "99_附件/course-visuals/general-courses/网易视觉设计师养成计划.svg"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "考试数学与学习方法",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {
+        "text_sidecars": 5,
+        "visual_sidecars": 1,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 11,
+        "overlap_sample": [
+          "北大博士后教你通关任何考",
+          "天考霸训练营",
+          "学习数据",
+          "完结",
+          "文档资料",
+          "混合资料",
+          "素材资产",
+          "考试数学与学习方法",
+          "视频",
+          "视频课程",
+          "音频"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__考试数学与学习方法__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    },
+    {
+      "course": "记忆圣经学习力合集",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 4,
+      "embedded_visuals": 19,
+      "sidecar_evidence": {
+        "text_sidecars": 5,
+        "visual_sidecars": 5,
+        "keyframes": 1,
+        "asr_transcripts": 0
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 6,
+        "overlap_sample": [
+          "com",
+          "danaomima",
+          "fbi",
+          "http",
+          "www",
+          "教你破解身体语言"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__记忆圣经学习力合集__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__记忆圣经学习力合集__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__记忆圣经学习力合集__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_10_reference_image_deepen/backups/02_课程库__记忆圣经学习力合集__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_16_learning_ops_keyframes/backups/02_课程库__记忆圣经学习力合集__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/记忆圣经学习力合集/round10_ref_01.jpg",
+        "99_附件/course-reference-images/记忆圣经学习力合集/round10_ref_02.jpg",
+        "99_附件/course-visuals/general-courses/记忆圣经学习力合集.svg",
+        "99_附件/verified-keyframes/记忆圣经学习力合集/round16_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "设计师职业加速营",
+      "status": "needs_review",
+      "evidence_methods": 5,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 5,
+      "embedded_visuals": 24,
+      "sidecar_evidence": {
+        "text_sidecars": 1,
+        "visual_sidecars": 0,
+        "keyframes": 3,
+        "asr_transcripts": 3
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 4,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__设计师职业加速营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__设计师职业加速营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__设计师职业加速营__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__设计师职业加速营__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_15_design_keyframes/backups/02_课程库__设计师职业加速营__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/设计师职业加速营/auto_ref_01.jpg",
+        "99_附件/course-reference-images/设计师职业加速营/auto_ref_02.png",
+        "99_附件/course-reference-images/设计师职业加速营/auto_ref_03.jpg",
+        "99_附件/course-visuals/general-courses/设计师职业加速营.svg",
+        "99_附件/verified-keyframes/设计师职业加速营/round15_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "设计系统",
+      "status": "verified_by_available_methods",
+      "evidence_methods": 6,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": true,
+        "raw_text_consistency": true,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 1,
+      "reports": 7,
+      "visual_assets": 3,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {},
+      "oer_matches": 1,
+      "oer_sidecar": false,
+      "text_consistency": {
+        "sample_count": 1,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 10,
+        "overlap_sample": [
+          "https",
+          "obsidian",
+          "status",
+          "tags",
+          "type",
+          "优先级",
+          "来源",
+          "设计系统实战",
+          "课程库",
+          "课程总览"
+        ],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [
+        "50_领域知识/AI Agent技能库/04_课程化吸收总控.md"
+      ],
+      "sample_reports": [
+        "93_导入报告/2026-07-03_TALOS_global_obsidian_shell_fix/backups/00_主页__28_TALOS设计系统.md",
+        "93_导入报告/2026-07-03_TALOS_nocode_overlap_fix/backups/00_主页__28_TALOS设计系统.md",
+        "93_导入报告/2026-07-03_TALOS_purple_gemstone_deepening_10_rounds/backups/00_主页__28_TALOS设计系统.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_01_ui_visual_coverage/backups/02_课程库__UI UX Agent设计系统实战__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__设计系统__00_领域主页.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/UI-UX-Agent设计系统实战/round10_ref_01.png",
+        "99_附件/course-reference-images/UI-UX-Agent设计系统实战/round10_ref_02.jpg",
+        "99_附件/course-visuals/awesome-skills-cn/UI-UX-Agent设计系统实战.svg"
+      ],
+      "sample_oer": [
+        "50_领域知识/05_设计系统/00_设计系统总览.md"
+      ]
+    },
+    {
+      "course": "设计转岗运营加速版",
+      "status": "needs_review",
+      "evidence_methods": 4,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": false,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": true,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "missing_raw_source",
+        "raw_text_not_cross_confirmed"
+      ],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 8,
+      "visual_assets": 5,
+      "embedded_visuals": 24,
+      "sidecar_evidence": {
+        "text_sidecars": 0,
+        "visual_sidecars": 0,
+        "keyframes": 3,
+        "asr_transcripts": 2
+      },
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 3,
+        "methods": [
+          "text-read"
+        ],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": true
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_02_all_courses_visuals/backups/02_课程库__设计转岗运营加速版__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__设计转岗运营加速版__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_07_reference_image_expansion/backups/02_课程库__设计转岗运营加速版__12_视觉索引与配图.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__设计转岗运营加速版__00_课程总览.md",
+        "93_导入报告/2026-07-04_sleep_loop_round_16_learning_ops_keyframes/backups/02_课程库__设计转岗运营加速版__00_课程总览.md"
+      ],
+      "sample_visual_assets": [
+        "99_附件/course-reference-images/设计转岗运营加速版/auto_ref_01.gif",
+        "99_附件/course-reference-images/设计转岗运营加速版/auto_ref_02.jpg",
+        "99_附件/course-reference-images/设计转岗运营加速版/auto_ref_03.jpg",
+        "99_附件/course-visuals/general-courses/设计转岗运营加速版.svg",
+        "99_附件/verified-keyframes/设计转岗运营加速版/round16_keyframe_01.png"
+      ],
+      "sample_oer": []
+    },
+    {
+      "course": "阅读资料库",
+      "status": "needs_review",
+      "evidence_methods": 3,
+      "evidence": {
+        "formal_markdown": true,
+        "raw_source_match": false,
+        "raw_text_consistency": false,
+        "report_match": true,
+        "visual_evidence": false,
+        "oer_crosscheck": true,
+        "audio_video_present": false,
+        "pdf_present": false
+      },
+      "hallucination_risks": [
+        "missing_raw_source",
+        "raw_text_not_cross_confirmed",
+        "missing_visual_evidence"
+      ],
+      "source_type_counts": {},
+      "raw_matches": 0,
+      "explicit_source_files": 0,
+      "local_source_refs": 0,
+      "reports": 1,
+      "visual_assets": 0,
+      "embedded_visuals": 0,
+      "sidecar_evidence": {},
+      "oer_matches": 0,
+      "oer_sidecar": true,
+      "text_consistency": {
+        "sample_count": 0,
+        "methods": [],
+        "overlap_terms": 0,
+        "overlap_sample": [],
+        "checked": false
+      },
+      "sample_raw_sources": [],
+      "sample_local_sources": [],
+      "sample_reports": [
+        "93_导入报告/2026-07-04_sleep_loop_round_08_raw_html_cleanup/backups/02_课程库__阅读资料库__00_领域主页.md"
+      ],
+      "sample_visual_assets": [],
+      "sample_oer": []
+    }
+  ]
+}
