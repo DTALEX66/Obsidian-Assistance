@@ -3,6 +3,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import scripts.v10.course_evidence_sidecar as sidecar
 from scripts.v10.course_evidence_sidecar import build_audio_sample_command, build_course_sidecar
 
 
@@ -11,14 +12,9 @@ def write(path: Path, text: str) -> None:
     path.write_text(text, encoding="utf-8")
 
 
-def create_pdf(path: Path) -> None:
-    import fitz
+def create_pdf_placeholder(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    doc = fitz.open()
-    page = doc.new_page(width=320, height=180)
-    page.insert_text((30, 70), "RAG vector database evidence", fontsize=16)
-    doc.save(path)
-    doc.close()
+    path.write_bytes(b"%PDF-1.4\n% placeholder fixture\n")
 
 
 def test_build_sidecar_extracts_pdf_text_and_page_image(tmp_path):
@@ -27,17 +23,31 @@ def test_build_sidecar_extracts_pdf_text_and_page_image(tmp_path):
     out = tmp_path / "sidecars"
     course = vault / "02_课程库" / "RAG实战课"
     write(course / "00_课程总览.md", "# RAG实战课\nRAG vector database")
-    create_pdf(source_root / "RAG实战课" / "lesson.pdf")
+    create_pdf_placeholder(source_root / "RAG实战课" / "lesson.pdf")
 
-    result = build_course_sidecar(
-        course="RAG实战课",
-        vault=vault,
-        source_root=source_root,
-        output_root=out,
-        max_text_files=1,
-        max_media_files=0,
-        run_asr=False,
-    )
+    original_extract = sidecar.extract_text_from_file
+    original_render = sidecar.render_pdf_page_image
+    try:
+        sidecar.extract_text_from_file = lambda path, max_chars=6000: {"method": "fixture-pdf", "text": "RAG vector database evidence", "path": str(path)}
+
+        def fake_render_pdf_page_image(pdf_path: Path, output_path: Path, page_number: int = 0) -> dict:
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            output_path.write_bytes(b"fake-png")
+            return {"path": str(output_path), "written": True, "page": page_number + 1, "pages": 1, "source": str(pdf_path)}
+
+        sidecar.render_pdf_page_image = fake_render_pdf_page_image
+        result = build_course_sidecar(
+            course="RAG实战课",
+            vault=vault,
+            source_root=source_root,
+            output_root=out,
+            max_text_files=1,
+            max_media_files=0,
+            run_asr=False,
+        )
+    finally:
+        sidecar.extract_text_from_file = original_extract
+        sidecar.render_pdf_page_image = original_render
 
     assert result["course"] == "RAG实战课"
     assert result["evidence"]["text_sidecars"] == 1
